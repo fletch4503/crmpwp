@@ -216,13 +216,13 @@ class EmailSyncLogAdmin(admin.ModelAdmin):
         "credentials",
         "status",
         "started_at",
-        "duration",
-        "messages_processed",
-        "errors_count",
+        "duration_display",
+        "emails_fetched",
+        "emails_processed",
     )
     list_filter = ("status", "started_at", "credentials__user")
-    search_fields = ("credentials__email", "error_message")
-    readonly_fields = ("id", "started_at", "finished_at", "duration")
+    search_fields = ("credentials__email",)
+    readonly_fields = ("id", "started_at", "completed_at", "duration_seconds", "duration_display")
     ordering = ("-started_at",)
 
     fieldsets = (
@@ -230,32 +230,30 @@ class EmailSyncLogAdmin(admin.ModelAdmin):
         (
             _("Время выполнения"),
             {
-                "fields": ("started_at", "finished_at", "duration"),
+                "fields": ("started_at", "completed_at", "duration_seconds", "duration_display"),
             },
         ),
         (
             _("Результаты"),
             {
-                "fields": ("messages_processed", "errors_count"),
+                "fields": ("emails_fetched", "emails_processed", "emails_skipped"),
             },
         ),
         (
             _("Ошибки"),
             {
-                "fields": ("error_message",),
+                "fields": ("errors", "warnings"),
                 "classes": ("collapse",),
             },
         ),
     )
 
-    def duration(self, obj):
+    def duration_display(self, obj):
         """Длительность синхронизации."""
-        if obj.finished_at and obj.started_at:
-            duration = obj.finished_at - obj.started_at
-            return f"{duration.total_seconds():.1f} сек"
-        return "-"
+        return obj.duration_display
 
-    duration.short_description = _("Длительность")
+    duration_display.short_description = _("Длительность")
+    duration_display.admin_order_field = "duration_seconds"
 
     def changelist_view(self, request, extra_context=None):
         """Добавить статистику на страницу списка."""

@@ -18,13 +18,9 @@ class ContactAdmin(admin.ModelAdmin):
         "phone",
         "company",
         "user",
-        "is_email_verified",
-        "is_phone_verified",
         "created_at",
     )
     list_filter = (
-        "is_email_verified",
-        "is_phone_verified",
         "created_at",
         "user",
         "company",
@@ -44,7 +40,7 @@ class ContactAdmin(admin.ModelAdmin):
         (
             _("Верификация"),
             {
-                "fields": ("is_email_verified", "is_phone_verified"),
+                "fields": ("is_active", "is_favorite"),
             },
         ),
         (

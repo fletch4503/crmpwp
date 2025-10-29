@@ -12,22 +12,22 @@ router.register(r"permissions", api_views.PermissionViewSet, basename="permissio
 router.register(r"access-tokens", api_views.AccessTokenViewSet, basename="access-token")
 
 # Nested routers for user relationships
-users_router = routers.NestedDefaultRouter(router, r"users", lookup="user")
-users_router.register(r"roles", api_views.UserRoleViewSet, basename="user-roles")
-users_router.register(
-    r"tokens", api_views.UserAccessTokenViewSet, basename="user-tokens"
-)
+# users_router = routers.NestedDefaultRouter(router, r"users", lookup="user")
+# users_router.register(r"roles", api_views.UserRoleViewSet, basename="user-roles")
+# users_router.register(
+#     r"tokens", api_views.UserAccessTokenViewSet, basename="user-tokens"
+# )
 
 # Roles nested router
-roles_router = routers.NestedDefaultRouter(router, r"roles", lookup="role")
-roles_router.register(
-    r"permissions", api_views.RolePermissionViewSet, basename="role-permissions"
-)
+# roles_router = routers.NestedDefaultRouter(router, r"roles", lookup="role")
+# roles_router.register(
+#     r"permissions", api_views.RolePermissionViewSet, basename="role-permissions"
+# )
 
 urlpatterns = [
     path("", include(router.urls)),
-    path("", include(users_router.urls)),
-    path("", include(roles_router.urls)),
+    # path("", include(users_router.urls)),
+    # path("", include(roles_router.urls)),
     # Additional endpoints
     path("auth/login/", api_views.LoginAPIView.as_view(), name="auth-login"),
     path("auth/logout/", api_views.LogoutAPIView.as_view(), name="auth-logout"),

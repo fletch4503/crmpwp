@@ -115,7 +115,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": config("DB_NAME", default="crm_db"),
         "USER": config("DB_USER", default="crm_user"),
-        "PASSWORD": config("DB_PASSWORD", default="crm_password"),
+        "PASSWORD": config("DB_PASSWORD", default="NS3RakCpILMlgLu1"),
         "HOST": config("DB_HOST", default="localhost"),
         "PORT": config("DB_PORT", default="5432"),
     }
@@ -166,7 +166,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = "django.db.models.UUIDField"
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Custom user model
 AUTH_USER_MODEL = "users.User"
@@ -205,9 +205,10 @@ CORS_ALLOWED_ORIGINS = config(
 
 # Allauth settings
 ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_SIGNUP_FIELDS = ["email*", "password1*", "password2*"]
 ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = "email"
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_LOGIN_METHODS = {'email'}
+ACCOUNT_EMAIL_VERIFICATION = "none"  # Отключить верификацию email для разработки
 ACCOUNT_ADAPTER = "users.adapters.AccountAdapter"
 SOCIALACCOUNT_ADAPTER = "users.adapters.SocialAccountAdapter"
 

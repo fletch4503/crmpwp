@@ -25,9 +25,9 @@ class PaymentInline(admin.TabularInline):
 
     model = Payment
     extra = 0
-    readonly_fields = ("paid_at",)
-    fields = ("order", "amount", "paid_at")
-    ordering = ("-paid_at",)
+    readonly_fields = ("payment_date",)
+    fields = ("order", "amount", "payment_date")
+    ordering = ("-payment_date",)
 
 
 @admin.register(Company)
@@ -164,7 +164,7 @@ class OrderAdmin(admin.ModelAdmin):
     Админка для заказов.
     """
 
-    list_display = ("number", "company", "amount", "created_at")
+    list_display = ("order_number", "company", "amount", "created_at")
     list_filter = ("created_at", "company")
     search_fields = ("number", "company__name", "company__inn")
     readonly_fields = ("id", "created_at")
@@ -192,13 +192,13 @@ class PaymentAdmin(admin.ModelAdmin):
     Админка для оплат.
     """
 
-    list_display = ("company", "order", "amount", "paid_at")
-    list_filter = ("paid_at", "company", "order")
+    list_display = ("company", "order", "amount", "payment_date")
+    list_filter = ("payment_date", "company", "order")
     search_fields = ("company__name", "company__inn", "order__number")
     readonly_fields = ("id",)
-    ordering = ("-paid_at",)
+    ordering = ("-payment_date",)
 
-    fieldsets = ((None, {"fields": ("company", "order", "amount", "paid_at")}),)
+    fieldsets = ((None, {"fields": ("company", "order", "amount", "payment_date")}),)
 
     def get_queryset(self, request):
         """Оптимизировать запросы."""

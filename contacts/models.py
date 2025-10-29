@@ -33,6 +33,8 @@ class Contact(models.Model):
     # Метаданные
     is_active = models.BooleanField(_("active"), default=True)
     is_favorite = models.BooleanField(_("favorite"), default=False)
+    is_email_verified = models.BooleanField(_("email verified"), default=False)
+    is_phone_verified = models.BooleanField(_("phone verified"), default=False)
     tags = models.JSONField(_("tags"), default=list, blank=True)
 
     created_at = models.DateTimeField(_("created at"), auto_now_add=True)

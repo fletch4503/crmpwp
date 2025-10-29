@@ -8,8 +8,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
-from rest_framework_nested import viewsets as nested_viewsets
-
+from logly import logger
 from .models import User, Role, Permission, UserRole, RolePermission, AccessToken
 from .permissions import IsAdmin, RBACPermission
 from .serializers import (
@@ -26,6 +25,24 @@ from .serializers import (
     UserStatsSerializer,
     RoleStatsSerializer,
 )
+
+
+cons_levels = {"DEBUG": True, "INFO": True, "WARN": True}
+cust_color = {"INFO": "GREEN", "ERROR": "BRIGHT_RED"}
+
+
+def configure_logging():
+    logger.configure(
+        level="INFO",
+        json=False,
+        color=True,
+        # console=True,                 # Вывод в log-файлы
+        # console_levels=cons_levels,   # Вывод в log-файлы
+        level_colors=cust_color,
+        # color_callback=custom_color,
+        auto_sink=True,
+        # auto_sink_levels=a_sink_levels,
+    )
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -154,7 +171,7 @@ class AccessTokenViewSet(viewsets.ModelViewSet):
 # Nested ViewSets
 
 
-class UserRoleViewSet(nested_viewsets.NestedViewSetMixin, viewsets.ModelViewSet):
+class UserRoleViewSet(viewsets.ModelViewSet):
     """
     ViewSet для управления ролями пользователя.
     """
@@ -167,7 +184,7 @@ class UserRoleViewSet(nested_viewsets.NestedViewSetMixin, viewsets.ModelViewSet)
         return self.queryset.filter(user=self.get_parents_query_dict()["user"])
 
 
-class UserAccessTokenViewSet(nested_viewsets.NestedViewSetMixin, viewsets.ModelViewSet):
+class UserAccessTokenViewSet(viewsets.ModelViewSet):
     """
     ViewSet для управления токенами пользователя.
     """
@@ -180,7 +197,7 @@ class UserAccessTokenViewSet(nested_viewsets.NestedViewSetMixin, viewsets.ModelV
         return self.queryset.filter(user=self.get_parents_query_dict()["user"])
 
 
-class RolePermissionViewSet(nested_viewsets.NestedViewSetMixin, viewsets.ModelViewSet):
+class RolePermissionViewSet(viewsets.ModelViewSet):
     """
     ViewSet для управления разрешениями роли.
     """

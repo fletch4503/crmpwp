@@ -1,0 +1,479 @@
+INFO 2025-10-29 13:43:53,830 autoreload 92 139679628725184 /app/users/api_views.py changed, reloading.
+INFO 2025-10-29 13:43:54,645 autoreload 221 140345122286528 Watching for file changes with StatReloader
+INFO 2025-10-29 13:45:34,802 autoreload 221 140345122286528 /app/users/api_views.py changed, reloading.
+INFO 2025-10-29 13:45:35,613 autoreload 246 139815221439424 Watching for file changes with StatReloader
+INFO 2025-10-29 13:46:07,062 autoreload 246 139815221439424 /app/users/models.py changed, reloading.
+INFO 2025-10-29 13:46:07,814 autoreload 256 140573866560448 Watching for file changes with StatReloader
+INFO 2025-10-29 13:46:20,523 autoreload 256 140573866560448 /app/users/models.py changed, reloading.
+INFO 2025-10-29 13:46:21,313 autoreload 258 140328837938112 Watching for file changes with StatReloader
+INFO 2025-10-29 13:46:47,207 autoreload 258 140328837938112 /app/users/api_urls.py changed, reloading.
+INFO 2025-10-29 13:46:48,015 autoreload 268 140177955797952 Watching for file changes with StatReloader
+INFO 2025-10-29 13:46:59,013 autoreload 268 140177955797952 /app/users/api_urls.py changed, reloading.
+INFO 2025-10-29 13:46:59,841 autoreload 278 140376028310464 Watching for file changes with StatReloader
+INFO 2025-10-29 13:48:08,287 autoreload 278 140376028310464 /app/crm/settings.py changed, reloading.
+INFO 2025-10-29 13:48:09,120 autoreload 294 139774884154304 Watching for file changes with StatReloader
+INFO 2025-10-29 13:48:59,842 autoreload 11 140261913508800 Watching for file changes with StatReloader
+INFO 2025-10-29 13:50:23,326 autoreload 11 139738294053824 Watching for file changes with StatReloader
+INFO 2025-10-29 13:53:22,739 autoreload 92 140612304047040 Watching for file changes with StatReloader
+INFO 2025-10-29 13:56:00,947 autoreload 11 140594771667904 Watching for file changes with StatReloader
+INFO 2025-10-29 14:09:01,139 autoreload 92 140469967797184 Watching for file changes with StatReloader
+INFO 2025-10-29 14:11:32,995 autoreload 11 139625881893824 Watching for file changes with StatReloader
+INFO 2025-10-29 14:14:54,208 autoreload 11 139625881893824 /app/crm/settings.py changed, reloading.
+INFO 2025-10-29 14:14:55,005 autoreload 34 140542617627584 Watching for file changes with StatReloader
+INFO 2025-10-29 14:15:55,071 autoreload 34 140542617627584 /app/crm/settings.py changed, reloading.
+INFO 2025-10-29 14:15:55,975 autoreload 38 140330792569792 Watching for file changes with StatReloader
+INFO 2025-10-29 14:16:22,091 autoreload 38 140330792569792 /app/crm/settings.py changed, reloading.
+INFO 2025-10-29 14:16:23,001 autoreload 42 140196447566784 Watching for file changes with StatReloader
+INFO 2025-10-29 14:18:05,759 autoreload 42 140196447566784 /app/crm/settings.py changed, reloading.
+INFO 2025-10-29 14:18:06,522 autoreload 58 140693372177344 Watching for file changes with StatReloader
+ERROR 2025-10-29 14:18:45,288 signal 10 140340514061248 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7fa3909234d0>> raised: ValueError("'e' is not a valid AppSettings.LoginMethod")
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/checks.py", line 72, in settings_check
+    for lm in app_settings.LOGIN_METHODS
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/app_settings.py", line 585, in __getattr__
+    return getattr(_app_settings, name)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/app_settings.py", line 169, in LOGIN_METHODS
+    return frozenset([self.LoginMethod(m) for m in methods])
+                      ~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.13/enum.py", line 726, in __call__
+    return cls.__new__(cls, value)
+           ~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/enum.py", line 1203, in __new__
+    raise ve_exc
+ValueError: 'e' is not a valid AppSettings.LoginMethod
+ERROR 2025-10-29 14:18:45,323 signal 10 140506408672192 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7fca30a9f4d0>> raised: ValueError("'e' is not a valid AppSettings.LoginMethod")
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/checks.py", line 72, in settings_check
+    for lm in app_settings.LOGIN_METHODS
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/app_settings.py", line 585, in __getattr__
+    return getattr(_app_settings, name)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/app_settings.py", line 169, in LOGIN_METHODS
+    return frozenset([self.LoginMethod(m) for m in methods])
+                      ~~~~~~~~~~~~~~~~^^^
+  File "/usr/local/lib/python3.13/enum.py", line 726, in __call__
+    return cls.__new__(cls, value)
+           ~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/enum.py", line 1203, in __new__
+    raise ve_exc
+ValueError: 'e' is not a valid AppSettings.LoginMethod
+INFO 2025-10-29 14:18:46,311 autoreload 11 140559505062848 Watching for file changes with StatReloader
+INFO 2025-10-29 14:19:48,077 autoreload 11 140559505062848 /app/crm/settings.py changed, reloading.
+INFO 2025-10-29 14:19:48,871 autoreload 15 140266051759040 Watching for file changes with StatReloader
+INFO 2025-10-29 14:21:06,346 autoreload 15 140266051759040 /app/companies/admin.py changed, reloading.
+INFO 2025-10-29 14:21:07,135 autoreload 19 140068840836032 Watching for file changes with StatReloader
+INFO 2025-10-29 14:21:18,603 autoreload 19 140068840836032 /app/companies/admin.py changed, reloading.
+INFO 2025-10-29 14:21:19,446 autoreload 23 140043432512448 Watching for file changes with StatReloader
+INFO 2025-10-29 14:21:32,999 autoreload 23 140043432512448 /app/companies/admin.py changed, reloading.
+INFO 2025-10-29 14:21:33,927 autoreload 27 139865258490816 Watching for file changes with StatReloader
+INFO 2025-10-29 14:21:45,403 autoreload 27 139865258490816 /app/companies/admin.py changed, reloading.
+INFO 2025-10-29 14:21:46,229 autoreload 31 140029767166912 Watching for file changes with StatReloader
+INFO 2025-10-29 14:21:57,790 autoreload 31 140029767166912 /app/companies/admin.py changed, reloading.
+INFO 2025-10-29 14:21:59,150 autoreload 35 140362719914944 Watching for file changes with StatReloader
+INFO 2025-10-29 14:22:09,619 autoreload 35 140362719914944 /app/companies/admin.py changed, reloading.
+INFO 2025-10-29 14:22:10,458 autoreload 39 140133181479872 Watching for file changes with StatReloader
+INFO 2025-10-29 14:22:20,884 autoreload 39 140133181479872 /app/companies/admin.py changed, reloading.
+INFO 2025-10-29 14:22:21,796 autoreload 43 140512764148672 Watching for file changes with StatReloader
+INFO 2025-10-29 14:22:46,193 autoreload 10 139665919482816 Watching for file changes with StatReloader
+INFO 2025-10-29 14:23:09,886 autoreload 10 139832652262336 Watching for file changes with StatReloader
+INFO 2025-10-29 14:24:54,481 autoreload 11 140399859854272 Watching for file changes with StatReloader
+INFO 2025-10-29 14:25:12,491 autoreload 10 140347759762368 Watching for file changes with StatReloader
+INFO 2025-10-29 14:28:12,757 autoreload 11 140096516320192 Watching for file changes with StatReloader
+INFO 2025-10-29 14:28:28,615 autoreload 11 140353508920256 Watching for file changes with StatReloader
+INFO 2025-10-29 14:30:03,571 autoreload 11 139794723658688 Watching for file changes with StatReloader
+INFO 2025-10-29 14:35:30,833 autoreload 92 140172755741632 Watching for file changes with StatReloader
+INFO 2025-10-29 14:36:23,449 autoreload 11 140587712334784 Watching for file changes with StatReloader
+INFO 2025-10-29 14:36:30,556 autoreload 10 139975688629184 Watching for file changes with StatReloader
+INFO 2025-10-29 14:36:55,063 autoreload 12 140376051399616 Watching for file changes with StatReloader
+INFO 2025-10-29 14:38:29,326 autoreload 11 139825106938816 Watching for file changes with StatReloader
+INFO 2025-10-29 14:38:54,840 autoreload 12 139626651315136 Watching for file changes with StatReloader
+INFO 2025-10-29 14:40:20,645 autoreload 11 140156040395712 Watching for file changes with StatReloader
+INFO 2025-10-29 15:05:59,362 autoreload 19 139661378911168 Watching for file changes with StatReloader
+INFO 2025-10-29 15:06:17,847 autoreload 10 140607360883648 Watching for file changes with StatReloader
+INFO 2025-10-29 15:07:06,901 autoreload 10 140607360883648 /app/companies/admin.py changed, reloading.
+INFO 2025-10-29 15:07:14,353 autoreload 14 139908820110272 Watching for file changes with StatReloader
+INFO 2025-10-29 15:07:37,600 autoreload 14 139908820110272 /app/contacts/admin.py changed, reloading.
+INFO 2025-10-29 15:07:44,029 autoreload 18 140049357212608 Watching for file changes with StatReloader
+INFO 2025-10-29 15:08:05,349 autoreload 18 140049357212608 /app/crm/settings.py changed, reloading.
+INFO 2025-10-29 15:08:11,603 autoreload 22 139676181466048 Watching for file changes with StatReloader
+INFO 2025-10-29 15:15:31,541 autoreload 82 140189919349696 Watching for file changes with StatReloader
+INFO 2025-10-29 15:15:38,925 basehttp 82 140189606344384 "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 15:16:14,127 basehttp 82 140189606344384 "GET /admin/ HTTP/1.1" 302 0
+WARNING 2025-10-29 15:16:41,578 log 82 140189586413248 Not Found: /ws/notifications/1fac988f-cc7b-47db-91a8-bed0b0e008c8/
+WARNING 2025-10-29 15:16:41,579 basehttp 82 140189586413248 "GET /ws/notifications/1fac988f-cc7b-47db-91a8-bed0b0e008c8/ HTTP/1.1" 404 6422
+WARNING 2025-10-29 15:16:41,786 log 82 140189606344384 Not Found: /favicon.ico
+WARNING 2025-10-29 15:16:41,787 basehttp 82 140189606344384 "GET /favicon.ico HTTP/1.1" 404 6293
+INFO 2025-10-29 15:16:47,049 basehttp 82 140189606344384 "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 15:16:47,348 basehttp 82 140189606344384 "GET /accounts/login/?next=/ HTTP/1.1" 200 2560
+INFO 2025-10-29 15:17:57,614 basehttp 82 140189606344384 "POST /accounts/login/ HTTP/1.1" 200 2758
+INFO 2025-10-29 15:18:04,382 basehttp 82 140189606344384 "GET /accounts/login/ HTTP/1.1" 200 2508
+INFO 2025-10-29 15:18:17,452 basehttp 82 140189606344384 "POST /accounts/login/ HTTP/1.1" 200 2698
+ERROR 2025-10-29 15:19:46,470 log 82 140189594805952 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/decorators.py", line 12, in wrap
+    resp = function(request, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/views/decorators/debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/views.py", line 95, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/mixins.py", line 53, in dispatch
+    response = super().dispatch(request, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/mixins.py", line 82, in post
+    response = self.form_valid(form)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/views.py", line 108, in form_valid
+    return form.login(self.request, redirect_url=redirect_url)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/forms.py", line 230, in login
+    return self._login_with_password(request, redirect_url, credentials)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/forms.py", line 252, in _login_with_password
+    ret = flows.login.perform_password_login(request, credentials, login)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/internal/flows/login.py", line 83, in perform_password_login
+    return perform_login(request, login)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/internal/flows/login.py", line 93, in perform_login
+    return resume_login(request, login)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/internal/flows/login.py", line 102, in resume_login
+    response = ctrl.handle()
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/stages.py", line 120, in handle
+    response, cont = stage.handle()
+                     ~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/stages.py", line 158, in handle
+    send_verification_email_at_login(self.request, login)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/internal/flows/email_verification.py", line 294, in send_verification_email_at_login
+    sent = send_verification_email_at_real_login(request, login)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/internal/flows/email_verification.py", line 308, in send_verification_email_at_real_login
+    return send_verification_email_to_address(request, address, signup=login.signup)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/internal/flows/email_verification.py", line 269, in send_verification_email_to_address
+    confirmation = address.send_confirmation(request, signup=signup)
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/models.py", line 104, in send_confirmation
+    confirmation.send(request, signup=signup)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/models.py", line 133, in send
+    get_adapter().send_confirmation_mail(request, self, signup)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/adapter.py", line 683, in send_confirmation_mail
+    self.send_mail(email_template, emailconfirmation.email_address.email, ctx)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/users/adapters.py", line 46, in send_mail
+    return super().send_mail(template_prefix, email, context)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/allauth/account/adapter.py", line 214, in send_mail
+    msg.send()
+    ~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/django/core/mail/message.py", line 307, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+  File "/app/.venv/lib/python3.13/site-packages/django/core/mail/backends/smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ~~~~~~~~~~~~~~~~~~~~~^
+        self.host, self.port, **connection_params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/smtplib.py", line 264, in __init__
+    (code, msg) = self.connect(host, port)
+                  ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/smtplib.py", line 350, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/smtplib.py", line 321, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+                                    self.source_address)
+                                    ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socket.py", line 864, in create_connection
+    raise exceptions[0]
+  File "/usr/local/lib/python3.13/socket.py", line 849, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR 2025-10-29 15:19:46,540 basehttp 82 140189594805952 "POST /accounts/login/ HTTP/1.1" 500 251731
+INFO 2025-10-29 15:21:13,937 autoreload 82 140189919349696 /app/crm/settings.py changed, reloading.
+INFO 2025-10-29 15:21:34,312 autoreload 10 139657322646464 Watching for file changes with StatReloader
+INFO 2025-10-29 15:22:52,079 basehttp 10 139657210754752 "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 15:22:52,350 basehttp 10 139657210754752 "GET /accounts/login/?next=/ HTTP/1.1" 200 2560
+INFO 2025-10-29 15:23:02,448 basehttp 10 139657210754752 "POST /accounts/login/ HTTP/1.1" 200 2758
+INFO 2025-10-29 15:23:19,446 basehttp 10 139657210754752 "GET /accounts/signup/?next=%2F HTTP/1.1" 200 2965
+INFO 2025-10-29 15:23:23,344 basehttp 10 139657210754752 "GET /accounts/login/?next=%2F HTTP/1.1" 200 2560
+INFO 2025-10-29 15:23:39,637 basehttp 10 139657210754752 "POST /accounts/login/ HTTP/1.1" 200 2758
+INFO 2025-10-29 15:23:59,109 basehttp 10 139657210754752 "POST /accounts/login/ HTTP/1.1" 302 0
+ERROR 2025-10-29 15:23:59,282 log 10 139657210754752 Internal Server Error: /
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 228, in get
+    context = self.get_context_data(**kwargs)
+  File "/app/users/views.py", line 51, in get_context_data
+    context["stats"] = self.get_dashboard_stats()
+                       ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/users/views.py", line 81, in get_dashboard_stats
+    .filter(Q(is_email_verified=True) | Q(is_phone_verified=True))
+     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1493, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1511, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1518, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1646, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1503, in build_filter
+    return self._add_q(
+           ~~~~~~~~~~~^
+        filter_expr,
+        ^^^^^^^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1526, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1333, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1806, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'is_email_verified' into field. Choices are: address, company, created_at, email, first_name, groups, id, interactions, is_active, is_favorite, last_name, linkedin, notes, phone, position, projects, tags, telegram, updated_at, user, user_id, website, whatsapp
+ERROR 2025-10-29 15:23:59,320 basehttp 10 139657210754752 "GET / HTTP/1.1" 500 146346
+INFO 2025-10-29 15:25:37,976 autoreload 11 140260839484352 Watching for file changes with StatReloader
+ERROR 2025-10-29 15:26:08,635 log 11 140260659951296 Internal Server Error: /
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 228, in get
+    context = self.get_context_data(**kwargs)
+  File "/app/users/views.py", line 51, in get_context_data
+    context["stats"] = self.get_dashboard_stats()
+                       ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/users/views.py", line 81, in get_dashboard_stats
+    .filter(Q(is_email_verified=True) | Q(is_phone_verified=True))
+     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1493, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1511, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1518, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1646, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1503, in build_filter
+    return self._add_q(
+           ~~~~~~~~~~~^
+        filter_expr,
+        ^^^^^^^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1526, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1333, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1806, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'is_email_verified' into field. Choices are: address, company, created_at, email, first_name, groups, id, interactions, is_active, is_favorite, last_name, linkedin, notes, phone, position, projects, tags, telegram, updated_at, user, user_id, website, whatsapp
+ERROR 2025-10-29 15:26:08,672 basehttp 11 140260659951296 "GET / HTTP/1.1" 500 146180
+ERROR 2025-10-29 15:26:20,858 log 11 140260659951296 Internal Server Error: /
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 228, in get
+    context = self.get_context_data(**kwargs)
+  File "/app/users/views.py", line 51, in get_context_data
+    context["stats"] = self.get_dashboard_stats()
+                       ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/users/views.py", line 81, in get_dashboard_stats
+    .filter(Q(is_email_verified=True) | Q(is_phone_verified=True))
+     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1493, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1511, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1518, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1646, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1503, in build_filter
+    return self._add_q(
+           ~~~~~~~~~~~^
+        filter_expr,
+        ^^^^^^^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1526, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1333, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1806, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'is_email_verified' into field. Choices are: address, company, created_at, email, first_name, groups, id, interactions, is_active, is_favorite, last_name, linkedin, notes, phone, position, projects, tags, telegram, updated_at, user, user_id, website, whatsapp
+ERROR 2025-10-29 15:26:20,872 basehttp 11 140260659951296 "GET / HTTP/1.1" 500 146043
+INFO 2025-10-29 15:40:59,031 autoreload 11 140260839484352 /app/contacts/models.py changed, reloading.

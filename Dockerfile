@@ -13,14 +13,17 @@ COPY pyproject.toml ./
 # Устанавливаем uv для управления зависимостями
 RUN pip install uv
 
-# Устанавливаем зависимости глобально (без виртуального окружения)
+# Устанавливаем зависимости в систему (без виртуального окружения)
 RUN uv pip install --system -r pyproject.toml
 
 # Copy project
 COPY . .
 
+# Create logs directory
+RUN mkdir -p /app/logs
+
 # Открываем порт 8000 для Django
 EXPOSE 8000
 
-# Activate virtual environment and run the application
-CMD ["bash", "-c", "source .venv/bin/activate && python manage.py runserver 0.0.0.0:8000"]
+# Использовать uv run для запуска без активации venv
+CMD ["uv", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
