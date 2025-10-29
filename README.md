@@ -66,7 +66,7 @@
 ### 1. Клонирование репозитория
 
 ```bash
-git clone https://github.com/your-username/crmpwp.git
+git clone https://github.com/fletch4503/crmpwp.git
 cd crmpwp
 ```
 
