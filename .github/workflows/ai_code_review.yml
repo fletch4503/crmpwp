@@ -20,7 +20,7 @@ jobs:
       - name: Run AI Code Review Action
         uses: github/code-review-action@v1
         with:
-          # Параметры action, например:
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           token: ${{ secrets.GITHUB_TOKEN }}
           # language: python
           # максимальное время анализа (если поддерживается)
