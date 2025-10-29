@@ -1,0 +1,26 @@
+name: AI Code Review
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  ai-review:
+    name: Run AI Code Review
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run AI Code Review Action
+        uses: github/code-review-action@v1
+        with:
+          # Параметры action, например:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          language: python
+          # максимальное время анализа (если поддерживается)
