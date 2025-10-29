@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_DB: ${DB_NAME:-crm_db}
       POSTGRES_USER: ${DB_USER:-crm_user}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-crm_password}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-NS3RakCpILMlgLu1}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
@@ -47,11 +47,10 @@ services:
 
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: uv run python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
-      - static_volume:/app/static
-      - media_volume:/app/media
+      - /app/.venv
     ports:
       - "8000:8000"
     depends_on:
@@ -65,7 +64,7 @@ services:
       - .env
     environment:
       - DJANGO_SETTINGS_MODULE=crm.settings
-      - DATABASE_URL=postgresql://${DB_USER:-crm_user}:${DB_PASSWORD:-crm_password}@db:${DB_PORT:-5432}/${DB_NAME:-crm_db}
+      - DATABASE_URL=postgresql://${DB_USER:-crm_user}:${DB_PASSWORD:-NS3RakCpILMlgLu1}@db:${DB_PORT:-5432}/${DB_NAME:-crm_db}
       - REDIS_URL=${REDIS_URL:-redis://redis:6379/0}
       - CELERY_BROKER_URL=${CELERY_BROKER_URL:-amqp://crm_user:crm_password@rabbitmq:5672//}
       - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND:-redis://redis:6379/0}
@@ -77,9 +76,10 @@ services:
 
   celery_worker:
     build: .
-    command: celery -A crm worker --loglevel=info
+    command: uv run celery -A crm worker --loglevel=info
     volumes:
       - .:/app
+      - /app/.venv
     depends_on:
       - redis
       - rabbitmq
@@ -88,16 +88,17 @@ services:
       - .env
     environment:
       - DJANGO_SETTINGS_MODULE=crm.settings
-      - DATABASE_URL=postgresql://${DB_USER:-crm_user}:${DB_PASSWORD:-crm_password}@db:${DB_PORT:-5432}/${DB_NAME:-crm_db}
+      - DATABASE_URL=postgresql://${DB_USER:-crm_user}:${DB_PASSWORD:-NS3RakCpILMlgLu1}@db:${DB_PORT:-5432}/${DB_NAME:-crm_db}
       - REDIS_URL=${REDIS_URL:-redis://redis:6379/0}
-      - CELERY_BROKER_URL=${CELERY_BROKER_URL:-amqp://crm_user:crm_password@rabbitmq:5672//}
+      - CELERY_BROKER_URL=${CELERY_BROKER_URL:-amqp://crm_user:NS3RakCpILMlgLu1@rabbitmq:5672//}
       - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND:-redis://redis:6379/0}
 
   celery_beat:
     build: .
-    command: celery -A crm beat --loglevel=info --scheduler django_celery_beat.schedulers:DatabaseScheduler
+    command: uv run celery -A crm beat --loglevel=info --scheduler django_celery_beat.schedulers:DatabaseScheduler
     volumes:
       - .:/app
+      - /app/.venv
     depends_on:
       - redis
       - rabbitmq
@@ -106,9 +107,9 @@ services:
       - .env
     environment:
       - DJANGO_SETTINGS_MODULE=crm.settings
-      - DATABASE_URL=postgresql://${DB_USER:-crm_user}:${DB_PASSWORD:-crm_password}@db:${DB_PORT:-5432}/${DB_NAME:-crm_db}
+      - DATABASE_URL=postgresql://${DB_USER:-crm_user}:${DB_PASSWORD:-NS3RakCpILMlgLu1}@db:${DB_PORT:-5432}/${DB_NAME:-crm_db}
       - REDIS_URL=${REDIS_URL:-redis://redis:6379/0}
-      - CELERY_BROKER_URL=${CELERY_BROKER_URL:-amqp://crm_user:crm_password@rabbitmq:5672//}
+      - CELERY_BROKER_URL=${CELERY_BROKER_URL:-amqp://crm_user:NS3RakCpILMlgLu1@rabbitmq:5672//}
       - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND:-redis://redis:6379/0}
 
 volumes:
