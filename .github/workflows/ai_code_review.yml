@@ -1,26 +1,22 @@
-name: AI Code Review
+name: AI Code Reviewer
 
 on:
   pull_request:
-    branches:
-      - master
-  push:
-    branches:
-      - master
-
+    types:
+      - opened
+      - synchronize
+permissions: write-all
 jobs:
-  ai-review:
-    name: Run AI Code Review
+  review:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout Repo
+        uses: actions/checkout@v3
 
-      - name: Run AI Code Review Action
-        uses: github/code-review-action@v1
+      - name: AI Code Reviewer
+        uses: fletch4503/ai-code-reviewer@main
         with:
-          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # language: python
-          # максимальное время анализа (если поддерживается)
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_MODEL: "gpt-4" # Optional: defaults to "gpt-4"
+          exclude: "**/*.json, **/*.md" # Optional: exclude patterns separated by commas
