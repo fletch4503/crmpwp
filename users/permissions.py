@@ -118,3 +118,26 @@ class CanManageSystem(RBACPermission):
 
     def __init__(self):
         super().__init__(["manage_system"])
+
+
+def check_user_permission(user, permission_codename):
+    """
+    Проверка наличия разрешения у пользователя на основе ролей (RBAC).
+    """
+    from django.contrib.auth.models import AnonymousUser
+
+    if isinstance(user, AnonymousUser):
+        return False
+
+    # Администраторы имеют все разрешения
+    if user.is_superuser:
+        return True
+
+    # Получить все разрешения пользователя через роли
+    user_permissions = set()
+    for user_role in user.user_roles.all():
+        for role_perm in user_role.role.role_permissions.all():
+            user_permissions.add(role_perm.permission.codename)
+
+    # Проверить наличие требуемого разрешения
+    return permission_codename in user_permissions

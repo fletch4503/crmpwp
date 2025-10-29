@@ -477,3 +477,1233 @@ Traceback (most recent call last):
 django.core.exceptions.FieldError: Cannot resolve keyword 'is_email_verified' into field. Choices are: address, company, created_at, email, first_name, groups, id, interactions, is_active, is_favorite, last_name, linkedin, notes, phone, position, projects, tags, telegram, updated_at, user, user_id, website, whatsapp
 ERROR 2025-10-29 15:26:20,872 basehttp 11 140260659951296 "GET / HTTP/1.1" 500 146043
 INFO 2025-10-29 15:40:59,031 autoreload 11 140260839484352 /app/contacts/models.py changed, reloading.
+INFO 2025-10-29 15:49:58,271 autoreload 95 140286474935232 Watching for file changes with StatReloader
+ERROR 2025-10-29 15:50:58,115 log 95 140286295537344 Internal Server Error: /
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column contacts_contact.is_email_verified does not exist
+LINE 1: ...'164822ac-d15c-45f0-b58f-4a6eae0f703d'::uuid AND ("contacts_...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 228, in get
+    context = self.get_context_data(**kwargs)
+  File "/app/users/views.py", line 51, in get_context_data
+    context["stats"] = self.get_dashboard_stats()
+                       ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/users/views.py", line 82, in get_dashboard_stats
+    .count(),
+     ~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/app/.venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/app/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/app/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column contacts_contact.is_email_verified does not exist
+LINE 1: ...'164822ac-d15c-45f0-b58f-4a6eae0f703d'::uuid AND ("contacts_...
+                                                             ^
+
+ERROR 2025-10-29 15:50:58,167 basehttp 95 140286295537344 "GET / HTTP/1.1" 500 150145
+INFO 2025-10-29 15:55:14,065 autoreload 11 140231437990848 Watching for file changes with StatReloader
+INFO 2025-10-29 15:56:17,667 autoreload 10 139665843309504 Watching for file changes with StatReloader
+ERROR 2025-10-29 15:56:23,351 log 10 139665732531904 Internal Server Error: /
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'dashboard' not found. 'dashboard' is not a valid view function or pattern name.
+ERROR 2025-10-29 15:56:23,390 basehttp 10 139665732531904 "GET / HTTP/1.1" 500 166152
+ERROR 2025-10-29 16:04:18,269 log 10 139665732531904 Internal Server Error: /
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 81, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'emails'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 92, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'emails' is not a registered namespace
+ERROR 2025-10-29 16:04:18,286 basehttp 10 139665732531904 "GET / HTTP/1.1" 500 168640
+INFO 2025-10-29 16:05:13,719 autoreload 10 139665843309504 /app/crm/urls.py changed, reloading.
+INFO 2025-10-29 16:05:20,038 autoreload 18 139722654731200 Watching for file changes with StatReloader
+ERROR 2025-10-29 18:10:09,919 signal 10 140017397779392 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f585555b4d0>> raised: ModuleNotFoundError("No module named 'contacts.api_urls'")
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 136, in check_custom_error_handlers
+    handler = resolver.resolve_error_handler(status_code)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 32, in <module>
+    path("contacts/", include("contacts.api_urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'contacts.api_urls'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 138, in check_custom_error_handlers
+    path = getattr(resolver.urlconf_module, "handler%s" % status_code)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 32, in <module>
+    path("contacts/", include("contacts.api_urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'contacts.api_urls'
+ERROR 2025-10-29 18:10:22,664 signal 10 139831550913472 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f2d100234d0>> raised: ModuleNotFoundError("No module named 'contacts.api_urls'")
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 136, in check_custom_error_handlers
+    handler = resolver.resolve_error_handler(status_code)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 32, in <module>
+    path("contacts/", include("contacts.api_urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'contacts.api_urls'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 138, in check_custom_error_handlers
+    path = getattr(resolver.urlconf_module, "handler%s" % status_code)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 32, in <module>
+    path("contacts/", include("contacts.api_urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'contacts.api_urls'
+INFO 2025-10-29 18:10:36,045 autoreload 11 140517802175424 Watching for file changes with StatReloader
+ERROR 2025-10-29 18:10:57,692 signal 9 140036589190080 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f5ccd3d2660>> raised: ModuleNotFoundError("No module named 'contacts.api_urls'")
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 136, in check_custom_error_handlers
+    handler = resolver.resolve_error_handler(status_code)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 32, in <module>
+    path("contacts/", include("contacts.api_urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'contacts.api_urls'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 138, in check_custom_error_handlers
+    path = getattr(resolver.urlconf_module, "handler%s" % status_code)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 32, in <module>
+    path("contacts/", include("contacts.api_urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'contacts.api_urls'
+INFO 2025-10-29 18:11:54,866 autoreload 10 139882352724928 Watching for file changes with StatReloader
+ERROR 2025-10-29 18:11:55,018 signal 9 140020422257600 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f59099e6660>> raised: ImportError("cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)")
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 136, in check_custom_error_handlers
+    handler = resolver.resolve_error_handler(status_code)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 41, in <module>
+    path("contacts/", include("contacts.urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/contacts/urls.py", line 2, in <module>
+    from . import views
+  File "/app/contacts/views.py", line 26, in <module>
+    from users.permissions import RBACPermission, check_user_permission
+ImportError: cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 138, in check_custom_error_handlers
+    path = getattr(resolver.urlconf_module, "handler%s" % status_code)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 41, in <module>
+    path("contacts/", include("contacts.urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/contacts/urls.py", line 2, in <module>
+    from . import views
+  File "/app/contacts/views.py", line 26, in <module>
+    from users.permissions import RBACPermission, check_user_permission
+ImportError: cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)
+ERROR 2025-10-29 18:11:55,844 signal 10 140180309490624 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f7e43a2e660>> raised: ImportError("cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)")
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 136, in check_custom_error_handlers
+    handler = resolver.resolve_error_handler(status_code)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 41, in <module>
+    path("contacts/", include("contacts.urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/contacts/urls.py", line 2, in <module>
+    from . import views
+  File "/app/contacts/views.py", line 26, in <module>
+    from users.permissions import RBACPermission, check_user_permission
+ImportError: cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 138, in check_custom_error_handlers
+    path = getattr(resolver.urlconf_module, "handler%s" % status_code)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 41, in <module>
+    path("contacts/", include("contacts.urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/contacts/urls.py", line 2, in <module>
+    from . import views
+  File "/app/contacts/views.py", line 26, in <module>
+    from users.permissions import RBACPermission, check_user_permission
+ImportError: cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)
+INFO 2025-10-29 18:14:33,258 autoreload 10 139882352724928 /app/contacts/views.py changed, reloading.
+INFO 2025-10-29 18:14:39,482 autoreload 14 139696671914944 Watching for file changes with StatReloader
+ERROR 2025-10-29 18:29:58,069 signal 35 139934422875072 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f4503a6b4d0>> raised: ImportError("cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)")
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 136, in check_custom_error_handlers
+    handler = resolver.resolve_error_handler(status_code)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 41, in <module>
+    path("contacts/", include("contacts.urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/contacts/urls.py", line 2, in <module>
+    from . import views
+  File "/app/contacts/views.py", line 26, in <module>
+    from users.permissions import (RBACPermission, check_user_permission,)
+ImportError: cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 138, in check_custom_error_handlers
+    path = getattr(resolver.urlconf_module, "handler%s" % status_code)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 41, in <module>
+    path("contacts/", include("contacts.urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/contacts/urls.py", line 2, in <module>
+    from . import views
+  File "/app/contacts/views.py", line 26, in <module>
+    from users.permissions import (RBACPermission, check_user_permission,)
+ImportError: cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)
+ERROR 2025-10-29 18:31:05,156 signal 9 139968220064704 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f4ce2202660>> raised: ImportError("cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)")
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 136, in check_custom_error_handlers
+    handler = resolver.resolve_error_handler(status_code)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 41, in <module>
+    path("contacts/", include("contacts.urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/contacts/urls.py", line 2, in <module>
+    from . import views
+  File "/app/contacts/views.py", line 26, in <module>
+    from users.permissions import (RBACPermission, check_user_permission,)
+ImportError: cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 138, in check_custom_error_handlers
+    path = getattr(resolver.urlconf_module, "handler%s" % status_code)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 41, in <module>
+    path("contacts/", include("contacts.urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/contacts/urls.py", line 2, in <module>
+    from . import views
+  File "/app/contacts/views.py", line 26, in <module>
+    from users.permissions import (RBACPermission, check_user_permission,)
+ImportError: cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)
+ERROR 2025-10-29 18:31:18,739 signal 81 139639130975168 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f0042ad6a50>> raised: ImportError("cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)")
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 44, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 63, in _load_all_namespaces
+    url_patterns = getattr(resolver, "url_patterns", [])
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 41, in <module>
+    path("contacts/", include("contacts.urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/contacts/urls.py", line 2, in <module>
+    from . import views
+  File "/app/contacts/views.py", line 26, in <module>
+    from users.permissions import (RBACPermission, check_user_permission,)
+ImportError: cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)
+INFO 2025-10-29 18:31:20,115 autoreload 94 140316301450176 Watching for file changes with StatReloader
+ERROR 2025-10-29 18:39:13,998 signal 10 140499011107776 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7fc877bba660>> raised: ImportError("cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)")
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 136, in check_custom_error_handlers
+    handler = resolver.resolve_error_handler(status_code)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 41, in <module>
+    path("contacts/", include("contacts.urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/contacts/urls.py", line 2, in <module>
+    from . import views
+  File "/app/contacts/views.py", line 26, in <module>
+    from users.permissions import (RBACPermission, check_user_permission,)
+ImportError: cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 138, in check_custom_error_handlers
+    path = getattr(resolver.urlconf_module, "handler%s" % status_code)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 41, in <module>
+    path("contacts/", include("contacts.urls")),
+                      ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/contacts/urls.py", line 2, in <module>
+    from . import views
+  File "/app/contacts/views.py", line 26, in <module>
+    from users.permissions import (RBACPermission, check_user_permission,)
+ImportError: cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)
+INFO 2025-10-29 18:40:50,443 autoreload 94 140316301450176 /app/contacts/views.py changed, reloading.
+ERROR 2025-10-29 18:41:22,683 signal 9 140024564984768 Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f5a008b6660>> raised: ImportError("cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)")
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 136, in check_custom_error_handlers
+    handler = resolver.resolve_error_handler(status_code)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 42, in <module>
+    path("companies/", include("companies.urls")),
+                       ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/companies/urls.py", line 2, in <module>
+    from . import views
+  File "/app/companies/views.py", line 26, in <module>
+    from users.permissions import RBACPermission, check_user_permission
+ImportError: cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/celery/utils/dispatch/signal.py", line 280, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 101, in on_import_modules
+    self.worker_fixup.validate_models()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/fixups/django.py", line 141, in validate_models
+    run_checks()
+    ~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/checks/urls.py", line 138, in check_custom_error_handlers
+    path = getattr(resolver.urlconf_module, "handler%s" % status_code)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/crm/urls.py", line 42, in <module>
+    path("companies/", include("companies.urls")),
+                       ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/local/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1027, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/app/companies/urls.py", line 2, in <module>
+    from . import views
+  File "/app/companies/views.py", line 26, in <module>
+    from users.permissions import RBACPermission, check_user_permission
+ImportError: cannot import name 'check_user_permission' from 'users.permissions' (/app/users/permissions.py)
+INFO 2025-10-29 18:42:01,954 autoreload 32 140557371476928 Watching for file changes with StatReloader
+INFO 2025-10-29 18:43:10,607 autoreload 32 140557371476928 /app/contacts/views.py changed, reloading.
+INFO 2025-10-29 18:43:18,905 autoreload 36 139669510433728 Watching for file changes with StatReloader
+INFO 2025-10-29 18:43:34,248 autoreload 36 139669510433728 /app/contacts/views.py changed, reloading.
+INFO 2025-10-29 18:43:41,707 autoreload 40 140264764492736 Watching for file changes with StatReloader
+INFO 2025-10-29 18:51:54,956 autoreload 40 140264764492736 /app/users/permissions.py changed, reloading.
+INFO 2025-10-29 18:52:00,524 autoreload 32960 21280 Watching for file changes with StatReloader
+INFO 2025-10-29 18:52:01,583 autoreload 44 140132839279552 Watching for file changes with StatReloader
+INFO 2025-10-29 18:53:26,903 autoreload 21948 29528 Watching for file changes with StatReloader
+INFO 2025-10-29 18:54:08,094 autoreload 23908 33200 Watching for file changes with StatReloader
+INFO 2025-10-29 18:58:17,105 autoreload 75 139898105658304 Watching for file changes with StatReloader
+INFO 2025-10-29 18:58:29,991 basehttp 75 139897755137728 "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 18:58:30,044 basehttp 75 139897755137728 "GET /accounts/login/?next=/ HTTP/1.1" 200 2817
+INFO 2025-10-29 18:58:43,124 basehttp 75 139897755137728 "POST /accounts/login/ HTTP/1.1" 200 2750
+INFO 2025-10-29 18:58:55,638 basehttp 75 139897755137728 "POST /accounts/login/ HTTP/1.1" 200 2758
+INFO 2025-10-29 18:59:05,973 basehttp 75 139897755137728 "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 18:59:05,994 basehttp 75 139897755137728 "GET /accounts/login/?next=/ HTTP/1.1" 200 2560
+INFO 2025-10-29 18:59:19,369 basehttp 75 139897755137728 "POST /accounts/login/ HTTP/1.1" 200 2758
+INFO 2025-10-29 19:01:05,885 basehttp 75 139897755137728 "POST /accounts/login/ HTTP/1.1" 200 2758
+INFO 2025-10-29 19:02:02,254 basehttp 75 139897755137728 "GET / HTTP/1.1" 302 0
+INFO 2025-10-29 19:02:02,275 basehttp 75 139897755137728 "GET /accounts/login/?next=/ HTTP/1.1" 200 2560
+INFO 2025-10-29 19:02:10,502 basehttp 75 139897755137728 "POST /accounts/login/ HTTP/1.1" 200 2758
+INFO 2025-10-29 19:02:52,878 basehttp 75 139897755137728 "POST /accounts/login/ HTTP/1.1" 302 0
+ERROR 2025-10-29 19:02:53,101 log 75 139897755137728 Internal Server Error: /
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'settings' not found. 'settings' is not a valid view function or pattern name.
+ERROR 2025-10-29 19:02:53,106 basehttp 75 139897755137728 "GET / HTTP/1.1" 500 161549
+INFO 2025-10-29 19:06:06,515 autoreload 75 139898105658304 /app/users/views.py changed, reloading.
+INFO 2025-10-29 19:06:08,216 autoreload 93 140603090922432 Watching for file changes with StatReloader
+INFO 2025-10-29 19:06:14,041 autoreload 93 140603090922432 /app/users/urls.py changed, reloading.
+INFO 2025-10-29 19:06:15,060 autoreload 97 140590618528704 Watching for file changes with StatReloader
+INFO 2025-10-29 19:08:12,172 basehttp 97 140590410888896 "GET / HTTP/1.1" 200 23935
+WARNING 2025-10-29 19:08:12,683 log 97 140590318614208 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:08:12,683 basehttp 97 140590318614208 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-29 19:08:12,783 log 97 140590402496192 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-29 19:08:12,785 basehttp 97 140590402496192 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-29 19:08:12,800 basehttp 97 140590410888896 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-29 19:08:12,803 basehttp 97 140590318614208 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-29 19:08:17,808 basehttp 97 140590318614208 "GET / HTTP/1.1" 200 23529
+WARNING 2025-10-29 19:08:17,934 log 97 140590310221504 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:08:17,934 basehttp 97 140590310221504 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-29 19:08:18,017 log 97 140590410888896 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-29 19:08:18,020 basehttp 97 140590410888896 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-29 19:08:18,038 basehttp 97 140590318614208 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-29 19:08:18,039 basehttp 97 140590402496192 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-29 19:08:23,035 basehttp 97 140590318614208 "GET / HTTP/1.1" 200 23529
+WARNING 2025-10-29 19:08:23,159 log 97 140590310221504 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:08:23,160 basehttp 97 140590310221504 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-29 19:08:23,223 log 97 140590402496192 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-29 19:08:23,226 basehttp 97 140590402496192 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-29 19:08:23,241 basehttp 97 140590318614208 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-29 19:08:23,242 basehttp 97 140590410888896 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-29 19:08:28,274 basehttp 97 140590410888896 "GET / HTTP/1.1" 200 23529
+WARNING 2025-10-29 19:08:28,437 log 97 140590310221504 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:08:28,438 basehttp 97 140590310221504 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-29 19:08:28,537 log 97 140590318614208 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-29 19:08:28,538 basehttp 97 140590318614208 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-29 19:08:28,556 basehttp 97 140590402496192 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-29 19:08:28,563 basehttp 97 140590410888896 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-29 19:08:33,622 basehttp 97 140590410888896 "GET / HTTP/1.1" 200 23529
+WARNING 2025-10-29 19:08:33,904 log 97 140590310221504 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:08:33,908 basehttp 97 140590310221504 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-29 19:08:34,011 log 97 140590402496192 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-29 19:08:34,043 basehttp 97 140590402496192 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-29 19:08:34,047 basehttp 97 140590318614208 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-29 19:08:34,056 basehttp 97 140590410888896 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-29 19:08:39,118 basehttp 97 140590410888896 "GET / HTTP/1.1" 200 23529
+INFO 2025-10-29 19:08:39,260 basehttp 97 140590402496192 "GET /emails/ HTTP/1.1" 200 24007
+WARNING 2025-10-29 19:08:39,632 log 97 140590410888896 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:08:39,640 basehttp 97 140590410888896 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-29 19:08:39,913 log 97 140590410888896 Not Found: /ws/emails/
+WARNING 2025-10-29 19:08:39,920 basehttp 97 140590410888896 "GET /ws/emails/ HTTP/1.1" 404 7156
+INFO 2025-10-29 19:08:42,850 basehttp 97 140590402496192 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-29 19:08:43,239 log 97 140590410888896 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:08:43,253 basehttp 97 140590410888896 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-29 19:08:43,387 log 97 140590318614208 Not Found: /api/dashboard/recent-activity/
+INFO 2025-10-29 19:08:43,412 basehttp 97 140590410888896 "GET /api/system/health/ HTTP/1.1" 200 48
+WARNING 2025-10-29 19:08:43,454 basehttp 97 140590318614208 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-29 19:08:43,654 basehttp 97 140590402496192 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-29 19:08:45,907 basehttp 97 140590402496192 "GET /emails/credentials/ HTTP/1.1" 200 24032
+WARNING 2025-10-29 19:08:46,243 log 97 140590310221504 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:08:46,251 basehttp 97 140590310221504 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-29 19:08:51,450 basehttp 97 140590402496192 "GET /emails/credentials/ HTTP/1.1" 200 24032
+WARNING 2025-10-29 19:08:51,769 log 97 140590310221504 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:08:51,783 basehttp 97 140590310221504 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-29 19:08:53,331 basehttp 97 140590402496192 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-29 19:08:53,493 log 97 140590310221504 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:08:53,494 basehttp 97 140590310221504 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-29 19:08:53,547 log 97 140590318614208 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-29 19:08:53,548 basehttp 97 140590318614208 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-29 19:08:53,563 basehttp 97 140590410888896 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-29 19:08:53,568 basehttp 97 140590402496192 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-29 19:08:58,598 basehttp 97 140590402496192 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-29 19:08:58,757 log 97 140590310221504 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:08:58,758 basehttp 97 140590310221504 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-29 19:08:58,780 log 97 140590410888896 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-29 19:08:58,782 basehttp 97 140590410888896 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-29 19:08:58,798 basehttp 97 140590318614208 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-29 19:08:58,798 basehttp 97 140590402496192 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-29 19:09:03,825 basehttp 97 140590402496192 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-29 19:09:03,994 log 97 140590310221504 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:09:03,995 basehttp 97 140590310221504 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-29 19:09:04,006 log 97 140590318614208 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-29 19:09:04,007 basehttp 97 140590318614208 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-29 19:09:04,024 basehttp 97 140590402496192 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-29 19:09:04,024 basehttp 97 140590410888896 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-29 19:09:09,055 basehttp 97 140590410888896 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-29 19:09:09,219 log 97 140590402496192 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-29 19:09:09,220 basehttp 97 140590402496192 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+WARNING 2025-10-29 19:09:09,232 log 97 140590310221504 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:09:09,236 basehttp 97 140590310221504 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-29 19:09:09,239 basehttp 97 140590318614208 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-29 19:09:09,245 basehttp 97 140590410888896 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-29 19:09:14,297 basehttp 97 140590410888896 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-29 19:09:14,486 log 97 140590318614208 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-29 19:09:14,488 basehttp 97 140590318614208 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-29 19:09:14,497 basehttp 97 140590402496192 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-29 19:09:14,508 basehttp 97 140590410888896 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+WARNING 2025-10-29 19:09:14,517 log 97 140590310221504 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:09:14,518 basehttp 97 140590310221504 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-29 19:09:18,672 basehttp 97 140590410888896 "GET /emails/credentials/ HTTP/1.1" 200 24032
+WARNING 2025-10-29 19:09:19,079 log 97 140590310221504 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:09:19,080 basehttp 97 140590310221504 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-29 19:09:23,004 basehttp 97 140590410888896 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-29 19:09:23,173 log 97 140590402496192 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-29 19:09:23,176 basehttp 97 140590402496192 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-29 19:09:23,193 basehttp 97 140590410888896 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-29 19:09:23,195 basehttp 97 140590318614208 "GET /api/system/health/ HTTP/1.1" 200 48
+WARNING 2025-10-29 19:09:23,605 log 97 140590310221504 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:09:23,606 basehttp 97 140590310221504 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-29 19:09:24,701 basehttp 97 140590318614208 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-29 19:09:24,854 log 97 140590410888896 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-29 19:09:24,855 basehttp 97 140590410888896 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-29 19:09:24,865 basehttp 97 140590402496192 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-29 19:09:24,870 basehttp 97 140590318614208 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+WARNING 2025-10-29 19:09:26,253 log 97 140590310221504 Not Found: /ws/notifications/
+WARNING 2025-10-29 19:09:26,254 basehttp 97 140590310221504 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-29 19:09:31,290 basehttp 97 140590318614208 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-29 19:09:31,459 log 97 140590402496192 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-29 19:09:31,460 basehttp 97 140590402496192 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-29 19:09:31,475 basehttp 97 140590410888896 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-29 19:09:31,477 basehttp 97 140590318614208 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+ERROR 2025-10-29 19:09:32,988 log 97 140590318614208 Internal Server Error: /companies/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: companies/company_list.html, companies/company_list.html
+ERROR 2025-10-29 19:09:32,991 basehttp 97 140590318614208 "GET /companies/ HTTP/1.1" 500 89319

@@ -11,6 +11,8 @@ urlpatterns = [
     path("dashboard/", views.DashboardView.as_view(), name="dashboard"),
     # Profile
     path("profile/", views.ProfileView.as_view(), name="profile"),
+    # Settings
+    path("settings/", views.SettingsView.as_view(), name="settings"),
     # Tokens
     path("tokens/", views.TokenListView.as_view(), name="token_list"),
     path("tokens/create/", views.TokenCreateView.as_view(), name="token_create"),

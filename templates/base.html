@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru" data-theme="light">
 <head>
@@ -72,7 +73,7 @@
                     {% block mobile_menu %}{% endblock %}
                 </ul>
             </div>
-            <a href="{% url 'dashboard' %}" class="btn btn-ghost normal-case text-xl">
+            <a href="{% url 'users:dashboard' %}" class="btn btn-ghost normal-case text-xl">
                 <i class="fas fa-crown text-primary"></i>
                 CRM Pro
             </a>

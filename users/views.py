@@ -366,3 +366,15 @@ def update_user_settings_ajax(request):
     # Обновляем настройки (здесь можно добавить поля в модель User)
     # Пока просто возвращаем успех
     return JsonResponse({"success": True})
+
+
+class SettingsView(LoginRequiredMixin, TemplateView):
+    """
+    Страница настроек пользователя.
+    """
+    template_name = "users/settings.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["user"] = self.request.user
+        return context

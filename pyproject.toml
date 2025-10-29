@@ -5,20 +5,20 @@ dependencies = [
   "django-allauth>=65.0,<66.0",
   "djangorestframework>=3.15,<4.0",
   "channels>=4.1,<5.0",
-  "channels-redis>=4.2,<5.0",
+  "channels-redis>=4.2,<7.0",
   "celery>=5.4,<6.0",
-  "redis>=5.0,<6.0",
-  "pillow>=10.0,<11.0",
+  "redis==7.0.1",
+  "pillow>=10.0,<12.0",
   "python-decouple>=3.8,<4.0",
   "django-cors-headers>=4.4,<5.0",
   "exchangelib>=5.4,<6.0",
   "uvicorn>=0.30,<1.0",
-  "gunicorn>=22.0,<23.0",
+  "gunicorn==23.0.0",
   "whitenoise>=6.7,<7.0",
-  "django-filter>=24.0,<25.0",
-  "django-guardian>=2.4,<3.0",
+  "django-filter==25.2",
+  "django-guardian==3.2.0",
   "django-phonenumber-field>=8.0,<9.0",
-  "phonenumbers>=8.13,<9.0",
+  "phonenumbers==9.0.17",
   "django-otp>=1.0,<2.0",
   "qrcode>=7.4,<8.0",
   "django-storages>=1.14,<2.0",
@@ -27,6 +27,7 @@ dependencies = [
   "django-celery-results>=2.6.0",
   "django-rest-framework-nested>=0.0.1",
   "logly>=0.1.6",
+  "ruff>=0.14.2",
 ]
 description = "CRM система с Django, PostgreSQL, WebSockets и Celery"
 name = "crmpwp"
@@ -37,6 +38,7 @@ version = "0.1.0"
 [project.optional-dependencies]
 dev = [
   "black>=24.0,<25.0",
+  "ruff>=0.14.2",
   "isort>=5.13,<6.0",
   "flake8>=7.0,<8.0",
   "mypy>=1.11,<2.0",

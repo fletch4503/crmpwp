@@ -10,7 +10,7 @@ services:
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-crm_user} -d ${DB_NAME:-crm_db}"]
+      test: [ "CMD-SHELL", "pg_isready -U ${DB_USER:-crm_user} -d ${DB_NAME:-crm_db}" ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -22,7 +22,7 @@ services:
     restart: always
     volumes:
       - redis_data:/data
-    command: redis-server --appendonly yes  
+    command: redis-server --appendonly yes
     # healthcheck:
     #   test: ["CMD", "redis-cli", "ping"]
     #   interval: 10s
@@ -39,7 +39,7 @@ services:
       - "15672:15672"
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
-    # healthcheck:
+      # healthcheck:
       # test: ["CMD", "rabbitmq-diagnostics", "ping"]
       # interval: 30s
       # timeout: 10s
@@ -47,9 +47,11 @@ services:
 
   web:
     build: .
+    restart: unless-stopped
     command: uv run python manage.py runserver 0.0.0.0:8000 --settings=crm.settings
     volumes:
       - .:/app
+      - /app/.venv
     ports:
       - "8000:8000"
     depends_on:
@@ -59,14 +61,14 @@ services:
       #   condition: service_healthy
     env_file:
       - .env
-#    environment:
+      #    environment:
       # - DJANGO_SETTINGS_MODULE=crm.settings
-#      - DATABASE_URL=postgresql://crm_user:NS3RakCpILMlgLu1@db:5432/crm_db
-#      - SECRET_KEY=django-insecure-change-this-in-production-50174416
-#      - REDIS_URL=${REDIS_URL:-redis://redis:6379/0}
-#      - CELERY_BROKER_URL=${CELERY_BROKER_URL:-amqp://crm_user:crm_password@rabbitmq:5672//}
-#      - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND:-redis://redis:6379/0}
-    # healthcheck:
+      #      - DATABASE_URL=postgresql://crm_user:NS3RakCpILMlgLu1@db:5432/crm_db
+      #      - SECRET_KEY=django-insecure-change-this-in-production-50174416
+      #      - REDIS_URL=${REDIS_URL:-redis://redis:6379/0}
+      #      - CELERY_BROKER_URL=${CELERY_BROKER_URL:-amqp://crm_user:crm_password@rabbitmq:5672//}
+      #      - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND:-redis://redis:6379/0}
+      # healthcheck:
       # test: ["CMD", "curl", "-f", "http://localhost:8000/health/"]
       # interval: 30s
       # timeout: 10s
@@ -77,16 +79,16 @@ services:
     command: uv run celery -A crm worker --loglevel=info
     volumes:
       - .:/app
-#      - /app/.venv
+      - /app/.venv
     depends_on:
       - redis
       - rabbitmq
       - db
     env_file:
       - .env
-#    environment:
-#      - DJANGO_SETTINGS_MODULE=crm.settings
-#      - DATABASE_URL=postgresql://crm_user:NS3RakCpILMlgLu1@db:5432/crm_db
+      #    environment:
+      #      - DJANGO_SETTINGS_MODULE=crm.settings
+      #      - DATABASE_URL=postgresql://crm_user:NS3RakCpILMlgLu1@db:5432/crm_db
       # - REDIS_URL=${REDIS_URL:-redis://redis:6379/0}
       # - CELERY_BROKER_URL=${CELERY_BROKER_URL:-amqp://crm_user:NS3RakCpILMlgLu1@rabbitmq:5672//}
       # - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND:-redis://redis:6379/0}
@@ -96,16 +98,16 @@ services:
     command: uv run celery -A crm beat --loglevel=info --scheduler django_celery_beat.schedulers:DatabaseScheduler
     volumes:
       - .:/app
-#      - /app/.venv
+      - /app/.venv
     depends_on:
       - redis
       - rabbitmq
       - db
     env_file:
       - .env
-#    environment:
-#      - DJANGO_SETTINGS_MODULE=crm.settings
-#      - DATABASE_URL=postgresql://crm_user:NS3RakCpILMlgLu1@db:5432/crm_db
+      #    environment:
+      #      - DJANGO_SETTINGS_MODULE=crm.settings
+      #      - DATABASE_URL=postgresql://crm_user:NS3RakCpILMlgLu1@db:5432/crm_db
       # - REDIS_URL=${REDIS_URL:-redis://redis:6379/0}
       # - CELERY_BROKER_URL=${CELERY_BROKER_URL:-amqp://crm_user:NS3RakCpILMlgLu1@rabbitmq:5672//}
       # - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND:-redis://redis:6379/0}

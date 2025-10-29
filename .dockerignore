@@ -6,9 +6,7 @@ db.sqlite3
 
 # Python
 __pycache__/
-*.py[cod]
 *$py.class
-*.so
 .Python
 develop-eggs/
 dist/

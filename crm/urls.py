@@ -38,10 +38,10 @@ urlpatterns = [
     ),
     # Apps
     path("", include("users.urls")),
-    # path("contacts/", include("contacts.urls")),
-    # path("companies/", include("companies.urls")),
-    # path("projects/", include("projects.urls")),
-    # path("emails/", include("emails.urls")),
+    path("contacts/", include("contacts.urls")),
+    path("companies/", include("companies.urls")),
+    path("projects/", include("projects.urls")),
+    path("emails/", include("emails.urls")),
     # Third party
     path("accounts/", include("allauth.urls")),
 ]
