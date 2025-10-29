@@ -1,0 +1,446 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Email сообщения - CRM Pro{% endblock %}
+
+{% block nav_menu %}
+<li><a href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i> Дашборд</a></li>
+<li><a href="{% url 'emails:email_list' %}" class="active"><i class="fas fa-envelope"></i> Email</a></li>
+<li><a href="{% url 'projects:project_list' %}"><i class="fas fa-project-diagram"></i> Проекты</a></li>
+<li><a href="{% url 'companies:company_list' %}"><i class="fas fa-building"></i> Компании</a></li>
+<li><a href="{% url 'contacts:contact_list' %}"><i class="fas fa-users"></i> Контакты</a></li>
+{% endblock %}
+
+{% block mobile_menu %}
+<li><a href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i> Дашборд</a></li>
+<li><a href="{% url 'emails:email_list' %}" class="active"><i class="fas fa-envelope"></i> Email</a></li>
+<li><a href="{% url 'projects:project_list' %}"><i class="fas fa-project-diagram"></i> Проекты</a></li>
+<li><a href="{% url 'companies:company_list' %}"><i class="fas fa-building"></i> Компании</a></li>
+<li><a href="{% url 'contacts:contact_list' %}"><i class="fas fa-users"></i> Контакты</a></li>
+{% endblock %}
+
+{% block breadcrumbs %}
+<nav class="breadcrumb">
+    <ul>
+        <li><a href="{% url 'dashboard' %}">Главная</a></li>
+        <li class="is-active"><a href="{% url 'emails:email_list' %}">Email</a></li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block sidebar %}
+<div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+        <h2 class="card-title">
+            <i class="fas fa-filter"></i>
+            Фильтры
+        </h2>
+
+        <!-- Search Form -->
+        <form method="get" class="space-y-4" hx-get="{% url 'emails:email_list' %}" hx-target="#email-list" hx-swap="innerHTML">
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Поиск</span>
+                </label>
+                <input type="text" name="q" value="{{ request.GET.q }}" placeholder="Тема, отправитель, текст..."
+                       class="input input-bordered input-sm">
+            </div>
+
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Отправитель</span>
+                </label>
+                <input type="text" name="sender" value="{{ request.GET.sender }}" placeholder="email@domain.com"
+                       class="input input-bordered input-sm">
+            </div>
+
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Статус</span>
+                </label>
+                <select name="is_read" class="select select-bordered select-sm">
+                    <option value="">Все</option>
+                    <option value="read" {% if request.GET.is_read == 'read' %}selected{% endif %}>Прочитанные</option>
+                    <option value="unread" {% if request.GET.is_read == 'unread' %}selected{% endif %}>Непрочитанные</option>
+                </select>
+            </div>
+
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Важность</span>
+                </label>
+                <label class="label cursor-pointer">
+                    <span class="label-text">Важные</span>
+                    <input type="checkbox" name="is_important" {% if request.GET.is_important %}checked{% endif %}
+                           class="checkbox checkbox-primary">
+                </label>
+            </div>
+
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">С вложениями</span>
+                </label>
+                <label class="label cursor-pointer">
+                    <span class="label-text">Только с вложениями</span>
+                    <input type="checkbox" name="has_attachments" {% if request.GET.has_attachments %}checked{% endif %}
+                           class="checkbox checkbox-primary">
+                </label>
+            </div>
+
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">ИНН</span>
+                </label>
+                <input type="text" name="parsed_inn" value="{{ request.GET.parsed_inn }}" placeholder="1234567890"
+                       class="input input-bordered input-sm">
+            </div>
+
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Дата от</span>
+                </label>
+                <input type="date" name="date_from" value="{{ request.GET.date_from }}"
+                       class="input input-bordered input-sm">
+            </div>
+
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Дата до</span>
+                </label>
+                <input type="date" name="date_to" value="{{ request.GET.date_to }}"
+                       class="input input-bordered input-sm">
+            </div>
+
+            <div class="form-control">
+                <label class="label cursor-pointer">
+                    <span class="label-text">Связанные с проектами</span>
+                    <input type="checkbox" name="related_to_project" {% if request.GET.related_to_project %}checked{% endif %}
+                           class="checkbox checkbox-primary">
+                </label>
+            </div>
+
+            <div class="form-control">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fas fa-search"></i>
+                    Применить
+                </button>
+                <a href="{% url 'emails:email_list' %}" class="btn btn-ghost btn-sm">
+                    <i class="fas fa-times"></i>
+                    Сбросить
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="card bg-base-100 shadow-xl mt-4">
+    <div class="card-body">
+        <h2 class="card-title">
+            <i class="fas fa-bolt"></i>
+            Быстрые действия
+        </h2>
+        <div class="space-y-2">
+            <a href="{% url 'emails:credentials' %}" class="btn btn-primary btn-block btn-sm">
+                <i class="fas fa-cog"></i>
+                Настройки Email
+            </a>
+            <button onclick="syncEmails()" class="btn btn-secondary btn-block btn-sm">
+                <i class="fas fa-sync"></i>
+                Синхронизировать
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Statistics -->
+<div class="card bg-base-100 shadow-xl mt-4">
+    <div class="card-body">
+        <h2 class="card-title">
+            <i class="fas fa-chart-bar"></i>
+            Статистика
+        </h2>
+        <div class="stats stats-vertical lg:stats-horizontal shadow">
+            <div class="stat">
+                <div class="stat-figure text-primary">
+                    <i class="fas fa-envelope fa-2x"></i>
+                </div>
+                <div class="stat-title">Всего</div>
+                <div class="stat-value text-primary">{{ stats.total_emails }}</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-figure text-secondary">
+                    <i class="fas fa-envelope-open fa-2x"></i>
+                </div>
+                <div class="stat-title">Непрочитанных</div>
+                <div class="stat-value text-secondary">{{ stats.unread_emails }}</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-figure text-accent">
+                    <i class="fas fa-star fa-2x"></i>
+                </div>
+                <div class="stat-title">Важных</div>
+                <div class="stat-value text-accent">{{ stats.important_emails }}</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-figure text-info">
+                    <i class="fas fa-paperclip fa-2x"></i>
+                </div>
+                <div class="stat-title">С вложениями</div>
+                <div class="stat-value text-info">{{ stats.emails_with_attachments }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="card-title">
+                <i class="fas fa-envelope"></i>
+                Email сообщения
+            </h1>
+            <div class="flex space-x-2">
+                <button onclick="markSelectedAsRead()" class="btn btn-outline btn-sm">
+                    <i class="fas fa-check"></i>
+                    Прочитать
+                </button>
+                <button onclick="markSelectedAsImportant()" class="btn btn-outline btn-sm">
+                    <i class="fas fa-star"></i>
+                    Важное
+                </button>
+            </div>
+        </div>
+
+        <!-- Email List -->
+        <div id="email-list" class="space-y-2">
+            {% for email in emails %}
+            <div class="card card-side bg-base-100 border border-base-300 hover:border-primary transition-colors">
+                <div class="card-body p-4">
+                    <div class="flex items-start space-x-3">
+                        <!-- Checkbox -->
+                        <input type="checkbox" class="checkbox checkbox-primary email-checkbox"
+                               data-email-id="{{ email.id }}">
+
+                        <!-- Avatar -->
+                        <div class="avatar placeholder">
+                            <div class="bg-neutral-focus text-neutral-content rounded-full w-10">
+                                <span class="text-sm">{{ email.sender|first|upper }}</span>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center space-x-2 mb-1">
+                                <h3 class="card-title text-sm">
+                                    <a href="{% url 'emails:email_detail' email.id %}" class="link link-primary">
+                                        {{ email.subject|truncatechars:80 }}
+                                    </a>
+                                </h3>
+                                {% if email.is_important %}
+                                <i class="fas fa-star text-warning"></i>
+                                {% endif %}
+                                {% if email.has_attachments %}
+                                <i class="fas fa-paperclip text-base-content/50"></i>
+                                {% endif %}
+                            </div>
+
+                            <p class="text-sm text-base-content/70 mb-1">
+                                <strong>{{ email.sender }}</strong>
+                                {% if email.recipients_to %}
+                                → {{ email.recipients_to|join:", " }}
+                                {% endif %}
+                            </p>
+
+                            <p class="text-sm text-base-content/60 mb-2">
+                                {{ email.body_preview|truncatechars:150 }}
+                            </p>
+
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4 text-xs text-base-content/50">
+                                    <span>{{ email.received_at|date:"d.m.Y H:i" }}</span>
+                                    {% if email.parsed_inn %}
+                                    <span class="badge badge-outline badge-sm">ИНН: {{ email.parsed_inn }}</span>
+                                    {% endif %}
+                                    {% if email.related_company %}
+                                    <span class="badge badge-primary badge-sm">{{ email.related_company.name }}</span>
+                                    {% endif %}
+                                    {% if email.related_project %}
+                                    <span class="badge badge-secondary badge-sm">{{ email.related_project.title }}</span>
+                                    {% endif %}
+                                </div>
+
+                                <div class="flex space-x-1">
+                                    <button onclick="toggleImportant({{ email.id }})"
+                                            class="btn btn-ghost btn-xs"
+                                            title="Пометить как важное">
+                                        <i class="fas fa-star {% if email.is_important %}text-warning{% else %}text-base-content/30{% endif %}"></i>
+                                    </button>
+                                    <button onclick="markAsRead({{ email.id }})"
+                                            class="btn btn-ghost btn-xs"
+                                            title="Пометить как прочитанное">
+                                        <i class="fas fa-check text-base-content/50"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="text-center py-8">
+                <i class="fas fa-envelope fa-3x text-base-content/20 mb-4"></i>
+                <h3 class="text-lg font-semibold text-base-content/50">Нет email сообщений</h3>
+                <p class="text-base-content/40">Настройте подключение к email для автоматической синхронизации</p>
+                <a href="{% url 'emails:credentials' %}" class="btn btn-primary mt-4">
+                    <i class="fas fa-cog"></i>
+                    Настроить Email
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        {% if is_paginated %}
+        <div class="flex justify-center mt-6">
+            <div class="join">
+                {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}"
+                   class="join-item btn">«</a>
+                {% endif %}
+
+                <span class="join-item btn btn-active">
+                    {{ page_obj.number }} из {{ paginator.num_pages }}
+                </span>
+
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}"
+                   class="join-item btn">»</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // WebSocket connection for real-time email updates
+    const emailSocket = new WebSocket(
+        'ws://' + window.location.host + '/ws/emails/'
+    );
+
+    emailSocket.onmessage = function(e) {
+        const data = JSON.parse(e.data);
+        handleEmailRealtimeUpdate(data);
+    };
+
+    function handleEmailRealtimeUpdate(data) {
+        if (data.type === 'email_received') {
+            // Refresh the email list
+            location.reload();
+        } else if (data.type === 'email_updated') {
+            // Update specific email in the list
+            updateEmailInList(data.email_id, data.action, data);
+        }
+    }
+
+    function updateEmailInList(emailId, action, data) {
+        const emailCard = document.querySelector(`[data-email-id="${emailId}"]`);
+        if (emailCard) {
+            if (action === 'marked_read') {
+                emailCard.closest('.card').classList.add('opacity-50');
+            } else if (action === 'toggled_important') {
+                const starIcon = emailCard.querySelector('.fa-star');
+                if (data.is_important) {
+                    starIcon.classList.remove('text-base-content/30');
+                    starIcon.classList.add('text-warning');
+                } else {
+                    starIcon.classList.remove('text-warning');
+                    starIcon.classList.add('text-base-content/30');
+                }
+            }
+        }
+    }
+
+    function markAsRead(emailId) {
+        fetch(`/emails/ajax/${emailId}/mark-read/`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                updateEmailInList(emailId, 'marked_read', {});
+                showNotification('Email помечен как прочитанный', '', 'success');
+            }
+        });
+    }
+
+    function toggleImportant(emailId) {
+        fetch(`/emails/ajax/${emailId}/toggle-important/`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                updateEmailInList(emailId, 'toggled_important', data);
+                showNotification(
+                    data.is_important ? 'Email помечен как важный' : 'Снята пометка важности',
+                    '', 'success'
+                );
+            }
+        });
+    }
+
+    function markSelectedAsRead() {
+        const selectedEmails = document.querySelectorAll('.email-checkbox:checked');
+        selectedEmails.forEach(checkbox => {
+            markAsRead(checkbox.dataset.emailId);
+        });
+    }
+
+    function markSelectedAsImportant() {
+        const selectedEmails = document.querySelectorAll('.email-checkbox:checked');
+        selectedEmails.forEach(checkbox => {
+            toggleImportant(checkbox.dataset.emailId);
+        });
+    }
+
+    function syncEmails() {
+        fetch('/emails/ajax/sync-now/', {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showNotification('Синхронизация запущена', 'Проверьте статус через несколько минут', 'info');
+            } else {
+                showNotification('Ошибка синхронизации', data.error, 'error');
+            }
+        });
+    }
+
+    // Auto-refresh every 5 minutes
+    setInterval(() => {
+        // Only refresh if no filters are applied
+        if (!window.location.search) {
+            location.reload();
+        }
+    }, 300000);
+</script>
+{% endblock %}

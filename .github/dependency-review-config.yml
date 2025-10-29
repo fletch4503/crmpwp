@@ -1,0 +1,20 @@
+fail_on_severity: moderate
+allow_licenses:
+  - MIT
+  - BSD-2-Clause
+  - BSD-3-Clause
+  - Apache-2.0
+  - ISC
+  - PostgreSQL
+  - Python-2.0
+  - PSF-2.0
+deny_licenses:
+  - MS-PL
+  - GPL-2.0
+  - GPL-3.0
+fail_on_scopes:
+  - runtime
+vulnerability_check: true
+license_check: true
+base_ref: main
+head_ref: HEAD

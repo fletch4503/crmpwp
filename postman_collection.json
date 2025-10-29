@@ -1,0 +1,1061 @@
+{
+  "info": {
+    "name": "CRM Pro API Collection",
+    "description": "Полная коллекция API запросов для CRM системы на Django",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{auth_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    },
+    {
+      "key": "auth_token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "user_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "role_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "company_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "contact_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "project_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "order_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "email_credentials_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "email_message_id",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"newuser@example.com\",\n  \"username\": \"newuser\",\n  \"password\": \"password123\",\n  \"first_name\": \"John\",\n  \"last_name\": \"Doe\",\n  \"phone\": \"+7 (999) 123-45-67\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", ""]
+            },
+            "description": "Регистрация нового пользователя"
+          }
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('auth_token', response.token);",
+                  "    pm.collectionVariables.set('user_id', response.user.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"admin123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/login/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login", ""]
+            },
+            "description": "Вход в систему и получение токена"
+          }
+        },
+        {
+          "name": "Current User Info",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/auth/me/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "me", ""]
+            },
+            "description": "Получение информации о текущем пользователе"
+          }
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"old_password\": \"admin123\",\n  \"new_password\": \"newpassword123\",\n  \"new_password_confirm\": \"newpassword123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/change-password/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "change-password", ""]
+            },
+            "description": "Изменение пароля пользователя"
+          }
+        },
+        {
+          "name": "Generate Access Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"expires_in_hours\": 24,\n  \"description\": \"API Token for external integration\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/generate-token/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "generate-token", ""]
+            },
+            "description": "Генерация токена доступа"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users Management",
+      "item": [
+        {
+          "name": "List Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/users/?page=1&page_size=20",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", ""],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "page_size",
+                  "value": "20"
+                }
+              ]
+            },
+            "description": "Получение списка пользователей с пагинацией"
+          }
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"manager@example.com\",\n  \"username\": \"manager\",\n  \"password\": \"password123\",\n  \"first_name\": \"Jane\",\n  \"last_name\": \"Smith\",\n  \"phone\": \"+7 (999) 987-65-43\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", ""]
+            },
+            "description": "Создание нового пользователя"
+          }
+        },
+        {
+          "name": "Get User Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/users/{{user_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "{{user_id}}", ""]
+            },
+            "description": "Получение детальной информации о пользователе"
+          }
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"Updated\",\n  \"last_name\": \"Name\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/{{user_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "{{user_id}}", ""]
+            },
+            "description": "Обновление данных пользователя"
+          }
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/users/{{user_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "{{user_id}}", ""]
+            },
+            "description": "Удаление пользователя"
+          }
+        },
+        {
+          "name": "Search Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/users/?search=john",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", ""],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "john"
+                }
+              ]
+            },
+            "description": "Поиск пользователей"
+          }
+        },
+        {
+          "name": "User Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/users/stats/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "stats", ""]
+            },
+            "description": "Статистика пользователей"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Roles & Permissions",
+      "item": [
+        {
+          "name": "List Roles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/roles/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "roles", ""]
+            },
+            "description": "Получение списка ролей"
+          }
+        },
+        {
+          "name": "Create Role",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('role_id', response.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Project Manager\",\n  \"description\": \"Управление проектами и командами\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/roles/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "roles", ""]
+            },
+            "description": "Создание новой роли"
+          }
+        },
+        {
+          "name": "Assign Role to User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_ids\": [\"{{user_id}}\"],\n  \"role_id\": \"{{role_id}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/bulk-assign-role/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "bulk-assign-role", ""]
+            },
+            "description": "Назначение роли пользователю"
+          }
+        },
+        {
+          "name": "List Permissions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/permissions/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "permissions", ""]
+            },
+            "description": "Получение списка разрешений"
+          }
+        },
+        {
+          "name": "Assign Permission to Role",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"role_id\": \"{{role_id}}\",\n  \"permission_ids\": [\"view_projects\", \"add_projects\"]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/roles/assign-permissions/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "roles", "assign-permissions", ""]
+            },
+            "description": "Назначение разрешений роли"
+          }
+        },
+        {
+          "name": "Role Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/roles/stats/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "roles", "stats", ""]
+            },
+            "description": "Статистика ролей"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Contacts Management",
+      "item": [
+        {
+          "name": "List Contacts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/contacts/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "contacts", ""]
+            },
+            "description": "Получение списка контактов"
+          }
+        },
+        {
+          "name": "Create Contact",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('contact_id', response.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"Alice\",\n  \"last_name\": \"Johnson\",\n  \"email\": \"alice@example.com\",\n  \"phone\": \"+7 (999) 123-45-67\",\n  \"company\": \"Tech Corp\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/contacts/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "contacts", ""]
+            },
+            "description": "Создание нового контакта"
+          }
+        },
+        {
+          "name": "Get Contact Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/contacts/{{contact_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "contacts", "{{contact_id}}", ""]
+            },
+            "description": "Получение детальной информации о контакте"
+          }
+        },
+        {
+          "name": "Update Contact",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phone\": \"+7 (999) 987-65-43\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/contacts/{{contact_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "contacts", "{{contact_id}}", ""]
+            },
+            "description": "Обновление данных контакта"
+          }
+        },
+        {
+          "name": "Search Contacts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/contacts/?search=alice",
+              "host": ["{{base_url}}"],
+              "path": ["api", "contacts", ""],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "alice"
+                }
+              ]
+            },
+            "description": "Поиск контактов"
+          }
+        },
+        {
+          "name": "Verify Contact Email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contacts\": [\"{{contact_id}}\"],\n  \"action\": \"verify_email\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/contacts/bulk/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "contacts", "bulk", ""]
+            },
+            "description": "Верификация email контакта"
+          }
+        },
+        {
+          "name": "Contact Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/contacts/stats/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "contacts", "stats", ""]
+            },
+            "description": "Статистика контактов"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Companies Management",
+      "item": [
+        {
+          "name": "List Companies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/companies/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "companies", ""]
+            },
+            "description": "Получение списка компаний"
+          }
+        },
+        {
+          "name": "Create Company",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('company_id', response.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"ABC Corporation\",\n  \"inn\": \"1234567890\",\n  \"address\": \"123 Business St, City, Country\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/companies/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "companies", ""]
+            },
+            "description": "Создание новой компании"
+          }
+        },
+        {
+          "name": "Get Company Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/companies/{{company_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "companies", "{{company_id}}", ""]
+            },
+            "description": "Получение детальной информации о компании"
+          }
+        },
+        {
+          "name": "Create Order for Company",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('order_id', response.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"company\": \"{{company_id}}\",\n  \"number\": \"ORD-001\",\n  \"amount\": 150000\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/orders/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "orders", ""]
+            },
+            "description": "Создание заказа для компании"
+          }
+        },
+        {
+          "name": "Create Payment for Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"company\": \"{{company_id}}\",\n  \"order\": \"{{order_id}}\",\n  \"amount\": 75000\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/payments/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "payments", ""]
+            },
+            "description": "Создание оплаты для заказа"
+          }
+        },
+        {
+          "name": "Search Companies by INN",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/companies/?inn=1234567890",
+              "host": ["{{base_url}}"],
+              "path": ["api", "companies", ""],
+              "query": [
+                {
+                  "key": "inn",
+                  "value": "1234567890"
+                }
+              ]
+            },
+            "description": "Поиск компаний по ИНН"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Projects Management",
+      "item": [
+        {
+          "name": "List Projects",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/projects/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", ""]
+            },
+            "description": "Получение списка проектов"
+          }
+        },
+        {
+          "name": "Create Project",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('project_id', response.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Website Development\",\n  \"description\": \"Development of corporate website\",\n  \"status\": \"active\",\n  \"priority\": \"high\",\n  \"inn\": \"1234567890\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/projects/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", ""]
+            },
+            "description": "Создание нового проекта"
+          }
+        },
+        {
+          "name": "Get Project Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/projects/{{project_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", "{{project_id}}", ""]
+            },
+            "description": "Получение детальной информации о проекте"
+          }
+        },
+        {
+          "name": "Update Project Status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"completed\",\n  \"priority\": \"medium\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/projects/{{project_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", "{{project_id}}", ""]
+            },
+            "description": "Обновление статуса проекта"
+          }
+        },
+        {
+          "name": "Search Projects",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/projects/?search=website",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", ""],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "website"
+                }
+              ]
+            },
+            "description": "Поиск проектов"
+          }
+        },
+        {
+          "name": "Filter Projects by Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/projects/?status=active",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", ""],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "active"
+                }
+              ]
+            },
+            "description": "Фильтрация проектов по статусу"
+          }
+        },
+        {
+          "name": "Bulk Update Project Status",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"projects\": [\"{{project_id}}\"],\n  \"status\": \"completed\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/projects/bulk-status/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", "bulk-status", ""]
+            },
+            "description": "Массовое обновление статуса проектов"
+          }
+        },
+        {
+          "name": "Project Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/projects/stats/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "projects", "stats", ""]
+            },
+            "description": "Статистика проектов"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Email Integration",
+      "item": [
+        {
+          "name": "Setup Email Credentials",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('email_credentials_id', response.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@company.com\",\n  \"server\": \"mail.company.com\",\n  \"use_ssl\": true,\n  \"is_active\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/emails/credentials/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "emails", "credentials", ""]
+            },
+            "description": "Настройка учетных данных для email"
+          }
+        },
+        {
+          "name": "List Email Messages",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/emails/messages/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "emails", "messages", ""]
+            },
+            "description": "Получение списка email сообщений"
+          }
+        },
+        {
+          "name": "Create Email Message",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 201) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('email_message_id', response.id);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"credentials\": \"{{email_credentials_id}}\",\n  \"subject\": \"Project Inquiry - INN 1234567890\",\n  \"body\": \"We are interested in your services. Our INN is 1234567890.\",\n  \"sender\": \"client@company.com\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/emails/messages/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "emails", "messages", ""]
+            },
+            "description": "Создание email сообщения"
+          }
+        },
+        {
+          "name": "Sync Email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"credentials_id\": \"{{email_credentials_id}}\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/emails/sync/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "emails", "sync", ""]
+            },
+            "description": "Синхронизация email"
+          }
+        },
+        {
+          "name": "Mark Email as Read",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"is_read\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/emails/messages/{{email_message_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "emails", "messages", "{{email_message_id}}", ""]
+            },
+            "description": "Отметить email как прочитанное"
+          }
+        },
+        {
+          "name": "Email Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/emails/stats/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "emails", "stats", ""]
+            },
+            "description": "Статистика email"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Health Check",
+      "item": [
+        {
+          "name": "API Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/health/",
+              "host": ["{{base_url}}"],
+              "path": ["health", ""]
+            },
+            "description": "Проверка работоспособности API"
+          }
+        }
+      ]
+    }
+  ]
+}

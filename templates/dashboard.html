@@ -1,0 +1,368 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Дашборд - CRM Pro{% endblock %}
+
+{% block nav_menu %}
+<li><a href="{% url 'dashboard' %}" class="active"><i class="fas fa-tachometer-alt"></i> Дашборд</a></li>
+<li><a href="{% url 'emails:email_list' %}"><i class="fas fa-envelope"></i> Email</a></li>
+<li><a href="{% url 'projects:project_list' %}"><i class="fas fa-project-diagram"></i> Проекты</a></li>
+<li><a href="{% url 'companies:company_list' %}"><i class="fas fa-building"></i> Компании</a></li>
+<li><a href="{% url 'contacts:contact_list' %}"><i class="fas fa-users"></i> Контакты</a></li>
+{% endblock %}
+
+{% block mobile_menu %}
+<li><a href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i> Дашборд</a></li>
+<li><a href="{% url 'emails:email_list' %}"><i class="fas fa-envelope"></i> Email</a></li>
+<li><a href="{% url 'projects:project_list' %}"><i class="fas fa-project-diagram"></i> Проекты</a></li>
+<li><a href="{% url 'companies:company_list' %}"><i class="fas fa-building"></i> Компании</a></li>
+<li><a href="{% url 'contacts:contact_list' %}"><i class="fas fa-users"></i> Контакты</a></li>
+{% endblock %}
+
+{% block sidebar %}
+<div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+        <h2 class="card-title">
+            <i class="fas fa-chart-line"></i>
+            Быстрые действия
+        </h2>
+        <div class="space-y-2">
+            <a href="{% url 'emails:credentials' %}" class="btn btn-primary btn-block">
+                <i class="fas fa-cog"></i>
+                Настроить Email
+            </a>
+            <a href="{% url 'projects:project_create' %}" class="btn btn-secondary btn-block">
+                <i class="fas fa-plus"></i>
+                Новый проект
+            </a>
+            <a href="{% url 'companies:company_create' %}" class="btn btn-accent btn-block">
+                <i class="fas fa-plus"></i>
+                Новая компания
+            </a>
+            <a href="{% url 'contacts:contact_create' %}" class="btn btn-neutral btn-block">
+                <i class="fas fa-plus"></i>
+                Новый контакт
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Activity -->
+<div class="card bg-base-100 shadow-xl mt-4">
+    <div class="card-body">
+        <h2 class="card-title">
+            <i class="fas fa-history"></i>
+            Недавняя активность
+        </h2>
+        <div id="recent-activity" class="space-y-2">
+            <!-- Activity items will be loaded here -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- Welcome Section -->
+<div class="hero bg-base-200 rounded-box mb-6">
+    <div class="hero-content text-center">
+        <div class="max-w-md">
+            <h1 class="text-3xl font-bold">
+                Добро пожаловать в CRM Pro, {{ user.get_full_name|default:user.username }}!
+            </h1>
+            <p class="py-4">
+                Ваша интеллектуальная система управления отношениями с клиентами.
+                Автоматизируйте обработку email, управляйте проектами и контактами.
+            </p>
+            {% if not user.email_credentials.exists %}
+            <div class="alert alert-warning">
+                <div>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <h3 class="font-bold">Настройка не завершена</h3>
+                        <div class="text-xs">Настройте подключение к email для автоматической обработки писем</div>
+                    </div>
+                </div>
+                <div class="flex-none">
+                    <a href="{% url 'emails:credentials' %}" class="btn btn-sm btn-primary">Настроить</a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Statistics Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+    <!-- Email Stats -->
+    <div class="card bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-xl">
+        <div class="card-body">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="card-title text-white">
+                        <i class="fas fa-envelope"></i>
+                        Email
+                    </h2>
+                    <p class="text-blue-100">{{ stats.emails_total|default:0 }} сообщений</p>
+                    <p class="text-sm text-blue-200">
+                        {{ stats.unread_emails|default:0 }} непрочитанных
+                    </p>
+                </div>
+                <div class="text-4xl opacity-75">
+                    <i class="fas fa-envelope"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Stats -->
+    <div class="card bg-gradient-to-r from-green-500 to-green-600 text-white shadow-xl">
+        <div class="card-body">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="card-title text-white">
+                        <i class="fas fa-project-diagram"></i>
+                        Проекты
+                    </h2>
+                    <p class="text-green-100">{{ stats.projects_total|default:0 }} активных</p>
+                    <p class="text-sm text-green-200">
+                        {{ stats.projects_completed|default:0 }} завершено
+                    </p>
+                </div>
+                <div class="text-4xl opacity-75">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Companies Stats -->
+    <div class="card bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-xl">
+        <div class="card-body">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="card-title text-white">
+                        <i class="fas fa-building"></i>
+                        Компании
+                    </h2>
+                    <p class="text-purple-100">{{ stats.companies_total|default:0 }} компаний</p>
+                    <p class="text-sm text-purple-200">
+                        {{ stats.companies_with_inn|default:0 }} с ИНН
+                    </p>
+                </div>
+                <div class="text-4xl opacity-75">
+                    <i class="fas fa-building"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contacts Stats -->
+    <div class="card bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-xl">
+        <div class="card-body">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="card-title text-white">
+                        <i class="fas fa-users"></i>
+                        Контакты
+                    </h2>
+                    <p class="text-orange-100">{{ stats.contacts_total|default:0 }} контактов</p>
+                    <p class="text-sm text-orange-200">
+                        {{ stats.contacts_verified|default:0 }} верифицированы
+                    </p>
+                </div>
+                <div class="text-4xl opacity-75">
+                    <i class="fas fa-users"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Items Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Recent Emails -->
+    <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+            <h2 class="card-title">
+                <i class="fas fa-envelope"></i>
+                Последние Email
+            </h2>
+            <div id="recent-emails" class="space-y-2">
+                {% for email in recent_emails %}
+                <div class="flex items-center space-x-3 p-3 bg-base-200 rounded-lg">
+                    <div class="avatar placeholder">
+                        <div class="bg-neutral-focus text-neutral-content rounded-full w-8">
+                            <span class="text-xs">{{ email.sender|first|upper }}</span>
+                        </div>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium truncate">{{ email.subject }}</p>
+                        <p class="text-xs text-base-content/70">{{ email.sender }}</p>
+                    </div>
+                    <div class="text-xs text-base-content/50">
+                        {{ email.received_at|date:"d.m H:i" }}
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-center text-base-content/50 py-4">Нет новых сообщений</p>
+                {% endfor %}
+            </div>
+            <div class="card-actions justify-end">
+                <a href="{% url 'emails:email_list' %}" class="btn btn-primary btn-sm">Показать все</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Projects -->
+    <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+            <h2 class="card-title">
+                <i class="fas fa-project-diagram"></i>
+                Активные проекты
+            </h2>
+            <div id="recent-projects" class="space-y-2">
+                {% for project in recent_projects %}
+                <div class="flex items-center space-x-3 p-3 bg-base-200 rounded-lg">
+                    <div class="avatar placeholder">
+                        <div class="bg-primary text-primary-content rounded-full w-8">
+                            <span class="text-xs">{{ project.title|first|upper }}</span>
+                        </div>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium truncate">{{ project.title }}</p>
+                        <p class="text-xs text-base-content/70">{{ project.status }}</p>
+                    </div>
+                    <div class="badge badge-outline">{{ project.get_status_display }}</div>
+                </div>
+                {% empty %}
+                <p class="text-center text-base-content/50 py-4">Нет активных проектов</p>
+                {% endfor %}
+            </div>
+            <div class="card-actions justify-end">
+                <a href="{% url 'projects:project_list' %}" class="btn btn-primary btn-sm">Показать все</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- System Status -->
+<div class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+        <h2 class="card-title">
+            <i class="fas fa-server"></i>
+            Статус системы
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="flex items-center space-x-3">
+                <div id="db-status" class="w-3 h-3 rounded-full bg-warning"></div>
+                <span>База данных</span>
+                <span id="db-status-text" class="text-sm text-base-content/70">Проверка...</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <div id="redis-status" class="w-3 h-3 rounded-full bg-warning"></div>
+                <span>Redis</span>
+                <span id="redis-status-text" class="text-sm text-base-content/70">Проверка...</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <div id="email-status" class="w-3 h-3 rounded-full bg-warning"></div>
+                <span>Email синхронизация</span>
+                <span id="email-status-text" class="text-sm text-base-content/70">Проверка...</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Load dashboard data
+    document.addEventListener('DOMContentLoaded', function() {
+        loadDashboardStats();
+        loadRecentActivity();
+
+        // Check system status
+        checkSystemStatus();
+    });
+
+    function loadDashboardStats() {
+        fetch('/api/dashboard/stats/')
+            .then(response => response.json())
+            .then(data => {
+                // Update stats cards
+                updateStatsCards(data);
+            })
+            .catch(error => console.error('Error loading stats:', error));
+    }
+
+    function loadRecentActivity() {
+        fetch('/api/dashboard/recent-activity/')
+            .then(response => response.json())
+            .then(data => {
+                updateRecentActivity(data);
+            })
+            .catch(error => console.error('Error loading activity:', error));
+    }
+
+    function checkSystemStatus() {
+        fetch('/api/system/health/')
+            .then(response => response.json())
+            .then(data => {
+                updateSystemStatus(data);
+            })
+            .catch(error => console.error('Error checking system status:', error));
+    }
+
+    function updateStatsCards(data) {
+        // Update the stats display
+        const statsElements = document.querySelectorAll('[data-stat]');
+        statsElements.forEach(element => {
+            const statName = element.getAttribute('data-stat');
+            if (data[statName] !== undefined) {
+                element.textContent = data[statName];
+            }
+        });
+    }
+
+    function updateRecentActivity(data) {
+        const activityContainer = document.getElementById('recent-activity');
+        if (data.activities && data.activities.length > 0) {
+            activityContainer.innerHTML = data.activities.map(activity => `
+                <div class="flex items-center space-x-2 text-sm">
+                    <i class="fas fa-${activity.icon} text-${activity.color}-500"></i>
+                    <span>${activity.description}</span>
+                    <span class="text-xs text-base-content/50">${activity.time}</span>
+                </div>
+            `).join('');
+        }
+    }
+
+    function updateSystemStatus(data) {
+        // Update status indicators
+        const statusMap = {
+            'database': 'db-status',
+            'redis': 'redis-status',
+            'email_sync': 'email-status'
+        };
+
+        Object.keys(statusMap).forEach(key => {
+            const status = data[key];
+            const indicator = document.getElementById(statusMap[key]);
+            const text = document.getElementById(statusMap[key] + '-text');
+
+            if (status) {
+                indicator.className = 'w-3 h-3 rounded-full bg-success';
+                text.textContent = 'OK';
+            } else {
+                indicator.className = 'w-3 h-3 rounded-full bg-error';
+                text.textContent = 'Ошибка';
+            }
+        });
+    }
+
+    // Auto-refresh dashboard data every 30 seconds
+    setInterval(() => {
+        loadDashboardStats();
+        checkSystemStatus();
+    }, 30000);
+</script>
+{% endblock %}
