@@ -25,9 +25,8 @@ jobs:
     - name: Install dependencies
       run: |
         curl -LsSf https://astral.sh/uv/install.sh | sh
-        uv sync
-        uv install
-        pip install black isort flake8 mypy
+        uv add black isort flake8 mypy
+.       uv sync
 
     - name: Run black autoformat
       run: uv run black .
