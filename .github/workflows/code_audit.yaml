@@ -55,5 +55,6 @@ jobs:
         review_simple_changes: false         # Не проверять простые изменения
         review_comment_lgtm: false           # Не комментировать LGTM
         path_filters: "!**/*.json,!**/*.md"  # Исключить паттерны (аналог exclude)
+        debug: true
         # OPENAI_API_MODEL: "gpt-4" # Optional: defaults to "gpt-4"
         # exclude: "**/*.json,**/*.md" # Optional: exclude patterns separated by commas
