@@ -1,0 +1,8 @@
+token_list.html
+accesstoken_list.html
+profile.html
+Изменить функцию showNotification JavaScript в шаблоне settings.html на Toasts из DaisyUI
+
+данные страницы и опция видны только администратору
+
+Переключение светлой/темной не работает на странице

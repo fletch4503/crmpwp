@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block title %}Контакты - CRM Система{% endblock %}
-{% block nav_menu %} {% include "navmenu.html" %} {% endblock %}
-{% block mobile_menu %} {% include "mobilemenu.html" %} {% endblock %}
+{% block nav_menu %} {% include "partials/navmenu.html" %} {% endblock %}
+{% block mobile_menu %} {% include "partials/mobilemenu.html" %} {% endblock %}
 {% block breadcrumbs %}
     <nav class="text-sm breadcrumbs">
         <ul>
@@ -226,6 +226,7 @@
                                     <a href="?page=
 
 
+
                                             {{ page_obj.previous_page_number }}{% for key,value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}"
                                        class="join-item btn">«</a>
                                 {% endif %}
@@ -236,6 +237,7 @@
 
                                 {% if page_obj.has_next %}
                                     <a href="?page=
+
 
 
                                             {{ page_obj.next_page_number }}{% for key,value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}"
