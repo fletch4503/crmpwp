@@ -23,17 +23,14 @@ jobs:
 
     - name: Install dependencies
       run: |
-        # curl -LsSf https://astral.sh/uv/install.sh | sh
-        astral-sh/setup-uv@v4
-        uv sync --dev
-        # uv install
+        astral-sh/setup-uv@v4     # curl -LsSf https://astral.sh/uv/install.sh | sh
+        uv sync --dev             # uv install
 
     - name: Run linters (flake8, mypy, black check)
       run: |
         uv run flake8 .
         uv run mypy .
-        # uv run black --check .
-        uv run black --check --diff .
+        uv run black --check --diff .  # uv run black --check .
 
     - name: Run tests with coverage
       run: uv run pytest --cov=.
