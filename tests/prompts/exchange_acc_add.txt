@@ -1,0 +1,28 @@
+exch_username='LLC\sorokin.i'
+exch_userkey='Swyov6731'
+exch_serverurl='mail.tsrv-it.ru'
+exch_authtype='NTLM'
+exch_usersmtpaddr='sorokin.i@trlink.ru'
+
+tz = EWSTimeZone("Europe/Moscow")
+    right_now = EWSDateTime.now(tz)
+    acc_locale = str(getlocale())
+credents = Credentials(username=exch_username, password=exch_userkey)
+version = Version(build=Build(15, 0, 1497, 4012))
+conf_exchange = Configuration(
+                server=exch_serverurl,
+                retry_policy=FaultTolerance(max_wait=3600),
+                credentials=credents,
+                version=version,
+                auth_type=exch_authtype,
+                max_connections=10,
+            )
+my_acc_exch = Account(
+            primary_smtp_address=exch_usersmtpaddr,
+            config=conf_exchange,
+            credentials=credents,
+            autodiscover=False,
+            access_type=DELEGATE,
+            locale=acc_locale,
+            default_timezone=tz,
+)

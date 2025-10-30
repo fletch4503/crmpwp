@@ -1,0 +1,1539 @@
+INFO 2025-10-30 17:15:50,862 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:15:50,868 basehttp 169 140652796966592 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:15:50,883 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24565
+WARNING 2025-10-30 17:15:51,005 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:15:51,006 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:15:51,055 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:15:51,056 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:15:51,068 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:15:51,074 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:16:51,069 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:16:51,072 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:16:51,116 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24565
+WARNING 2025-10-30 17:16:51,303 log 169 140652796966592 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:16:51,303 basehttp 169 140652796966592 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:16:51,379 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:16:51,382 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:16:51,401 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:16:51,401 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:17:51,383 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:17:51,387 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:17:51,428 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24565
+WARNING 2025-10-30 17:17:51,603 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:17:51,604 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:17:51,664 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:17:51,665 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:17:51,678 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:17:51,682 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:18:51,668 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:18:51,673 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:18:51,718 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24565
+WARNING 2025-10-30 17:18:51,896 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:18:51,897 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:18:51,962 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:18:51,963 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:18:51,979 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:18:51,980 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:19:51,957 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:19:51,962 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:19:52,003 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24567
+WARNING 2025-10-30 17:19:52,175 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:19:52,176 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:19:52,240 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:19:52,241 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:19:52,254 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:19:52,259 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:20:42,863 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24567
+WARNING 2025-10-30 17:20:43,030 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:20:43,031 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:20:43,094 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:20:43,094 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:20:43,106 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:20:43,112 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:22:06,915 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24567
+WARNING 2025-10-30 17:22:07,083 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:22:07,083 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:22:07,155 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:22:07,157 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:22:07,170 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:22:07,173 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:22:08,278 basehttp 169 140652780181184 "GET /emails/ HTTP/1.1" 200 22917
+WARNING 2025-10-30 17:22:08,398 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:22:08,398 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:22:08,430 log 169 140652771788480 Not Found: /ws/emails/
+WARNING 2025-10-30 17:22:08,431 basehttp 169 140652771788480 "GET /ws/emails/ HTTP/1.1" 404 7156
+INFO 2025-10-30 17:22:09,618 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24567
+WARNING 2025-10-30 17:22:09,741 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:22:09,742 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:22:09,784 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:22:09,785 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:22:09,797 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:22:09,800 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:24:09,788 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:24:09,792 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:24:09,856 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24562
+WARNING 2025-10-30 17:24:10,054 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:24:10,054 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:24:10,120 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:24:10,122 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:24:10,137 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:24:10,138 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:24:26,348 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24117
+WARNING 2025-10-30 17:24:26,471 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:24:26,472 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:24:26,523 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:24:26,525 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:24:26,543 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:24:26,544 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:24:28,224 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24117
+WARNING 2025-10-30 17:24:28,332 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:24:28,333 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:24:28,377 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:24:28,378 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:24:28,387 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:24:28,392 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:24:29,371 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24117
+WARNING 2025-10-30 17:24:29,483 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:24:29,483 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:24:29,535 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:24:29,536 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:24:29,550 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:24:29,554 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:26:22,199 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24116
+WARNING 2025-10-30 17:26:22,354 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:26:22,355 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:26:22,414 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:26:22,416 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:26:22,431 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:26:22,431 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:27:14,270 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24116
+WARNING 2025-10-30 17:27:14,448 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:27:14,449 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:27:14,506 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:27:14,506 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:27:14,519 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:27:14,525 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:27:26,590 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24541
+WARNING 2025-10-30 17:27:26,712 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:27:26,713 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:27:26,763 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:27:26,764 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:27:26,776 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:27:26,783 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:27:30,330 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24541
+WARNING 2025-10-30 17:27:30,443 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:27:30,444 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:27:30,491 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:27:30,492 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:27:30,505 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:27:30,510 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:27:31,572 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24541
+WARNING 2025-10-30 17:27:31,738 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:27:31,739 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:27:31,790 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:27:31,791 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:27:31,812 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:27:31,820 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+ERROR 2025-10-30 17:27:32,570 log 169 140652780181184 Internal Server Error: /projects/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: projects/project_list.html, projects/project_list.html
+ERROR 2025-10-30 17:27:32,576 basehttp 169 140652780181184 "GET /projects/ HTTP/1.1" 500 92315
+WARNING 2025-10-30 17:27:35,092 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:27:35,093 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:27:35,140 log 169 140652771788480 Not Found: /ws/emails/
+WARNING 2025-10-30 17:27:35,141 basehttp 169 140652771788480 "GET /ws/emails/ HTTP/1.1" 404 7156
+INFO 2025-10-30 17:27:36,461 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24541
+WARNING 2025-10-30 17:27:36,603 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:27:36,604 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:27:36,638 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:27:36,640 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:27:36,655 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:27:36,658 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:27:37,611 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24541
+WARNING 2025-10-30 17:27:37,752 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:27:37,753 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:27:37,771 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:27:37,771 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:27:37,784 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:27:37,789 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+ERROR 2025-10-30 17:27:45,220 log 169 140652780181184 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list' not found. 'list' is not a valid view function or pattern name.
+ERROR 2025-10-30 17:27:45,224 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 500 185769
+WARNING 2025-10-30 17:28:24,767 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:28:24,768 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:28:24,817 log 169 140652771788480 Not Found: /ws/emails/
+WARNING 2025-10-30 17:28:24,818 basehttp 169 140652771788480 "GET /ws/emails/ HTTP/1.1" 404 7156
+ERROR 2025-10-30 17:28:26,410 log 169 140652780181184 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list' not found. 'list' is not a valid view function or pattern name.
+ERROR 2025-10-30 17:28:26,415 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 500 185010
+ERROR 2025-10-30 17:28:30,688 log 169 140652780181184 Internal Server Error: /
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list' not found. 'list' is not a valid view function or pattern name.
+ERROR 2025-10-30 17:28:30,691 basehttp 169 140652780181184 "GET / HTTP/1.1" 500 184752
+ERROR 2025-10-30 17:28:50,225 log 169 140652780181184 Internal Server Error: /
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list' not found. 'list' is not a valid view function or pattern name.
+ERROR 2025-10-30 17:28:50,229 basehttp 169 140652780181184 "GET / HTTP/1.1" 500 185645
+ERROR 2025-10-30 17:29:12,053 log 169 140652780181184 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list' not found. 'list' is not a valid view function or pattern name.
+ERROR 2025-10-30 17:29:12,057 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 500 185903
+ERROR 2025-10-30 17:30:34,929 log 169 140652780181184 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list' not found. 'list' is not a valid view function or pattern name.
+ERROR 2025-10-30 17:30:34,933 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 500 185917
+INFO 2025-10-30 17:31:28,589 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24541
+WARNING 2025-10-30 17:31:28,829 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:31:28,830 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:31:28,870 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:31:28,872 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:31:28,892 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:31:28,893 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+ERROR 2025-10-30 17:31:32,215 log 169 140652780181184 Internal Server Error: /companies/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list' not found. 'list' is not a valid view function or pattern name.
+ERROR 2025-10-30 17:31:32,219 basehttp 169 140652780181184 "GET /companies/ HTTP/1.1" 500 165225
+ERROR 2025-10-30 17:31:34,041 log 169 140652780181184 Internal Server Error: /companies/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list' not found. 'list' is not a valid view function or pattern name.
+ERROR 2025-10-30 17:31:34,044 basehttp 169 140652780181184 "GET /companies/ HTTP/1.1" 500 165362
+INFO 2025-10-30 17:32:29,883 basehttp 169 140652780181184 "GET /companies/ HTTP/1.1" 200 17820
+WARNING 2025-10-30 17:32:30,043 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:32:30,044 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:32:38,726 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24541
+WARNING 2025-10-30 17:32:38,875 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:32:38,876 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:32:38,926 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:32:38,927 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:32:38,943 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:32:38,946 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:32:40,334 basehttp 169 140652780181184 "GET /companies/ HTTP/1.1" 200 17820
+WARNING 2025-10-30 17:32:40,456 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:32:40,457 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:33:13,079 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24541
+WARNING 2025-10-30 17:33:13,228 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:33:13,228 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:33:13,271 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:33:13,272 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:33:13,284 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:33:13,290 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:33:17,409 basehttp 169 140652780181184 "GET /emails/credentials/ HTTP/1.1" 200 23802
+WARNING 2025-10-30 17:33:17,538 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:33:17,538 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:33:47,596 basehttp 169 140652780181184 "GET /emails/credentials/ HTTP/1.1" 200 23802
+WARNING 2025-10-30 17:33:47,757 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:33:47,758 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:34:17,821 basehttp 169 140652780181184 "GET /emails/credentials/ HTTP/1.1" 200 23802
+WARNING 2025-10-30 17:34:17,943 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:34:17,944 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:34:42,783 basehttp 169 140652780181184 "POST /emails/credentials/ HTTP/1.1" 200 23802
+WARNING 2025-10-30 17:34:42,905 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:34:42,906 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:35:12,956 basehttp 169 140652780181184 "POST /emails/credentials/ HTTP/1.1" 200 23802
+WARNING 2025-10-30 17:35:13,141 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:35:13,142 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:35:42,898 basehttp 169 140652780181184 "POST /emails/credentials/ HTTP/1.1" 200 23802
+WARNING 2025-10-30 17:35:43,014 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:35:43,015 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:36:13,080 basehttp 169 140652780181184 "POST /emails/credentials/ HTTP/1.1" 200 23802
+WARNING 2025-10-30 17:36:13,202 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:36:13,203 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:36:42,251 basehttp 169 140652780181184 "POST /emails/credentials/ HTTP/1.1" 200 23802
+WARNING 2025-10-30 17:36:42,381 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:36:42,382 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:36:59,873 basehttp 169 140652780181184 "POST /emails/credentials/ HTTP/1.1" 200 23802
+WARNING 2025-10-30 17:36:59,988 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:36:59,988 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:37:30,047 basehttp 169 140652780181184 "POST /emails/credentials/ HTTP/1.1" 200 23802
+WARNING 2025-10-30 17:37:30,167 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:37:30,168 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:38:00,230 basehttp 169 140652780181184 "POST /emails/credentials/ HTTP/1.1" 200 23802
+WARNING 2025-10-30 17:38:00,383 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:38:00,384 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:38:24,821 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24541
+WARNING 2025-10-30 17:38:24,949 log 169 140652788573888 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:38:24,949 basehttp 169 140652788573888 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:38:25,017 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:38:25,018 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:38:25,029 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:38:25,032 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+ERROR 2025-10-30 17:38:27,473 log 169 140652780181184 Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: contacts/contact_list.html, contacts/contact_list.html
+ERROR 2025-10-30 17:38:27,476 basehttp 169 140652780181184 "GET /contacts/ HTTP/1.1" 500 92315
+INFO 2025-10-30 17:38:30,119 basehttp 169 140652780181184 "GET /companies/ HTTP/1.1" 200 17820
+WARNING 2025-10-30 17:38:30,236 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:38:30,237 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:38:48,246 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 24541
+WARNING 2025-10-30 17:38:48,383 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:38:48,384 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:38:48,428 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:38:48,429 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:38:48,442 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:38:48,445 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+ERROR 2025-10-30 17:38:52,654 log 169 140652780181184 Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: contacts/contact_list.html, contacts/contact_list.html
+ERROR 2025-10-30 17:38:52,656 basehttp 169 140652780181184 "GET /contacts/ HTTP/1.1" 500 92315
+ERROR 2025-10-30 17:40:09,791 log 169 140652780181184 Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: contacts/contact_list.html, contacts/contact_list.html
+ERROR 2025-10-30 17:40:09,793 basehttp 169 140652780181184 "GET /contacts/ HTTP/1.1" 500 92315
+WARNING 2025-10-30 17:45:57,414 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:45:57,415 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 17:46:00,412 basehttp 169 140652796966592 "GET /emails/ HTTP/1.1" 200 22916
+WARNING 2025-10-30 17:46:00,535 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:46:00,536 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:46:00,558 log 169 140652771788480 Not Found: /ws/emails/
+WARNING 2025-10-30 17:46:00,558 basehttp 169 140652771788480 "GET /ws/emails/ HTTP/1.1" 404 7156
+INFO 2025-10-30 17:46:01,903 basehttp 169 140652796966592 "GET /dashboard/ HTTP/1.1" 200 24541
+WARNING 2025-10-30 17:46:02,046 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:46:02,047 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:46:02,113 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:46:02,116 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:46:02,135 basehttp 169 140652796966592 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:46:02,142 basehttp 169 140652771788480 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:48:02,134 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:48:02,141 basehttp 169 140652771788480 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:48:02,161 basehttp 169 140652796966592 "GET /dashboard/ HTTP/1.1" 200 24541
+WARNING 2025-10-30 17:48:02,367 log 169 140652759549632 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:48:02,368 basehttp 169 140652759549632 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:48:02,415 log 169 140652771788480 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:48:02,416 basehttp 169 140652771788480 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:48:02,429 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:48:02,432 basehttp 169 140652796966592 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:48:15,111 basehttp 169 140652796966592 "GET /dashboard/ HTTP/1.1" 200 24545
+WARNING 2025-10-30 17:48:15,232 log 169 140652759549632 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:48:15,233 basehttp 169 140652759549632 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:48:15,299 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:48:15,300 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:48:15,311 basehttp 169 140652771788480 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:48:15,315 basehttp 169 140652796966592 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:48:46,738 basehttp 169 140652796966592 "GET /dashboard/ HTTP/1.1" 200 24527
+WARNING 2025-10-30 17:48:46,862 log 169 140652759549632 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:48:46,863 basehttp 169 140652759549632 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:48:46,912 log 169 140652771788480 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:48:46,913 basehttp 169 140652771788480 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:48:46,926 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:48:46,931 basehttp 169 140652796966592 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:48:49,069 basehttp 169 140652796966592 "GET /dashboard/ HTTP/1.1" 200 24527
+WARNING 2025-10-30 17:48:49,183 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:48:49,183 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:48:49,225 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:48:49,226 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:48:49,239 basehttp 169 140652771788480 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:48:49,242 basehttp 169 140652796966592 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:48:50,242 basehttp 169 140652796966592 "GET /dashboard/ HTTP/1.1" 200 24527
+WARNING 2025-10-30 17:48:50,355 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:48:50,356 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:48:50,397 log 169 140652771788480 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:48:50,399 basehttp 169 140652771788480 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:48:50,414 basehttp 169 140652796966592 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:48:50,415 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:48:53,606 basehttp 169 140652788573888 "GET /emails/ HTTP/1.1" 200 22916
+WARNING 2025-10-30 17:48:53,730 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:48:53,730 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:48:53,760 log 169 140652780181184 Not Found: /ws/emails/
+WARNING 2025-10-30 17:48:53,761 basehttp 169 140652780181184 "GET /ws/emails/ HTTP/1.1" 404 7156
+INFO 2025-10-30 17:48:57,032 basehttp 169 140652788573888 "GET /dashboard/ HTTP/1.1" 200 24527
+WARNING 2025-10-30 17:48:57,162 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:48:57,163 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:48:57,195 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:48:57,195 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:48:57,206 basehttp 169 140652771788480 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:48:57,211 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:49:02,883 basehttp 169 140652788573888 "GET /emails/ HTTP/1.1" 200 22916
+WARNING 2025-10-30 17:49:02,997 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:49:02,998 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:49:03,015 log 169 140652780181184 Not Found: /ws/emails/
+WARNING 2025-10-30 17:49:03,017 basehttp 169 140652780181184 "GET /ws/emails/ HTTP/1.1" 404 7156
+INFO 2025-10-30 17:50:14,240 basehttp 169 140652788573888 "GET /dashboard/ HTTP/1.1" 200 24519
+WARNING 2025-10-30 17:50:14,405 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:50:14,406 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:50:14,472 log 169 140652771788480 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:50:14,473 basehttp 169 140652771788480 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:50:14,486 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:50:14,490 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:50:16,142 basehttp 169 140652788573888 "GET /emails/ HTTP/1.1" 200 22916
+WARNING 2025-10-30 17:50:16,262 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:50:16,263 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:50:16,294 log 169 140652780181184 Not Found: /ws/emails/
+WARNING 2025-10-30 17:50:16,295 basehttp 169 140652780181184 "GET /ws/emails/ HTTP/1.1" 404 7156
+INFO 2025-10-30 17:50:17,406 basehttp 169 140652788573888 "GET /dashboard/ HTTP/1.1" 200 24519
+WARNING 2025-10-30 17:50:17,549 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:50:17,550 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:50:17,590 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:50:17,591 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:50:17,604 basehttp 169 140652771788480 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:50:17,614 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:50:18,741 basehttp 169 140652788573888 "GET /dashboard/ HTTP/1.1" 200 24519
+WARNING 2025-10-30 17:50:18,884 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:50:18,885 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:50:18,919 log 169 140652771788480 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:50:18,919 basehttp 169 140652771788480 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:50:18,933 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:50:18,937 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:50:19,947 basehttp 169 140652788573888 "GET /dashboard/ HTTP/1.1" 200 24519
+WARNING 2025-10-30 17:50:20,070 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:50:20,071 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:50:20,100 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:50:20,101 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:50:20,119 basehttp 169 140652771788480 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:50:20,124 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:50:21,375 basehttp 169 140652788573888 "GET /dashboard/ HTTP/1.1" 200 24519
+WARNING 2025-10-30 17:50:21,513 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:50:21,514 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:50:21,528 log 169 140652771788480 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:50:21,529 basehttp 169 140652771788480 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:50:21,539 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:50:21,543 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:50:23,267 basehttp 169 140652788573888 "GET /dashboard/ HTTP/1.1" 200 24519
+WARNING 2025-10-30 17:50:23,399 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:50:23,399 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:50:23,418 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:50:23,420 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:50:23,435 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:50:23,435 basehttp 169 140652771788480 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:50:27,900 basehttp 169 140652771788480 "GET /emails/ HTTP/1.1" 200 22916
+WARNING 2025-10-30 17:50:28,053 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:50:28,053 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:50:28,083 log 169 140652780181184 Not Found: /ws/emails/
+WARNING 2025-10-30 17:50:28,083 basehttp 169 140652780181184 "GET /ws/emails/ HTTP/1.1" 404 7156
+INFO 2025-10-30 17:50:29,876 basehttp 169 140652771788480 "GET /dashboard/ HTTP/1.1" 200 24519
+WARNING 2025-10-30 17:50:30,039 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:50:30,040 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:50:30,047 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:50:30,053 basehttp 169 140652771788480 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+WARNING 2025-10-30 17:50:30,182 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:50:30,182 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+ERROR 2025-10-30 17:50:31,721 log 169 140652771788480 Internal Server Error: /projects/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: projects/project_list.html, projects/project_list.html
+ERROR 2025-10-30 17:50:31,723 basehttp 169 140652771788480 "GET /projects/ HTTP/1.1" 500 92315
+INFO 2025-10-30 17:51:23,462 basehttp 169 140652771788480 "GET /dashboard/ HTTP/1.1" 200 24519
+WARNING 2025-10-30 17:51:23,626 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:51:23,626 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:51:23,700 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:51:23,702 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:51:23,717 basehttp 169 140652771788480 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:51:23,718 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:51:24,869 basehttp 169 140652788573888 "GET /dashboard/ HTTP/1.1" 200 24519
+WARNING 2025-10-30 17:51:24,990 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:51:24,991 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:51:25,032 log 169 140652771788480 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:51:25,033 basehttp 169 140652771788480 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:51:25,047 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:51:25,049 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:51:26,324 basehttp 169 140652788573888 "GET /dashboard/ HTTP/1.1" 200 24519
+WARNING 2025-10-30 17:51:26,432 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:51:26,433 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:51:26,476 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:51:26,476 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:51:26,490 basehttp 169 140652771788480 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:51:26,494 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:51:27,015 basehttp 169 140652788573888 "GET /emails/ HTTP/1.1" 200 22916
+WARNING 2025-10-30 17:51:27,138 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:51:27,139 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:51:27,159 log 169 140652780181184 Not Found: /ws/emails/
+WARNING 2025-10-30 17:51:27,160 basehttp 169 140652780181184 "GET /ws/emails/ HTTP/1.1" 404 7156
+INFO 2025-10-30 17:51:28,955 basehttp 169 140652788573888 "GET /dashboard/ HTTP/1.1" 200 24519
+WARNING 2025-10-30 17:51:29,086 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:51:29,086 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:51:29,145 log 169 140652771788480 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:51:29,147 basehttp 169 140652771788480 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:51:29,159 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:51:29,164 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:53:29,156 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:53:29,163 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:53:29,178 basehttp 169 140652771788480 "GET /dashboard/ HTTP/1.1" 200 24519
+WARNING 2025-10-30 17:53:29,405 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:53:29,406 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:53:29,450 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:53:29,451 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:53:29,463 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:53:29,468 basehttp 169 140652771788480 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:54:09,999 basehttp 169 140652771788480 "GET /dashboard/ HTTP/1.1" 200 24821
+WARNING 2025-10-30 17:54:10,161 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:54:10,162 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:54:10,225 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:54:10,229 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:54:10,248 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:54:10,248 basehttp 169 140652771788480 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:56:10,229 basehttp 169 140652771788480 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:56:10,235 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:56:10,287 basehttp 169 140652788573888 "GET /dashboard/ HTTP/1.1" 200 24821
+WARNING 2025-10-30 17:56:10,468 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:56:10,470 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:56:10,547 log 169 140652771788480 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:56:10,548 basehttp 169 140652771788480 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:56:10,560 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:56:10,564 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:58:10,545 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 17:58:10,549 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:58:10,589 basehttp 169 140652788573888 "GET /dashboard/ HTTP/1.1" 200 24821
+WARNING 2025-10-30 17:58:10,768 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 17:58:10,768 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 17:58:10,835 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 17:58:10,837 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 17:58:10,851 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 17:58:10,852 basehttp 169 140652771788480 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:00:10,845 basehttp 169 140652771788480 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:00:10,850 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:00:10,891 basehttp 169 140652788573888 "GET /dashboard/ HTTP/1.1" 200 24821
+WARNING 2025-10-30 18:00:11,067 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:00:11,068 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:00:11,143 log 169 140652771788480 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:00:11,143 basehttp 169 140652771788480 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:00:11,154 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:00:11,160 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:01:26,123 basehttp 169 140652788573888 "GET /accounts/logout/ HTTP/1.1" 200 2030
+INFO 2025-10-30 18:01:29,334 basehttp 169 140652788573888 "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-10-30 18:01:29,341 basehttp 169 140652788573888 "GET / HTTP/1.1" 302 0
+INFO 2025-10-30 18:01:29,453 basehttp 169 140652788573888 "GET /accounts/login/?next=/ HTTP/1.1" 200 2776
+INFO 2025-10-30 18:01:52,489 basehttp 169 140652788573888 "POST /accounts/login/ HTTP/1.1" 200 2766
+INFO 2025-10-30 18:04:18,442 basehttp 169 140652788573888 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-10-30 18:04:18,472 basehttp 169 140652788573888 "GET / HTTP/1.1" 200 28375
+WARNING 2025-10-30 18:04:18,707 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:04:18,708 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:04:18,757 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:04:18,758 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:04:18,772 basehttp 169 140652771788480 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:04:18,776 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:04:47,374 basehttp 169 140652788573888 "GET /emails/ HTTP/1.1" 200 22917
+WARNING 2025-10-30 18:04:47,535 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:04:47,535 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:04:47,576 log 169 140652780181184 Not Found: /ws/emails/
+WARNING 2025-10-30 18:04:47,579 basehttp 169 140652780181184 "GET /ws/emails/ HTTP/1.1" 404 7156
+INFO 2025-10-30 18:04:50,107 basehttp 169 140652788573888 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:04:50,234 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:04:50,234 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:04:50,278 log 169 140652771788480 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:04:50,281 basehttp 169 140652771788480 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:04:50,294 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:04:50,295 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+ERROR 2025-10-30 18:04:56,156 log 169 140652796966592 Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: contacts/contact_list.html, contacts/contact_list.html
+ERROR 2025-10-30 18:04:56,159 basehttp 169 140652796966592 "GET /contacts/ HTTP/1.1" 500 92331
+INFO 2025-10-30 18:05:01,210 basehttp 169 140652796966592 "GET /emails/ HTTP/1.1" 200 22917
+WARNING 2025-10-30 18:05:01,333 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:05:01,333 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:05:01,381 log 169 140652780181184 Not Found: /ws/emails/
+WARNING 2025-10-30 18:05:01,382 basehttp 169 140652780181184 "GET /ws/emails/ HTTP/1.1" 404 7156
+INFO 2025-10-30 18:06:50,282 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:06:50,286 basehttp 169 140652796966592 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:06:50,332 basehttp 169 140652796966592 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:06:50,564 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:06:50,565 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:06:50,619 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:06:50,622 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:06:50,635 basehttp 169 140652796966592 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:06:50,636 basehttp 169 140652771788480 "GET /api/system/health/ HTTP/1.1" 200 48
+ERROR 2025-10-30 18:07:56,164 log 169 140652771788480 Internal Server Error: /profile/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: users/profile.html
+ERROR 2025-10-30 18:07:56,166 basehttp 169 140652771788480 "GET /profile/ HTTP/1.1" 500 86898
+INFO 2025-10-30 18:08:02,099 basehttp 169 140652771788480 "GET /emails/credentials/ HTTP/1.1" 200 23807
+WARNING 2025-10-30 18:08:02,261 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:08:02,262 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 18:08:32,339 basehttp 169 140652771788480 "GET /emails/credentials/ HTTP/1.1" 200 23807
+WARNING 2025-10-30 18:08:32,491 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:08:32,491 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 18:09:02,546 basehttp 169 140652771788480 "GET /emails/credentials/ HTTP/1.1" 200 23807
+WARNING 2025-10-30 18:09:02,660 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:09:02,661 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+ERROR 2025-10-30 18:09:05,326 redis 169 140652771788480 Connection to Redis lost: Retry (0/20) now.
+ERROR 2025-10-30 18:09:05,327 redis 169 140652771788480 Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR 2025-10-30 18:09:06,328 redis 169 140652771788480 Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR 2025-10-30 18:09:07,329 redis 169 140652771788480 Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR 2025-10-30 18:09:08,332 redis 169 140652771788480 Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR 2025-10-30 18:09:09,334 redis 169 140652771788480 Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR 2025-10-30 18:09:10,336 redis 169 140652771788480 Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR 2025-10-30 18:09:11,340 redis 169 140652771788480 Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR 2025-10-30 18:09:12,342 redis 169 140652771788480 Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR 2025-10-30 18:09:13,343 redis 169 140652771788480 Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR 2025-10-30 18:09:14,344 redis 169 140652771788480 Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR 2025-10-30 18:09:15,346 redis 169 140652771788480 Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR 2025-10-30 18:09:16,347 redis 169 140652771788480 Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR 2025-10-30 18:09:17,349 redis 169 140652771788480 Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR 2025-10-30 18:09:18,351 redis 169 140652771788480 Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR 2025-10-30 18:09:19,354 redis 169 140652771788480 Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR 2025-10-30 18:09:20,357 redis 169 140652771788480 Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR 2025-10-30 18:09:21,361 redis 169 140652771788480 Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR 2025-10-30 18:09:22,363 redis 169 140652771788480 Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR 2025-10-30 18:09:23,363 redis 169 140652771788480 Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL 2025-10-30 18:09:24,364 redis 169 140652771788480 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR 2025-10-30 18:09:24,418 log 169 140652771788480 Internal Server Error: /emails/ajax/sync-now/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/redis/connection.py", line 855, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/app/.venv/lib/python3.13/site-packages/redis/retry.py", line 116, in call_with_retry
+    return do()
+  File "/app/.venv/lib/python3.13/site-packages/redis/connection.py", line 856, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/redis/connection.py", line 1306, in _connect
+    raise err
+  File "/app/.venv/lib/python3.13/site-packages/redis/connection.py", line 1290, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/celery/backends/redis.py", line 127, in reconnect_on_error
+    yield
+  File "/app/.venv/lib/python3.13/site-packages/celery/backends/redis.py", line 177, in _consume_from
+    self._pubsub.subscribe(key)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/redis/client.py", line 1085, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+  File "/app/.venv/lib/python3.13/site-packages/redis/client.py", line 909, in execute_command
+    self.connection = self.connection_pool.get_connection()
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/redis/connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to localhost:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/redis/connection.py", line 855, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/app/.venv/lib/python3.13/site-packages/redis/retry.py", line 116, in call_with_retry
+    return do()
+  File "/app/.venv/lib/python3.13/site-packages/redis/connection.py", line 856, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/redis/connection.py", line 1306, in _connect
+    raise err
+  File "/app/.venv/lib/python3.13/site-packages/redis/connection.py", line 1290, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/views/decorators/http.py", line 64, in inner
+    return func(request, *args, **kwargs)
+  File "/app/emails/views.py", line 481, in sync_emails_now_ajax
+    sync_user_emails.delay(request.user.id, credentials.id)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/app/task.py", line 601, in apply_async
+    return app.send_task(
+           ~~~~~~~~~~~~~^
+        self.name, args, kwargs, task_id=task_id, producer=producer,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        **options
+        ^^^^^^^^^
+    )
+    ^
+  File "/app/.venv/lib/python3.13/site-packages/celery/app/base.py", line 929, in send_task
+    self.backend.on_task_call(P, task_id)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/backends/redis.py", line 378, in on_task_call
+    self.result_consumer.consume_from(task_id)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/backends/redis.py", line 169, in consume_from
+    return self.start(task_id)
+           ~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/backends/redis.py", line 147, in start
+    self._consume_from(initial_task_id)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/backends/redis.py", line 176, in _consume_from
+    with self.reconnect_on_error():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/backends/redis.py", line 130, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/celery/backends/redis.py", line 389, in ensure
+    return retry_over_time(
+        fun, self.connection_errors, args, {},
+        partial(self.on_connection_error, max_retries),
+        **retry_policy)
+  File "/app/.venv/lib/python3.13/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/celery/backends/redis.py", line 106, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+  File "/app/.venv/lib/python3.13/site-packages/redis/commands/core.py", line 1999, in mget
+    return self.execute_command("MGET", *args, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/redis/client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/redis/client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/redis/utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/redis/connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/app/.venv/lib/python3.13/site-packages/redis/connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/redis/connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to localhost:6379. Connection refused.
+ERROR 2025-10-30 18:09:24,433 basehttp 169 140652771788480 "POST /emails/ajax/sync-now/ HTTP/1.1" 500 261201
+INFO 2025-10-30 18:09:32,726 basehttp 169 140652771788480 "GET /emails/credentials/ HTTP/1.1" 200 23807
+WARNING 2025-10-30 18:09:32,869 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:09:32,870 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+ERROR 2025-10-30 18:09:57,866 log 169 140652771788480 Internal Server Error: /projects/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: projects/project_list.html, projects/project_list.html
+ERROR 2025-10-30 18:09:57,868 basehttp 169 140652771788480 "GET /projects/ HTTP/1.1" 500 92340
+INFO 2025-10-30 18:10:01,169 basehttp 169 140652771788480 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:10:01,289 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:10:01,290 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:10:01,341 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:10:01,341 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:10:01,354 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:10:01,357 basehttp 169 140652771788480 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:12:01,342 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:12:01,347 basehttp 169 140652771788480 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:12:01,388 basehttp 169 140652771788480 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:12:01,571 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:12:01,572 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:12:01,648 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:12:01,649 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:12:01,664 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:12:01,670 basehttp 169 140652771788480 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:14:01,658 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:14:01,664 basehttp 169 140652771788480 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:14:01,704 basehttp 169 140652771788480 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:14:01,877 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:14:01,878 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:14:01,945 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:14:01,945 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:14:01,959 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:14:01,963 basehttp 169 140652771788480 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:16:01,950 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:16:01,956 basehttp 169 140652771788480 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:16:02,000 basehttp 169 140652771788480 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:16:02,183 log 169 140652780181184 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:16:02,184 basehttp 169 140652780181184 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:16:02,245 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:16:02,246 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:16:02,256 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:16:02,262 basehttp 169 140652771788480 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:18:02,280 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:18:02,285 basehttp 169 140652796966592 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:18:02,313 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:18:02,507 log 169 140652759549632 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:18:02,507 basehttp 169 140652759549632 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:18:02,569 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:18:02,571 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:18:02,589 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:18:02,591 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:20:03,426 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:20:03,434 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:20:03,439 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:20:03,655 log 169 140652759549632 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:20:03,656 basehttp 169 140652759549632 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:20:03,706 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:20:03,707 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:20:03,718 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:20:03,725 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:22:04,433 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:22:04,436 basehttp 169 140652796966592 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:22:04,440 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:22:04,657 log 169 140652759549632 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:22:04,658 basehttp 169 140652759549632 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:22:04,708 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:22:04,709 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:22:04,719 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:22:04,724 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:24:05,427 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:24:05,434 basehttp 169 140652788573888 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:24:05,437 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:24:05,665 log 169 140652759549632 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:24:05,665 basehttp 169 140652759549632 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:24:05,714 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:24:05,717 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:24:05,731 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:24:05,736 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:25:45,077 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:25:45,249 log 169 140652759549632 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:25:45,249 basehttp 169 140652759549632 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:25:45,312 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:25:45,313 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:25:45,328 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:25:45,332 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:25:47,493 basehttp 169 140652780181184 "GET /companies/ HTTP/1.1" 200 33374
+WARNING 2025-10-30 18:25:47,618 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:25:47,618 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 18:25:58,074 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:25:58,193 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:25:58,194 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:25:58,254 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:25:58,257 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:25:58,272 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:25:58,273 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+ERROR 2025-10-30 18:25:59,633 log 169 140652796966592 Internal Server Error: /projects/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: projects/project_list.html, projects/project_list.html
+ERROR 2025-10-30 18:25:59,635 basehttp 169 140652796966592 "GET /projects/ HTTP/1.1" 500 92331
+INFO 2025-10-30 18:26:04,697 basehttp 169 140652796966592 "GET /emails/ HTTP/1.1" 200 22917
+WARNING 2025-10-30 18:26:04,829 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:26:04,830 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:26:04,864 log 169 140652771788480 Not Found: /ws/emails/
+WARNING 2025-10-30 18:26:04,866 basehttp 169 140652771788480 "GET /ws/emails/ HTTP/1.1" 404 7156
+INFO 2025-10-30 18:26:09,996 basehttp 169 140652796966592 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:26:10,129 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:26:10,130 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:26:10,161 log 169 140652780181184 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:26:10,162 basehttp 169 140652780181184 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:26:10,174 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:26:10,176 basehttp 169 140652796966592 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+ERROR 2025-10-30 18:26:13,871 log 169 140652796966592 Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: contacts/contact_list.html, contacts/contact_list.html
+ERROR 2025-10-30 18:26:13,874 basehttp 169 140652796966592 "GET /contacts/ HTTP/1.1" 500 92331
+INFO 2025-10-30 18:26:23,692 basehttp 169 140652796966592 "GET /companies/ HTTP/1.1" 200 33374
+WARNING 2025-10-30 18:26:23,812 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:26:23,813 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 18:26:29,978 basehttp 169 140652796966592 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:26:30,108 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:26:30,109 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:26:30,153 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:26:30,157 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:26:30,174 basehttp 169 140652796966592 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:26:30,174 basehttp 169 140652780181184 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:27:13,809 basehttp 169 140652780181184 "GET /companies/ HTTP/1.1" 200 33795
+WARNING 2025-10-30 18:27:13,983 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:27:13,984 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 18:27:15,866 basehttp 169 140652780181184 "GET /companies/ HTTP/1.1" 200 33795
+WARNING 2025-10-30 18:27:15,985 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:27:15,985 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 18:27:17,234 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:27:17,363 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:27:17,364 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:27:17,399 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:27:17,400 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:27:17,411 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:27:17,415 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 18:27:37,968 basehttp 169 140652780181184 "GET /emails/ HTTP/1.1" 200 25256
+WARNING 2025-10-30 18:27:38,128 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:27:38,129 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:27:38,162 log 169 140652771788480 Not Found: /ws/emails/
+WARNING 2025-10-30 18:27:38,163 basehttp 169 140652771788480 "GET /ws/emails/ HTTP/1.1" 404 7156
+INFO 2025-10-30 18:27:39,577 basehttp 169 140652780181184 "GET /emails/ HTTP/1.1" 200 25256
+WARNING 2025-10-30 18:27:39,703 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:27:39,704 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 18:27:39,754 log 169 140652771788480 Not Found: /ws/emails/
+WARNING 2025-10-30 18:27:39,755 basehttp 169 140652771788480 "GET /ws/emails/ HTTP/1.1" 404 7156
+INFO 2025-10-30 18:27:40,751 basehttp 169 140652780181184 "GET /companies/ HTTP/1.1" 200 33795
+WARNING 2025-10-30 18:27:40,922 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:27:40,924 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 18:27:48,950 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:27:49,122 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:27:49,122 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:27:49,134 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:27:49,138 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+WARNING 2025-10-30 18:27:49,204 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:27:49,205 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 18:27:50,854 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:27:51,016 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:27:51,017 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:27:51,031 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:27:51,037 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+WARNING 2025-10-30 18:27:51,196 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:27:51,196 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 18:27:52,943 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:27:53,105 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:27:53,106 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:27:53,123 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:27:53,127 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+WARNING 2025-10-30 18:27:53,527 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:27:53,527 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 18:27:54,186 basehttp 169 140652780181184 "GET /dashboard/ HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:27:54,340 log 169 140652796966592 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:27:54,341 basehttp 169 140652796966592 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:27:54,353 basehttp 169 140652788573888 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:27:54,356 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+WARNING 2025-10-30 18:27:54,825 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:27:54,826 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 18:27:57,360 basehttp 169 140652780181184 "GET / HTTP/1.1" 200 28017
+WARNING 2025-10-30 18:27:57,527 log 169 140652788573888 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 18:27:57,527 basehttp 169 140652788573888 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 18:27:57,538 basehttp 169 140652796966592 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 18:27:57,540 basehttp 169 140652780181184 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+WARNING 2025-10-30 18:27:58,872 log 169 140652771788480 Not Found: /ws/notifications/
+WARNING 2025-10-30 18:27:58,873 basehttp 169 140652771788480 "GET /ws/notifications/ HTTP/1.1" 404 7177
+ERROR 2025-10-30 18:28:02,448 log 169 140652780181184 Internal Server Error: /projects/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: projects/project_list.html, projects/project_list.html
+ERROR 2025-10-30 18:28:02,450 basehttp 169 140652780181184 "GET /projects/ HTTP/1.1" 500 92321

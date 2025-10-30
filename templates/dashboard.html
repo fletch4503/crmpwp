@@ -2,22 +2,8 @@
 {% load static %}
 
 {% block title %}Дашборд - CRM Pro{% endblock %}
-
-{% block nav_menu %}
-    <li><a href="{% url 'users:dashboard' %}" class="active"><i class="fas fa-tachometer-alt"></i> Дашборд</a></li>
-    <li><a href="{% url 'emails:email_list' %}"><i class="fas fa-envelope"></i> Email</a></li>
-    <li><a href="{% url 'projects:project_list' %}"><i class="fas fa-project-diagram"></i> Проекты</a></li>
-    <li><a href="{% url 'companies:company_list' %}"><i class="fas fa-building"></i> Компании</a></li>
-    <li><a href="{% url 'contacts:contact_list' %}"><i class="fas fa-users"></i> Контакты</a></li>
-{% endblock %}
-
-{% block mobile_menu %}
-    <li><a href="{% url 'users:dashboard' %}"><i class="fas fa-tachometer-alt"></i> Дашборд</a></li>
-    <li><a href="{% url 'emails:email_list' %}"><i class="fas fa-envelope"></i> Email</a></li>
-    <li><a href="{% url 'projects:project_list' %}"><i class="fas fa-project-diagram"></i> Проекты</a></li>
-    <li><a href="{% url 'companies:company_list' %}"><i class="fas fa-building"></i> Компании</a></li>
-    <li><a href="{% url 'contacts:contact_list' %}"><i class="fas fa-users"></i> Контакты</a></li>
-{% endblock %}
+{% block nav_menu %} {% include "navmenu.html" %} {% endblock %}
+{% block mobile_menu %} {% include "mobilemenu.html" %} {% endblock %}
 
 {% block sidebar %}
     <div class="card bg-base-100 shadow-xl">
@@ -247,6 +233,12 @@
     </div>
 
     <!-- System Status -->
+    <div hx-get="/api/dashboard/stats/" hx-trigger="load, every 30s" hx-target="#stats-container">
+        <!-- Статистика -->
+    </div>
+    <div hx-get="/api/system/health/" hx-trigger="load, every 30s" hx-target="#health-container">
+        <!-- Статус системы -->
+    </div>
     <div class="card bg-base-100 shadow-xl mt-6">
         <div class="card-body">
             <h2 class="card-title">
@@ -364,6 +356,6 @@
         setInterval(() => {
             loadDashboardStats();
             checkSystemStatus();
-        }, 60000);
+        }, 120000);
     </script>
 {% endblock %}
