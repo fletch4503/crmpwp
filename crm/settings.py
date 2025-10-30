@@ -207,7 +207,7 @@ CORS_ALLOWED_ORIGINS = config(
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_SIGNUP_FIELDS = ["email*", "password1*", "password2*"]
 ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_LOGIN_METHODS = {'email'}
+ACCOUNT_LOGIN_METHODS = {"email"}
 ACCOUNT_EMAIL_VERIFICATION = "none"  # Отключить верификацию email для разработки
 ACCOUNT_ADAPTER = "users.adapters.AccountAdapter"
 SOCIALACCOUNT_ADAPTER = "users.adapters.SocialAccountAdapter"
@@ -234,11 +234,16 @@ CHANNEL_LAYERS = {
 
 # Email settings (for Exchange integration)
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = config("EMAIL_HOST", default="")
-EMAIL_PORT = config("EMAIL_PORT", default=587, cast=int)
-EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=True, cast=bool)
-EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="")
-EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="")
+EMAIL_HOST = config("EMAIL_HOST", default="smtp.yandex.ru")
+# EMAIL_PORT = config("EMAIL_PORT", default=587, cast=int)
+EMAIL_PORT = config("EMAIL_PORT", default=465, cast=int)
+# EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=True, cast=bool)
+EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="me@afletcher.ru")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="hdqueqvarlsynvtw")
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = EMAIL_HOST_USER
+EMAIL_ADMIN = EMAIL_HOST_USER
 
 # Logging
 LOGGING = {
