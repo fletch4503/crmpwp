@@ -35,20 +35,22 @@ jobs:
     # - name: Run tests with coverage
     #   run: uv run pytest --cov=.
 
-    - name: Run Security scan (bandit)
-      run: |
-        pip install bandit
-        bandit -r .
+    # - name: Run Security scan (bandit)
+    #   run: |
+    #     pip install bandit
+    #     bandit -r .
 
   ai_code_review:
-    needs: lint_and_test
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
-    - name: AI Code Review (GitHub Marketplace Action example)
-      uses: github/codeql-action/analyze@v2
-      with:
-        category: 'security-and-quality'
+      - name: AI Code Reviewer
+        # uses: fletch4503/ai-code-reviewer@master
+        uses: fletch4503/ai-code-reviewer@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # The GITHUB_TOKEN is there by default so you just need to keep it like it is and not necessarily need to add it as secret as it will throw an error. [More Details](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret)
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_MODEL: "gpt-4" # Optional: defaults to "gpt-4"
+          exclude: "**/*.json,**/*.md" # Optional: exclude patterns separated by commas

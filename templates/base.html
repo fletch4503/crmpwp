@@ -63,14 +63,15 @@
 </head>
 <body class="min-h-screen bg-base-200">
     <!-- Navigation -->
-    <div id="navbar" class="navbar bg-base-100 shadow-lg">
-        <div class="navbar-start">
+    <div id="navbar" class="navbar fixed flex w-full top-0 z-50 bg-base-100 shadow-lg">  <!-- navbar flex w-full top-0 z-50 border-b justify-between dark:bg-gray-900 dark:border-gray-600 shadow-md -->
+    {% comment %} <div id="navbar" class="navbar w-full top-0 z-50 bg-base-100 shadow-lg">  <!-- navbar flex w-full top-0 z-50 border-b justify-between dark:bg-gray-900 dark:border-gray-600 shadow-md --> {% endcomment %}
+        <div class="navbar-start"> <!-- Главная страница -->
             <div class="dropdown">
                 <label tabindex="0" class="btn btn-ghost lg:hidden">
                     <i class="fas fa-bars"></i>
                 </label>
                 <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    {% block mobile_menu %}{% endblock %}
+                    {% block mobile_menu %}{% include "mobilemenu.html" %}{% endblock %}
                 </ul>
             </div>
             <a href="{% url 'users:dashboard' %}" class="btn btn-ghost normal-case text-xl">
@@ -79,20 +80,17 @@
             </a>
         </div>
 
-        <div class="navbar-center hidden lg:flex">
+        <div class="navbar-center hidden lg:flex"> <!-- Средняя часть навигатора -->
             <ul class="menu menu-horizontal px-1">
-                {% block nav_menu %}{% endblock %}
+                {% block nav_menu %} {% include "navmenu.html" %} {% endblock %}
             </ul>
         </div>
 
-        <div class="navbar-end">
-            <!-- Theme Toggle -->
+        <div class="navbar-end">  <!-- Theme Toggle -->
             <button id="theme-toggle" class="btn btn-ghost btn-circle">
                 <i class="fas fa-moon"></i>
             </button>
-
-            <!-- Notifications -->
-            <div class="dropdown dropdown-end">
+            <div class="dropdown dropdown-end"> <!-- Notifications -->
                 <label tabindex="0" class="btn btn-ghost btn-circle">
                     <div class="indicator">
                         <i class="fas fa-bell"></i>
@@ -138,9 +136,9 @@
     </div>
 
     <!-- Main Content -->
-    <div class="container mx-auto px-4 py-6">
-        <!-- Breadcrumbs -->
-        {% block breadcrumbs %}{% endblock %}
+    {% comment %} <div class="container mx-auto px-0 py-1"> {% endcomment %}
+    <div class="container px-0 py-1 pt-16">
+        {% block breadcrumbs %}{% endblock %} <!-- Быстрые действия -->
 
         <!-- Messages -->
         <div id="messages" class="mb-4">

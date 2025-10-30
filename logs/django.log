@@ -4512,3 +4512,382 @@ WARNING 2025-10-29 20:14:09,373 log 97 140590318614208 Not Found: /api/dashboard
 WARNING 2025-10-29 20:14:09,375 basehttp 97 140590318614208 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
 INFO 2025-10-29 20:14:09,387 basehttp 97 140590310221504 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
 INFO 2025-10-29 20:14:09,388 basehttp 97 140590301828800 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 12:28:19,553 autoreload 45 139864053152704 Watching for file changes with StatReloader
+INFO 2025-10-30 12:28:53,495 basehttp 45 139863712069312 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-30 12:28:53,789 log 45 139863694235328 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:28:53,790 basehttp 45 139863694235328 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 12:28:53,842 log 45 139863703676608 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 12:28:53,844 basehttp 45 139863703676608 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 12:28:53,859 basehttp 45 139863712069312 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 12:28:53,862 basehttp 45 139863694235328 "GET /api/system/health/ HTTP/1.1" 200 48
+WARNING 2025-10-30 12:28:54,027 log 45 139863694235328 Not Found: /favicon.ico
+WARNING 2025-10-30 12:28:54,028 basehttp 45 139863694235328 "GET /favicon.ico HTTP/1.1" 404 7159
+INFO 2025-10-30 12:28:58,952 basehttp 45 139863694235328 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-30 12:28:59,073 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:28:59,073 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 12:28:59,154 log 45 139863712069312 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 12:28:59,155 basehttp 45 139863712069312 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 12:28:59,167 basehttp 45 139863703676608 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 12:28:59,172 basehttp 45 139863694235328 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 12:29:04,181 basehttp 45 139863694235328 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-30 12:29:04,301 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:29:04,302 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 12:29:04,368 log 45 139863703676608 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 12:29:04,369 basehttp 45 139863703676608 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 12:29:04,382 basehttp 45 139863712069312 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 12:29:04,390 basehttp 45 139863694235328 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 12:29:09,398 basehttp 45 139863694235328 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-30 12:29:09,508 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:29:09,525 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+WARNING 2025-10-30 12:29:09,583 log 45 139863712069312 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 12:29:09,584 basehttp 45 139863712069312 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 12:29:09,598 basehttp 45 139863694235328 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 12:29:09,599 basehttp 45 139863703676608 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 12:29:13,344 basehttp 45 139863703676608 "GET /emails/credentials/ HTTP/1.1" 200 24032
+WARNING 2025-10-30 12:29:13,461 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:29:13,461 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 12:29:18,539 basehttp 45 139863703676608 "GET /emails/credentials/ HTTP/1.1" 200 24032
+WARNING 2025-10-30 12:29:18,663 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:29:18,663 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 12:29:23,725 basehttp 45 139863703676608 "GET /emails/credentials/ HTTP/1.1" 200 24032
+WARNING 2025-10-30 12:29:23,847 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:29:23,847 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 12:29:28,927 basehttp 45 139863703676608 "GET /emails/credentials/ HTTP/1.1" 200 24032
+WARNING 2025-10-30 12:29:29,065 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:29:29,065 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 12:29:34,139 basehttp 45 139863703676608 "GET /emails/credentials/ HTTP/1.1" 200 24032
+WARNING 2025-10-30 12:29:34,316 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:29:34,317 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 12:29:39,390 basehttp 45 139863703676608 "GET /emails/credentials/ HTTP/1.1" 200 24032
+WARNING 2025-10-30 12:29:39,541 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:29:39,541 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 12:29:44,618 basehttp 45 139863703676608 "GET /emails/credentials/ HTTP/1.1" 200 24032
+WARNING 2025-10-30 12:29:44,832 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:29:44,833 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 12:29:49,870 basehttp 45 139863703676608 "GET /emails/credentials/ HTTP/1.1" 200 24032
+WARNING 2025-10-30 12:29:50,058 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:29:50,059 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 12:29:55,117 basehttp 45 139863703676608 "GET /emails/credentials/ HTTP/1.1" 200 24032
+WARNING 2025-10-30 12:29:55,376 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:29:55,377 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 12:30:00,404 basehttp 45 139863703676608 "GET /emails/credentials/ HTTP/1.1" 200 24032
+WARNING 2025-10-30 12:30:00,887 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:30:00,887 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+INFO 2025-10-30 12:30:03,985 basehttp 45 139863703676608 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-30 12:30:04,159 log 45 139863694235328 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 12:30:04,160 basehttp 45 139863694235328 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 12:30:04,172 basehttp 45 139863712069312 "GET /api/system/health/ HTTP/1.1" 200 48
+INFO 2025-10-30 12:30:04,177 basehttp 45 139863703676608 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+WARNING 2025-10-30 12:30:05,250 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:30:05,251 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+ERROR 2025-10-30 12:30:06,126 log 45 139863703676608 Internal Server Error: /projects/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: projects/project_list.html, projects/project_list.html
+ERROR 2025-10-30 12:30:06,128 basehttp 45 139863703676608 "GET /projects/ HTTP/1.1" 500 92567
+INFO 2025-10-30 12:30:10,286 basehttp 45 139863703676608 "GET /dashboard/ HTTP/1.1" 200 23529
+WARNING 2025-10-30 12:30:10,435 log 45 139863712069312 Not Found: /api/dashboard/recent-activity/
+WARNING 2025-10-30 12:30:10,438 basehttp 45 139863712069312 "GET /api/dashboard/recent-activity/ HTTP/1.1" 404 7312
+INFO 2025-10-30 12:30:10,451 basehttp 45 139863703676608 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 12:30:10,454 basehttp 45 139863694235328 "GET /api/system/health/ HTTP/1.1" 200 48
+WARNING 2025-10-30 12:30:11,009 log 45 139863684794048 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:30:11,010 basehttp 45 139863684794048 "GET /ws/notifications/ HTTP/1.1" 404 7177
+ERROR 2025-10-30 12:30:11,232 log 45 139863694235328 Internal Server Error: /companies/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list' not found. 'list' is not a valid view function or pattern name.
+ERROR 2025-10-30 12:30:11,235 basehttp 45 139863694235328 "GET /companies/ HTTP/1.1" 500 165397
+INFO 2025-10-30 12:30:49,546 autoreload 45 139864053152704 /app/companies/urls.py changed, reloading.
+INFO 2025-10-30 12:30:50,448 autoreload 68 139759189208000 Watching for file changes with StatReloader
+ERROR 2025-10-30 12:32:17,144 log 68 139758831396544 Internal Server Error: /companies/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list' not found. 'list' is not a valid view function or pattern name.
+ERROR 2025-10-30 12:32:17,148 basehttp 68 139758831396544 "GET /companies/ HTTP/1.1" 500 165629
+WARNING 2025-10-30 12:32:31,905 log 68 139758823003840 Not Found: /ws/notifications/
+WARNING 2025-10-30 12:32:31,906 basehttp 68 139758823003840 "GET /ws/notifications/ HTTP/1.1" 404 7177
+ERROR 2025-10-30 12:32:33,778 log 68 139758831396544 Internal Server Error: /companies/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list' not found. 'list' is not a valid view function or pattern name.
+ERROR 2025-10-30 12:32:33,781 basehttp 68 139758831396544 "GET /companies/ HTTP/1.1" 500 165492
+INFO 2025-10-30 12:32:55,548 autoreload 68 139759189208000 /app/contacts/urls.py changed, reloading.
+INFO 2025-10-30 12:32:56,407 autoreload 100 139936198663104 Watching for file changes with StatReloader
+ERROR 2025-10-30 12:33:01,272 log 100 139935857243840 Internal Server Error: /companies/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'list' not found. 'list' is not a valid view function or pattern name.
+ERROR 2025-10-30 12:33:01,284 basehttp 100 139935857243840 "GET /companies/ HTTP/1.1" 500 165730
+INFO 2025-10-30 12:33:03,325 basehttp 100 139935848851136 "GET /api/dashboard/stats/ HTTP/1.1" 200 162
+INFO 2025-10-30 12:33:03,325 basehttp 100 139935837312704 "GET /api/system/health/ HTTP/1.1" 200 48
+ERROR 2025-10-30 12:33:03,390 log 100 139935857243840 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/app/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/app/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/app/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'company_list' not found. 'company_list' is not a valid view function or pattern name.
+ERROR 2025-10-30 12:33:03,393 basehttp 100 139935857243840 "GET /dashboard/ HTTP/1.1" 500 167330
+INFO 2025-10-30 12:33:31,006 autoreload 100 139936198663104 /app/contacts/urls.py changed, reloading.
+INFO 2025-10-30 12:33:31,885 autoreload 107 140573025860544 Watching for file changes with StatReloader
+INFO 2025-10-30 12:33:42,168 autoreload 107 140573025860544 /app/companies/urls.py changed, reloading.
+INFO 2025-10-30 12:33:42,979 autoreload 111 140570069334976 Watching for file changes with StatReloader
