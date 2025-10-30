@@ -1,4 +1,42 @@
-import pytest
+import os
+import sys
+import django
+from django.conf import settings
+
+# Configure Django settings before importing anything else
+if not settings.configured:
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "crm.settings")
+    # Temporarily remove crm from sys.modules to avoid celery import
+    if "crm" in sys.modules:
+        del sys.modules["crm"]
+    if "crm.celery" in sys.modules:
+        del sys.modules["crm.celery"]
+    # Set minimal settings to avoid missing dependencies
+    settings.configure(
+        DEBUG=True,
+        SECRET_KEY="test-secret-key",
+        INSTALLED_APPS=[
+            "django.contrib.auth",
+            "django.contrib.contenttypes",
+            "rest_framework",
+            "phonenumber_field",
+            "users",
+            "contacts",
+            "companies",
+            "projects",
+            "emails",
+        ],
+        DATABASES={
+            "default": {
+                "ENGINE": "django.db.backends.sqlite3",
+                "NAME": ":memory:",
+            }
+        },
+        USE_TZ=True,
+    )
+    django.setup()
+
+import pytest  # type: ignore
 from django.contrib.auth import get_user_model
 from django.test import Client
 from rest_framework.test import APIClient

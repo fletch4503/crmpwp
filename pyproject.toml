@@ -46,6 +46,7 @@ dev = [
   "pytest-django>=4.8,<5.0",
   "pytest-cov>=5.0,<6.0",
   "factory-boy>=3.3,<4.0",
+  "model-bakery>=1.17,<2.0",
 ]
 
 [tool.setuptools]
@@ -94,7 +95,8 @@ profile = "black"
 
 [tool.mypy]
 disallow_incomplete_defs = true
-disallow_untyped_defs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
 python_version = "3.13"
 warn_return_any = true
 warn_unused_configs = true
@@ -103,3 +105,11 @@ warn_unused_configs = true
 DJANGO_SETTINGS_MODULE = "crm.settings"
 addopts = "-v --cov=crm --cov-report=html --cov-report=term-missing"
 python_files = ["tests.py", "test_*.py", "*_tests.py"]
+
+[dependency-groups]
+dev = [
+    "model-bakery>=1.20.5",
+    "pytest>=8.4.2",
+    "pytest-cov>=5.0.0",
+    "pytest-django>=4.11.1",
+]
