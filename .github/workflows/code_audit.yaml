@@ -1,4 +1,4 @@
-name: Code Audit & Quality Checks
+name: AI Code Review
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  lint_and_test:
+  ai-code-review:
     runs-on: ubuntu-latest
 
     steps:
@@ -40,17 +40,12 @@ jobs:
     #     pip install bandit
     #     bandit -r .
 
-  ai_code_review:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
-
-      - name: AI Code Reviewer
-        # uses: fletch4503/ai-code-reviewer@master
-        uses: fletch4503/ai-code-reviewer@master
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # The GITHUB_TOKEN is there by default so you just need to keep it like it is and not necessarily need to add it as secret as it will throw an error. [More Details](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret)
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_API_MODEL: "gpt-4" # Optional: defaults to "gpt-4"
-          exclude: "**/*.json,**/*.md" # Optional: exclude patterns separated by commas
+    - name: AI Code Reviewer
+      # uses: fletch4503/ai-code-reviewer@master
+      uses: fletch4503/ai-code-reviewer@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # The GITHUB_TOKEN is there by default so you just need to keep it like it is and not necessarily need to add it as secret as it will throw an error. [More Details](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret)
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      with:  
+        OPENAI_API_MODEL: "gpt-4" # Optional: defaults to "gpt-4"
+        exclude: "**/*.json,**/*.md" # Optional: exclude patterns separated by commas
