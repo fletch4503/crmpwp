@@ -81,6 +81,7 @@ docker-compose up -d --build
 ```
 
 ### 3. Инициализация данных
+
 ```bash
 # Войти в контейнер приложения
 docker-compose exec web bash
@@ -96,6 +97,7 @@ python manage.py createsuperuser
 ```
 
 ### 4. Доступ к приложению
+
 - **Веб-интерфейс**: http://localhost:8000
 - **Django Admin**: http://localhost:8000/admin/
 - **API документация**: http://localhost:8000/api/

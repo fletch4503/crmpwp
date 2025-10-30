@@ -1,0 +1,15 @@
+docker-compose exec web python manage.py generate_test_data           - генерируем тестовые данные
+
+docker-compose exec db psql -U postgres -d pwp_users_db -c "\d users_objectpermission"
+                                                                      - выводим свойства таблицы users_objectpermission
+docker-compose exec web python manage.py migrate users --fake 0003
+
+docker-compose exec web python manage.py generate_test_data --clear
+
+docker-compose up --build -d
+
+docker-compose stop
+
+docker-compose exec web python manage.py makemigrations
+
+docker-compose exec web python manage.py migrate

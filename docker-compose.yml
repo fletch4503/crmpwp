@@ -61,6 +61,13 @@ services:
       #   condition: service_healthy
     env_file:
       - .env
+    develop:
+      watch:
+        - action: sync+restart
+          path: .
+          target: /app
+        - action: rebuild
+          path: ./pyproject.toml
       #    environment:
       # - DJANGO_SETTINGS_MODULE=crm.settings
       #      - DATABASE_URL=postgresql://crm_user:NS3RakCpILMlgLu1@db:5432/crm_db

@@ -152,7 +152,7 @@ class Command(BaseCommand):
                 user=random.choice(users),
                 name=fake.company(),
                 inn=self.generate_inn(),
-                address=fake.address(),
+                legal_address=fake.address(),
             )
 
             # Создаем заказы и оплаты для некоторых компаний
@@ -174,7 +174,8 @@ class Command(BaseCommand):
             # Создаем заказ
             order = Order.objects.create(
                 company=company,
-                number=f"ORD-{random.randint(1000, 9999)}",
+                user=company.user,  # Добавлено
+                order_number=f"ORD-{random.randint(1000, 9999)}",
                 amount=random.randint(10000, 500000),
             )
 
@@ -183,8 +184,10 @@ class Command(BaseCommand):
                 Payment.objects.create(
                     company=company,
                     order=order,
+                    user=company.user,  # Добавлено
                     amount=order.amount,
-                    paid_at=timezone.now() - timedelta(days=random.randint(1, 30)),
+                    payment_date=timezone.now().date()
+                    - timedelta(days=random.randint(1, 30)),
                 )
 
     def create_test_contacts(self, count, users, companies):
@@ -209,7 +212,7 @@ class Command(BaseCommand):
             )
 
             contacts.append(contact)
-            self.stdout.write(f"  ✓ Создан контакт: {contact.get_full_name()}")
+            self.stdout.write(f"  ✓ Создан контакт: {contact.full_name}")
 
         return contacts
 

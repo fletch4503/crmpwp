@@ -39,7 +39,11 @@ class Project(models.Model):
 
     # Идентификаторы из email
     inn = models.CharField(
-        _("ИНН"), max_length=12, blank=True, help_text=_("ИНН из email")
+        _("ИНН"),
+        max_length=12,
+        blank=True,
+        help_text=_("ИНН из email"),
+        null=True,
     )
     project_number = models.CharField(
         _("project number"),

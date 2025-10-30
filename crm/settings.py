@@ -204,9 +204,9 @@ CORS_ALLOWED_ORIGINS = config(
 )
 
 # Allauth settings
-ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_SIGNUP_FIELDS = ["email*", "password1*", "password2*"]
-ACCOUNT_USERNAME_REQUIRED = False
+# ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_LOGIN_METHODS = {"email"}
 ACCOUNT_EMAIL_VERIFICATION = "none"  # Отключить верификацию email для разработки
 ACCOUNT_ADAPTER = "users.adapters.AccountAdapter"

@@ -243,7 +243,7 @@ class Command(BaseCommand):
                 inn=inn,
                 defaults={
                     "name": fake.company(),
-                    "address": fake.address(),
+                    "actual_address": fake.address(),
                     "user": random.choice(users),
                 },
             )
@@ -318,7 +318,8 @@ class Command(BaseCommand):
                 order_amount = random.randint(50000, 500000)
                 order = Order.objects.create(
                     company=company,
-                    number=f"ORD-{company.id}-{i+1:03d}",
+                    user=company.user,
+                    order_number=f"ORD-{company.id}-{i+1:03d}",
                     amount=order_amount,
                 )
 
@@ -330,11 +331,13 @@ class Command(BaseCommand):
                     if remaining_amount <= 0:
                         break
 
-                    payment_amount = random.randint(10000, remaining_amount)
+                    payment_amount = random.randint(1, remaining_amount)
                     Payment.objects.create(
                         company=company,
+                        user=company.user,
                         order=order,
                         amount=payment_amount,
+                        payment_date=timezone.now().date(),
                     )
                     remaining_amount -= payment_amount
 
@@ -349,14 +352,17 @@ class Command(BaseCommand):
         for user in random.sample(
             users, min(len(users), 5)
         ):  # Up to 5 users with email
-            credentials = EmailCredentials.objects.create(
+            credentials, created = EmailCredentials.objects.get_or_create(
                 user=user,
-                email=fake.email(),
-                server=random.choice(servers),
-                use_ssl=True,
-                is_active=True,
+                defaults={
+                    "email": fake.email(),
+                    "server": random.choice(servers),
+                    "use_ssl": True,
+                    "is_active": True,
+                },
             )
-            email_credentials.append(credentials)
+            if created:
+                email_credentials.append(credentials)
 
         # Create email messages
         subjects = [
@@ -394,18 +400,20 @@ class Command(BaseCommand):
             if related_company:
                 body += f"\n\nИНН компании: {related_company.inn}"
 
+            message_id = f"<{fake.uuid4()}@{fake.domain_name()}>"
             EmailMessage.objects.create(
                 user=credentials.user,
                 credentials=credentials,
                 subject=random.choice(subjects),
-                body=body,
+                body_text=body,
                 sender=fake.email(),
                 recipients_to=fake.email(),
                 is_read=fake.boolean(chance_of_getting_true=60),
                 is_important=fake.boolean(chance_of_getting_true=20),
                 has_attachments=fake.boolean(chance_of_getting_true=30),
                 is_processed=fake.boolean(chance_of_getting_true=80),
-                parsed_inn=related_company.inn if related_company else None,
+                # parsed_inn=related_company.inn if related_company else None,
+                message_id=message_id,
                 related_project=related_project,
                 related_company=related_company,
                 received_at=fake.date_time_between(
@@ -421,18 +429,18 @@ class Command(BaseCommand):
                 EmailSyncLog.objects.create(
                     credentials=credentials,
                     status=random.choice(["success", "failed", "running"]),
-                    messages_processed=random.randint(0, 20),
-                    error_message=(
-                        fake.text(max_nb_chars=100)
+                    emails_processed=random.randint(0, 20),
+                    errors=(
+                        [fake.text(max_nb_chars=100)]
                         if random.choice([True, False])
-                        else ""
+                        else []
                     ),
                     started_at=fake.date_time_between(
                         start_date="-7d",
                         end_date="now",
                         tzinfo=timezone.get_current_timezone(),
                     ),
-                    finished_at=(
+                    completed_at=(
                         fake.date_time_between(
                             start_date="-7d",
                             end_date="now",

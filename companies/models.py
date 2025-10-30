@@ -17,7 +17,11 @@ class Company(models.Model):
     )
     name = models.CharField(_("name"), max_length=200)
     inn = models.CharField(
-        _("ИНН"), max_length=12, unique=True, help_text=_("10 or 12 digits")
+        _("ИНН"),
+        max_length=12,
+        unique=True,
+        help_text=_("10 or 12 digits"),
+        null=True,
     )
     legal_address = models.TextField(_("legal address"))
     actual_address = models.TextField(_("actual address"), blank=True)
