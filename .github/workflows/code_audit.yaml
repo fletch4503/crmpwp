@@ -23,7 +23,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        curl -LsSf https://astral.sh/uv/install.sh | sh
+        # curl -LsSf https://astral.sh/uv/install.sh | sh
+        astral-sh/setup-uv@v4
         uv sync --dev
         # uv install
 
