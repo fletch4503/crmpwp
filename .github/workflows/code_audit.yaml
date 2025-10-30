@@ -48,5 +48,12 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # The GITHUB_TOKEN is there by default so you just need to keep it like it is and not necessarily need to add it as secret as it will throw an error. [More Details](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret)
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} 
-        OPENAI_API_MODEL: "gpt-4" # Optional: defaults to "gpt-4"
-        exclude: "**/*.json,**/*.md" # Optional: exclude patterns separated by commas
+      with:  
+        openai_light_model: "gpt-3.5-turbo"  # Модель для лёгких задач
+        openai_heavy_model: "gpt-4"          # Модель для сложных задач
+        language: "ru-RU"                    # Язык отзывов
+        review_simple_changes: false         # Не проверять простые изменения
+        review_comment_lgtm: false           # Не комментировать LGTM
+        path_filters: "!**/*.json,!**/*.md"  # Исключить паттерны (аналог exclude)
+        # OPENAI_API_MODEL: "gpt-4" # Optional: defaults to "gpt-4"
+        # exclude: "**/*.json,**/*.md" # Optional: exclude patterns separated by commas
