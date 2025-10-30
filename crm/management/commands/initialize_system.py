@@ -287,7 +287,7 @@ class Command(BaseCommand):
             return
 
         # Создаем credentials
-        credentials = EmailCredentials.objects.create(
+        EmailCredentials.objects.create(
             user=admin_user,
             email=email,
             server=server,

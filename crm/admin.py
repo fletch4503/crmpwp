@@ -5,8 +5,6 @@ from django.db.models import Count
 from django.urls import reverse
 from django.utils.html import format_html
 
-from .models import *  # Import all models from crm app if any
-
 
 # Custom admin site
 class CRMAdminSite(admin.AdminSite):

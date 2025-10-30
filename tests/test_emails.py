@@ -172,7 +172,7 @@ class TestEmailAPIViews:
             f"/api/emails/messages/{email_message.id}/", data
         )
         assert response.status_code == status.HTTP_200_OK
-        assert response.data["is_read"] == True
+        assert response.data["is_read"]
 
     def test_email_mark_important_api(self, authenticated_client, email_message):
         """Test mark email as important API."""
@@ -181,7 +181,7 @@ class TestEmailAPIViews:
             f"/api/emails/messages/{email_message.id}/", data
         )
         assert response.status_code == status.HTTP_200_OK
-        assert response.data["is_important"] == True
+        assert response.data["is_important"]
 
 
 class TestEmailPermissions:

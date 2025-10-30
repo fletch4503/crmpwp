@@ -83,7 +83,7 @@ class EmailParser:
 
         # Ищем имена
         name_pattern = r"\b([A-ZА-Я][a-zа-яё]+(?:\s+[A-ZА-Я][a-zа-яё]+)*)\b"
-        names = re.findall(name_pattern, text)
+        re.findall(name_pattern, text)
 
         # Создаем контакты на основе найденных данных
         for email in emails:

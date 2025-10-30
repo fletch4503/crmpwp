@@ -31,9 +31,9 @@ class TestProjectModel:
     def test_project_status_choices(self, user):
         """Test project status choices."""
         valid_statuses = ["draft", "active", "completed", "on_hold", "cancelled"]
-        for status in valid_statuses:
-            project = baker.make(Project, user=user, status=status)
-            assert project.status == status
+        for project_status in valid_statuses:
+            project = baker.make(Project, user=user, status=project_status)
+            assert project.status == project_status
 
     def test_project_priority_choices(self, user):
         """Test project priority choices."""

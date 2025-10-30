@@ -261,11 +261,11 @@ class Command(BaseCommand):
             cred = credentials[user.id]
 
             # Выбираем случайные связанные объекты
-            related_contact = (
-                random.choice(contacts)
-                if contacts and random.choice([True, False])
-                else None
-            )
+            # related_contact = (
+            #     random.choice(contacts)
+            #     if contacts and random.choice([True, False])
+            #     else None
+            # )
             related_project = (
                 random.choice(projects)
                 if projects and random.choice([True, False])

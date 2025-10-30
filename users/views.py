@@ -282,7 +282,7 @@ class SystemHealthAPIView(APIView):
         try:
             User.objects.count()
             db_status = True
-        except Exception as e:
+        except Exception:
             db_status = False
 
         # Проверка Redis
@@ -291,7 +291,7 @@ class SystemHealthAPIView(APIView):
 
             cache.set("health_check", "ok", 10)
             redis_status = cache.get("health_check") == "ok"
-        except:
+        except Exception:
             redis_status = False
 
         # Проверка email синхронизации
@@ -308,7 +308,7 @@ class SystemHealthAPIView(APIView):
             )
 
             email_sync_status = last_sync and last_sync.status == "success"
-        except:
+        except Exception:
             email_sync_status = False
 
         return Response(
@@ -344,13 +344,12 @@ def user_settings_ajax(request):
     """
     AJAX view для получения настроек пользователя.
     """
-    user = request.user
     return JsonResponse(
         {
-            "email_notifications": getattr(user, "email_notifications", True),
-            "sms_notifications": getattr(user, "sms_notifications", False),
-            "theme": getattr(user, "theme", "light"),
-            "language": getattr(user, "language", "ru"),
+            "email_notifications": getattr(request.user, "email_notifications", True),
+            "sms_notifications": getattr(request.user, "sms_notifications", False),
+            "theme": getattr(request.user, "theme", "light"),
+            "language": getattr(request.user, "language", "ru"),
         }
     )
 
@@ -361,7 +360,6 @@ def update_user_settings_ajax(request):
     """
     AJAX view для обновления настроек пользователя.
     """
-    user = request.user
 
     # Обновляем настройки (здесь можно добавить поля в модель User)
     # Пока просто возвращаем успех
@@ -372,6 +370,7 @@ class SettingsView(LoginRequiredMixin, TemplateView):
     """
     Страница настроек пользователя.
     """
+
     template_name = "users/settings.html"
 
     def get_context_data(self, **kwargs):

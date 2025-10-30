@@ -234,16 +234,6 @@ class Command(BaseCommand):
         self.stdout.write(f"Creating {count} companies...")
 
         companies = []
-        industries = [
-            "IT",
-            "Строительство",
-            "Производство",
-            "Торговля",
-            "Финансы",
-            "Образование",
-            "Медицина",
-            "Транспорт",
-        ]
 
         for i in range(count):
             # Generate unique INN (10 digits)
@@ -266,7 +256,7 @@ class Command(BaseCommand):
         self.stdout.write(f"Creating {count} contacts...")
 
         for i in range(count):
-            contact = Contact.objects.create(
+            Contact.objects.create(
                 user=random.choice(users),
                 first_name=fake.first_name(),
                 last_name=fake.last_name(),
@@ -404,7 +394,7 @@ class Command(BaseCommand):
             if related_company:
                 body += f"\n\nИНН компании: {related_company.inn}"
 
-            email = EmailMessage.objects.create(
+            EmailMessage.objects.create(
                 user=credentials.user,
                 credentials=credentials,
                 subject=random.choice(subjects),
