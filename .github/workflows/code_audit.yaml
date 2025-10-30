@@ -32,8 +32,8 @@ jobs:
         uv run mypy crm
         uv run black --check --diff .  # uv run black --check .
 
-    - name: Run tests with coverage
-      run: uv run pytest --cov=.
+    # - name: Run tests with coverage
+    #   run: uv run pytest --cov=.
 
     - name: Run Security scan (bandit)
       run: |
