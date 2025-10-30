@@ -215,7 +215,7 @@ class ProjectConsumer(AsyncWebsocketConsumer):
             return Project.objects.filter(
                 id=self.project_id, user=self.user, is_active=True
             ).exists()
-        except:
+        except Exception:
             return False
 
     async def receive(self, text_data):
@@ -558,7 +558,7 @@ class EmailConsumer(AsyncWebsocketConsumer):
             email.is_read = True
             email.save()
             return True
-        except:
+        except Exception:
             return False
 
     @database_sync_to_async
@@ -573,7 +573,7 @@ class EmailConsumer(AsyncWebsocketConsumer):
             email.is_important = not email.is_important
             email.save()
             return True, email.is_important
-        except:
+        except Exception:
             return False, False
 
     # Обработчики событий группы

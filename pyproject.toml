@@ -40,7 +40,6 @@ dev = [
   "black>=24.0,<25.0",
   "ruff>=0.14.2",
   "isort>=5.13,<6.0",
-  "flake8>=7.0,<8.0",
   "mypy>=1.11,<2.0",
   "pytest>=8.0,<9.0",
   "pytest-django>=4.8,<5.0",
@@ -52,8 +51,41 @@ dev = [
 [tool.setuptools]
 packages = ["crm"]
 
+[tool.ruff]
+# Исключить стандартные директории
+exclude = [
+  ".bzr",
+  ".direnv",
+  ".eggs",
+  ".git",
+  ".git-references",
+  ".hg",
+  ".mypy_cache",
+  ".nox",
+  ".pants.d",
+  ".pytype",
+  ".ruff_cache",
+  ".svn",
+  ".tox",
+  ".venv",
+  "__pypackages__",
+  "_build",
+  "buck-out",
+  "build",
+  "dist",
+  "node_modules",
+  "venv",
+]
+indent-width = 4
+# line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+ignore = ["F401", "E501"] # Отключает проверку неиспользуемых импортов и длинных строк
+select = ["E", "F"]
+
 [tool.black]
-line-length = 88
+# line-length = 88
 target-version = ['py313']
 
 [tool.isort]

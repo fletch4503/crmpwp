@@ -1,11 +1,19 @@
-import json
+# import json
 from decimal import Decimal
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.db.models import Q, Sum, Count
+from django.db.models import (
+    Q,
+    Sum,
+    # Count,
+)
 from django.http import JsonResponse
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import (
+    # render,
+    redirect,
+    # get_object_or_404,
+)
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.decorators.http import require_POST
@@ -15,10 +23,11 @@ from django.views.generic import (
     CreateView,
     UpdateView,
     DeleteView,
-    TemplateView,
+    # TemplateView,
 )
 from rest_framework import status
-from rest_framework.decorators import api_view, permission_classes
+
+# from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -33,6 +42,7 @@ from .forms import (
     OrderSearchForm,
 )
 from .models import Company, Order, Payment, CompanyNote
+from logly import logger
 
 
 class CompanyListView(LoginRequiredMixin, ListView):
@@ -543,6 +553,7 @@ class CompanyAPIView(APIView):
     """
 
     permission_classes = [IsAuthenticated, RBACPermission]
+    logger.info(f"permission_classes: {permission_classes}")
     required_permissions = ["view_company"]
 
     def get(self, request):
