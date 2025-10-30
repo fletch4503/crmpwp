@@ -222,7 +222,13 @@ class EmailSyncLogAdmin(admin.ModelAdmin):
     )
     list_filter = ("status", "started_at", "credentials__user")
     search_fields = ("credentials__email",)
-    readonly_fields = ("id", "started_at", "completed_at", "duration_seconds", "duration_display")
+    readonly_fields = (
+        "id",
+        "started_at",
+        "completed_at",
+        "duration_seconds",
+        "duration_display",
+    )
     ordering = ("-started_at",)
 
     fieldsets = (
@@ -230,7 +236,12 @@ class EmailSyncLogAdmin(admin.ModelAdmin):
         (
             _("Время выполнения"),
             {
-                "fields": ("started_at", "completed_at", "duration_seconds", "duration_display"),
+                "fields": (
+                    "started_at",
+                    "completed_at",
+                    "duration_seconds",
+                    "duration_display",
+                ),
             },
         ),
         (
