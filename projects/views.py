@@ -20,7 +20,6 @@ from rest_framework.decorators import api_view
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
 from users.permissions import RBACPermission, check_user_permission
 from .forms import (
     ProjectForm,
@@ -30,6 +29,7 @@ from .forms import (
     ProjectEmailFilterForm,
 )
 from .models import Project, ProjectEmail, ProjectNote
+from logly import logger
 
 
 class ProjectListView(LoginRequiredMixin, ListView):
@@ -46,12 +46,8 @@ class ProjectListView(LoginRequiredMixin, ListView):
         queryset = (
             Project.objects.filter(user=self.request.user, is_active=True)
             .select_related("company", "contact")
-            .prefetch_related(
-                Prefetch(
-                    "emails", queryset=ProjectEmail.objects.order_by("-received_at")[:5]
-                )
-            )
         )
+        logger.info(f"projects: {queryset}")
 
         # Поиск
         search_query = self.request.GET.get("q", "")
@@ -122,10 +118,9 @@ class ProjectListView(LoginRequiredMixin, ListView):
         projects = Project.objects.filter(user=self.request.user, is_active=True)
         context["stats"] = {
             "total_projects": projects.count(),
-            "active_projects": projects.filter(status="in_progress").count(),
+            "in_progress_projects": projects.filter(status="in_progress").count(),
             "completed_projects": projects.filter(status="completed").count(),
             "overdue_projects": sum(1 for p in projects if p.is_overdue),
-            "new_projects": projects.filter(status="new").count(),
         }
 
         return context

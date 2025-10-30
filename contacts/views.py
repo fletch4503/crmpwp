@@ -95,12 +95,15 @@ class ContactListView(LoginRequiredMixin, ListView):
             user=self.request.user, data=self.request.GET
         )
         context["groups"] = ContactGroup.objects.filter(user=self.request.user)
-        context["total_contacts"] = Contact.objects.filter(
-            user=self.request.user, is_active=True
-        ).count()
-        context["favorite_contacts"] = Contact.objects.filter(
-            user=self.request.user, is_favorite=True
-        ).count()
+
+        # Статистика
+        contacts = Contact.objects.filter(user=self.request.user, is_active=True)
+        context["stats"] = {
+            "total_contacts": contacts.count(),
+            "active_contacts": contacts.filter(is_active=True).count(),
+            "favorite_contacts": contacts.filter(is_favorite=True).count(),
+            "contacts_with_email": contacts.exclude(email="").count(),
+        }
         return context
 
 

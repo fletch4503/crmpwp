@@ -1,0 +1,4 @@
+Добавь шаблоны страниц приложений contacts (contact_list.html) и projects (project_list.html)
+по аналогии с шаблоном приложения company (company_list.html) с соответствующим расположением
+для contacts в папке contacts/templates/contacts и для projects в projects/templates/projects.
+На всех шаблонах должен быть раздел поиска и список с основными полями таблиц каждого приложения.

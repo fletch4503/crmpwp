@@ -1,0 +1,276 @@
+{% extends "base.html" %}
+
+{% block title %}Контакты - CRM Система{% endblock %}
+{% block nav_menu %} {% include "navmenu.html" %} {% endblock %}
+{% block mobile_menu %} {% include "mobilemenu.html" %} {% endblock %}
+{% block breadcrumbs %}
+    <nav class="text-sm breadcrumbs">
+        <ul>
+            <li><a href="{% url 'users:dashboard' %}">Главная</a></li>
+            <li>Контакты</li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="max-w-7xl mx-auto">
+        <!-- Статистика -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+            <div class="card bg-base-100 shadow-lg">
+                <div class="card-body p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-sm font-medium text-base-content/70">Всего контактов</h3>
+                            <p class="text-2xl font-bold text-primary">{{ stats.total_contacts }}</p>
+                        </div>
+                        <i class="fas fa-users text-3xl text-primary/50"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-lg">
+                <div class="card-body p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-sm font-medium text-base-content/70">Активные</h3>
+                            <p class="text-2xl font-bold text-success">{{ stats.active_contacts }}</p>
+                        </div>
+                        <i class="fas fa-user-check text-3xl text-success/50"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-lg">
+                <div class="card-body p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-sm font-medium text-base-content/70">Избранные</h3>
+                            <p class="text-2xl font-bold text-warning">{{ stats.favorite_contacts }}</p>
+                        </div>
+                        <i class="fas fa-star text-3xl text-warning/50"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-lg">
+                <div class="card-body p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-sm font-medium text-base-content/70">С email</h3>
+                            <p class="text-2xl font-bold text-info">{{ stats.contacts_with_email }}</p>
+                        </div>
+                        <i class="fas fa-envelope text-3xl text-info/50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Фильтры и поиск -->
+        <div class="card bg-base-100 shadow-lg mb-6">
+            <div class="card-body">
+                <form method="get" class="flex flex-col lg:flex-row gap-4">
+                    <div class="flex-1">
+                        <input type="text" name="q" placeholder="Поиск по имени, email, телефону, компании..."
+                               value="{{ request.GET.q }}" class="input input-bordered w-full">
+                    </div>
+
+                    <div class="flex gap-2">
+                        <select name="status" class="select select-bordered">
+                            <option value="">Все статусы</option>
+                            <option value="active" {% if request.GET.status == 'active' %}selected{% endif %}>Активные
+                            </option>
+                            <option value="inactive" {% if request.GET.status == 'inactive' %}selected{% endif %}>
+                                Неактивные
+                            </option>
+                        </select>
+
+                        <label class="label cursor-pointer">
+                            <input type="checkbox" name="is_favorite" {% if request.GET.is_favorite %}checked{% endif %}
+                                   class="checkbox">
+                            <span class="label-text ml-2">Избранные</span>
+                        </label>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                            Поиск
+                        </button>
+                        <a href="{% url 'contacts:contact_list' %}" class="btn btn-outline">
+                            <i class="fas fa-times"></i>
+                            Сброс
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Кнопка создания -->
+        <div class="mb-6">
+            <a href="{% url 'contacts:contact_create' %}" class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+                Добавить контакт
+            </a>
+        </div>
+
+        <!-- Список контактов -->
+        <div class="card bg-base-100 shadow-lg">
+            <div class="card-body">
+                {% if contacts %}
+                    <div class="overflow-x-auto">
+                        <table class="table table-zebra w-full">
+                            <thead>
+                            <tr>
+                                <th>Имя</th>
+                                <th>Компания</th>
+                                <th>Должность</th>
+                                <th>Email</th>
+                                <th>Телефон</th>
+                                <th>Статус</th>
+                                <th>Действия</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for contact in contacts %}
+                                <tr>
+                                    <td>
+                                        <div class="flex items-center space-x-3">
+                                            <div class="avatar placeholder">
+                                                <div class="bg-neutral-focus text-neutral-content rounded-full w-8">
+                                                    <span class="text-xs">{{ contact.first_name|first|upper }}</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="font-bold">
+                                                    <a href="{% url 'contacts:contact_detail' contact.pk %}"
+                                                       class="link link-primary">
+                                                        {{ contact.full_name }}
+                                                    </a>
+                                                </div>
+                                                {% if contact.is_favorite %}
+                                                    <div class="text-sm text-warning">
+                                                        <i class="fas fa-star"></i> Избранный
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>{{ contact.company|default:"—" }}</td>
+                                    <td>{{ contact.position|default:"—" }}</td>
+                                    <td>
+                                        {% if contact.email %}
+                                            <a href="mailto:{{ contact.email }}" class="link link-primary text-sm">
+                                                <i class="fas fa-envelope"></i> {{ contact.email }}
+                                            </a>
+                                        {% else %}
+                                            <span class="text-base-content/50">—</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if contact.phone %}
+                                            <a href="tel:{{ contact.phone }}" class="link link-primary text-sm">
+                                                <i class="fas fa-phone"></i> {{ contact.phone }}
+                                            </a>
+                                        {% else %}
+                                            <span class="text-base-content/50">—</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <div class="badge {% if contact.is_active %}badge-success{% else %}badge-warning{% endif %}">
+                                            {% if contact.is_active %}Активный{% else %}Неактивный{% endif %}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown dropdown-left">
+                                            <label tabindex="0" class="btn btn-ghost btn-sm">
+                                                <i class="fas fa-ellipsis-v"></i>
+                                            </label>
+                                            <ul tabindex="0"
+                                                class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                                <li><a href="{% url 'contacts:contact_detail' contact.pk %}">
+                                                    <i class="fas fa-eye"></i> Просмотр
+                                                </a></li>
+                                                <li><a href="{% url 'contacts:contact_update' contact.pk %}">
+                                                    <i class="fas fa-edit"></i> Редактировать
+                                                </a></li>
+                                                {#                                                <li>#}
+                                                {#                                                    <a href="{% url 'contacts:contact_toggle_favorite' contact.pk %}"#}
+                                                {#                                                       class="text-warning">#}
+                                                {#                                                       {% if contact.is_favorite %}#}
+                                                {#                                                           <i class="fas fa-star-half-alt"></i> Убрать из избранного#}
+                                                {#                                                       {% else %}#}
+                                                {#                                                           <i class="fas fa-star"></i> Добавить в избранное#}
+                                                {#                                                       {% endif %}#}
+                                                {#                                                    </a></li>#}
+                                                <li>
+                                                    <a href="{% url 'contacts:contact_delete' contact.pk %}"
+                                                       class="text-error"
+                                                       onclick="return confirm('Вы уверены, что хотите удалить этот контакт?')">
+                                                        <i class="fas fa-trash"></i> Удалить
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Пагинация -->
+                    {% if is_paginated %}
+                        <div class="flex justify-center mt-6">
+                            <div class="join">
+                                {% if page_obj.has_previous %}
+                                    <a href="?page=
+
+
+                                            {{ page_obj.previous_page_number }}{% for key,value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}"
+                                       class="join-item btn">«</a>
+                                {% endif %}
+
+                                <span class="join-item btn btn-active">
+                Страница {{ page_obj.number }} из {{ paginator.num_pages }}
+              </span>
+
+                                {% if page_obj.has_next %}
+                                    <a href="?page=
+
+
+                                            {{ page_obj.next_page_number }}{% for key,value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}"
+                                       class="join-item btn">»</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                {% else %}
+                    <div class="text-center py-12">
+                        <i class="fas fa-users text-6xl text-base-content/20 mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">Контакты не найдены</h3>
+                        <p class="text-base-content/70 mb-4">
+                            {% if request.GET %}
+                                Попробуйте изменить параметры поиска или
+                            {% endif %}
+                            добавьте первый контакт в систему.
+                        </p>
+                        <a href="{% url 'contacts:contact_create' %}" class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            Добавить контакт
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_scripts %}
+    <script>
+        // AJAX поиск (опционально, для будущего улучшения)
+        document.addEventListener('DOMContentLoaded', function () {
+            // Можно добавить AJAX функциональность для поиска без перезагрузки страницы
+        });
+    </script>
+{% endblock %}
