@@ -32,7 +32,7 @@ jobs:
         uv run flake8 .
         uv run mypy .
         # uv run black --check .
-        uv run black .
+        uv run black --check --diff .
 
     - name: Run tests with coverage
       run: uv run pytest --cov=.
