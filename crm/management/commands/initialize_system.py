@@ -5,7 +5,8 @@ from django.contrib.auth import get_user_model
 from django.db import transaction
 from django.conf import settings
 from getpass import getpass
-import requests
+
+# import requests  # Not used in this command, removing to avoid mypy issues
 
 from users.models import Role, Permission, UserRole, RolePermission
 from emails.models import EmailCredentials
