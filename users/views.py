@@ -31,8 +31,11 @@ from .forms import (
     CustomUserChangeForm,
     ProfileUpdateForm,
     TokenGenerationForm,
+    CustomLoginForm,
+    CustomSignupForm,
 )
-from .allauth_forms import CustomSignupForm, CustomLoginForm
+
+# from .allauth_forms import CustomSignupForm, CustomLoginForm
 from .models import User, Role, Permission, UserRole, RolePermission, AccessToken
 from .permissions import IsAdmin, RBACPermission
 
@@ -423,6 +426,11 @@ class CustomLoginView(FormView):
     form_class = CustomLoginForm
     success_url = reverse_lazy("users:dashboard")
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['request'] = self.request
+        return kwargs
+
     def form_valid(self, form):
         email = form.cleaned_data.get("login")
         password = form.cleaned_data.get("password")
@@ -458,6 +466,11 @@ class CustomRegisterView(FormView):
     template_name = "users/partials/register.html"
     form_class = CustomSignupForm
     success_url = reverse_lazy("users:dashboard")
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['request'] = self.request
+        return kwargs
 
     def form_valid(self, form):
         user = form.save(self.request)

@@ -9,7 +9,7 @@ app_name = "users"
 urlpatterns = [
     # Dashboard
     path("", views.DashboardView.as_view(), name="dashboard"),
-    path("dashboard/", views.DashboardView.as_view(), name="dashboard"),
+    # path("dashboard/", views.DashboardView.as_view(), name="dashboard"),
     # Authentication
     path("login/", views.CustomLoginView.as_view(), name="login"),
     path("register/", views.CustomRegisterView.as_view(), name="register"),
