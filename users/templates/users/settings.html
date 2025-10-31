@@ -3,12 +3,11 @@
 {% block title %}Настройки - CRM Система{% endblock %}
 {% block nav_menu %} {% include "partials/navmenu.html" %} {% endblock %}
 {% block mobile_menu %} {% include "partials/mobilemenu.html" %} {% endblock %}{% block breadcrumbs %}
-    <nav class="text-sm breadcrumbs">
-        <ul>
-            <li><a href="{% url 'users:dashboard' %}">Главная</a></li>
-            <li>Настройки</li>
-        </ul>
-    </nav>
+    <ul>
+        <li><a class="fa-solid fa-folder hover:underline cursor-pointer gap-2 items-center"
+               href="{% url 'users:dashboard' %}">Главная</a></li>
+        <li>Настройки</li>
+    </ul>
 {% endblock %}
 {% block content %}
     <div class="max-w-4xl mx-auto">
@@ -52,7 +51,9 @@
                             </h3>
                             <div class="form-control">
                                 <label class="label"><span class="label-text">Имя</span></label>
-                                <input type="text" class="grow text-sm" placeholder="Имя пользователя" name="Имя" id="user_data"/>
+                                <label for="user_data"></label>
+                                <input type="text" class="grow text-sm" placeholder="Имя пользователя" name="Имя"
+                                       id="user_data"/>
                             </div>
                         </div>
                     </div>
@@ -68,6 +69,7 @@
                                 <label class="label">
                                     <span class="label-text">Язык интерфейса</span>
                                 </label>
+                                <label for="language-select"></label>
                                 <select class="select select-bordered" id="language-select">
                                     <option value="ru" selected>Русский</option>
                                     <option value="en">English</option>
@@ -174,17 +176,16 @@
         function showNotification(title, message, level = 'info') {
             const notification = document.createElement('div');
             notification.className = `alert alert-${level} mb-2 notification-enter`;
-            notification.innerHTML = `
-        <div>
-            <h3 class="font-bold">${title}</h3>
-            <div class="text-xs">${message}</div>
-        </div>
-        <div class="flex-none">
-            <button class="btn btn-sm btn-circle btn-ghost" onclick="this.parentElement.parentElement.remove()">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-    `;
+            notification.innerHTML =
+                `<div>
+                        <h3 class="font-bold">${title}</h3>
+                        <div class="text-xs">${message}</div>
+                     </div>
+                    <div class="flex-none">
+                        <button class="btn btn-sm btn-circle btn-ghost" onclick="this.parentElement.parentElement.remove()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>`;
 
             const messagesDiv = document.getElementById('messages');
             messagesDiv.appendChild(notification);

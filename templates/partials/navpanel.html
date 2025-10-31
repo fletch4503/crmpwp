@@ -8,7 +8,8 @@
                 {% block mobile_menu %}{% include "partials/mobilemenu.html" %}{% endblock %}
             </ul>
         </div>
-        <a href="{% url 'users:dashboard' %}" class="btn btn-md normal-case text-xl hover:bg-gradient-to-r from-[#104458] to-[#00FFFF] shadow-lg">
+        <a href="{% url 'users:dashboard' %}"
+           class="btn btn-md normal-case text-xl hover:bg-gradient-to-r from-[#104458] to-[#00FFFF] shadow-lg">
             <i class="fas fa-crown text-primary"></i>
             TCB CRM Pro
         </a>
@@ -18,16 +19,17 @@
             {% block nav_menu %} {% include "partials/navmenu.html" %} {% endblock %}
         </ul>
     </div>
-    <div class="navbar-end">  <!-- Theme Toggle -->
+    <div class="navbar-end">
+        <!-- Theme Toggle -->
         <button id="theme-toggle" class="btn btn-ghost btn-circle">
             <i class="fas fa-moon"></i>
         </button>
         <div class="dropdown dropdown-end"> <!-- Notifications -->
             <label tabindex="0" class="btn btn-ghost btn-circle">
-                <div class="indicator">
+                <a class="indicator">
                     <i class="fas fa-bell"></i>
                     <span id="notification-count" class="badge badge-xs badge-primary indicator-item hidden">0</span>
-                </div>
+                </a>
             </label>
             <!-- Оповещения -->
             <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-80 bg-base-100 shadow">
@@ -69,7 +71,7 @@
     </div>
 </div>
 <script>
-        // Theme Toggle Script
+    // Theme Toggle Script
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
 

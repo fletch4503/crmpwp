@@ -2,7 +2,7 @@ from datetime import timedelta
 from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
@@ -117,6 +117,25 @@ class ProfileView(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         messages.success(self.request, _("Профиль успешно обновлен."))
         return super().form_valid(form)
+
+
+class AdminRequiredMixin(UserPassesTestMixin):
+    """Mixin для проверки прав администратора"""
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+
+class UserListView(AdminRequiredMixin, ListView):
+    """Представление списка пользователей для администраторов"""
+
+    model = User
+    template_name = "users/user_list.html"
+    context_object_name = "users"
+    paginate_by = 20
+
+    def get_queryset(self):
+        return User.objects.select_related().prefetch_related("user_roles__role").all()
 
 
 class TokenListView(LoginRequiredMixin, ListView):

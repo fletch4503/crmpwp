@@ -1,5 +1,6 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
+from django.contrib.auth.decorators import login_required
 
 from . import views
 
@@ -11,6 +12,7 @@ urlpatterns = [
     path("dashboard/", views.DashboardView.as_view(), name="dashboard"),
     # Profile
     path("profile/", views.ProfileView.as_view(), name="profile"),
+    path("userslist/", login_required(views.UserListView.as_view()), name="users_list"),
     # Settings
     path("settings/", views.SettingsView.as_view(), name="settings"),
     # Tokens
