@@ -4,7 +4,13 @@
 {% block title %}Дашборд - CRM Pro{% endblock %}
 {% block nav_menu %} {% include "partials/navmenu.html" %} {% endblock %}
 {% comment %} {% block mobile_menu %} {% include "partials/mobilemenu.html" %} {% endblock %} {% endcomment %}
-
+{% block breadcrumbs %}
+    <style>
+        .breadcrumbs {
+            display: none !important;
+        }
+    </style>
+{% endblock %}
 {% block sidebar %}
     <div class="card bg-base-100 shadow-xl">
         <div class="card-body">
@@ -13,21 +19,25 @@
                 Быстрые действия
             </h2>
             <div class="space-y-2">
-                <a href="{% url 'emails:credentials' %}" class="btn bg-gradient-to-r from-blue-500 to-blue-600 btn-block shadow-xl">
-                {% comment %} <a href="{% url 'emails:credentials' %}" class="btn bg-blue-500 btn-block"> {% endcomment %}
-                {% comment %} <a href="{% url 'emails:credentials' %}" class="btn bg-[#1A77F2] btn-primary btn-block"> {% endcomment %}
+                <a href="{% url 'emails:credentials' %}"
+                   class="btn bg-gradient-to-r from-blue-500 to-blue-600 btn-block shadow-xl">
+                    {% comment %} <a href="{% url 'emails:credentials' %}" class="btn bg-blue-500 btn-block"> {% endcomment %}
+                    {% comment %} <a href="{% url 'emails:credentials' %}" class="btn bg-[#1A77F2] btn-primary btn-block"> {% endcomment %}
                     <i class="fas fa-cog"></i>
                     Настроить Email
                 </a>
-                <a href="{% url 'projects:project_create' %}" class="btn bg-gradient-to-r from-green-500 to-green-600 btn-block shadow-xl">
+                <a href="{% url 'projects:project_create' %}"
+                   class="btn bg-gradient-to-r from-green-500 to-green-600 btn-block shadow-xl">
                     <i class="fas fa-plus"></i>
                     Новый проект
                 </a>
-                <a href="{% url 'companies:company_create' %}" class="btn bg-gradient-to-r from-purple-500 to-purple-600 btn-block shadow-xl">
+                <a href="{% url 'companies:company_create' %}"
+                   class="btn bg-gradient-to-r from-purple-500 to-purple-600 btn-block shadow-xl">
                     <i class="fas fa-plus"></i>
                     Новая компания
                 </a>
-                <a href="{% url 'contacts:contact_create' %}" class="btn bg-gradient-to-r from-orange-500 to-orange-600 btn-block shadow-xl">
+                <a href="{% url 'contacts:contact_create' %}"
+                   class="btn bg-gradient-to-r from-orange-500 to-orange-600 btn-block shadow-xl">
                     <i class="fas fa-plus"></i>
                     Новый контакт
                 </a>
@@ -100,9 +110,9 @@
                         <i class="fas fa-envelope"></i>
                     </div>
                 </div>
-            <div class="card-actions justify-end pt-4">
-                <a href="{% url 'emails:email_list' %}" class="btn btn-primary btn-sm">Показать все</a>
-            </div>
+                <div class="card-actions justify-end pt-4">
+                    <a href="{% url 'emails:email_list' %}" class="btn btn-primary btn-sm">Показать все</a>
+                </div>
             </div>
         </div>
 

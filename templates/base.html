@@ -28,11 +28,11 @@
 {% include "partials/navpanel.html" %}
 <!-- Main Content -->
 {% comment %} {% include "partials/maincontent.html" %} {% endcomment %}
-<div class="container px-0 py-1 pt-16">
-    <div class="breadcrumbs bg-gradient-to-r from-[#104458] to-[#00FFFF] h-8 text-sm text-white">
+<div class="container px-0 py-1 pt-14">
+    <div class="breadcrumbs bg-gradient-to-r from-[#104458] to-[#00FFFF] full-w-xs h-7 text-sm text-white shadow-lg">
         {% block breadcrumbs %}{% endblock breadcrumbs %} <!-- Индикатор приложения -->
-    </div>    
-    <div id="messages" class="mb-4"> <!-- Messages -->
+    </div>
+    <div id="messages" class="mb-2 shadow-lg"> <!-- Messages -->
         {% if messages %}
             {% for message in messages %}
                 <div class="alert alert-{{ message.tags|default:'info' }} mb-2">
@@ -55,7 +55,7 @@
     <!-- Page Content -->
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
         <!-- Sidebar -->
-        <div class="lg:col-span-1">
+        <div class="lg:col-span-1 shadow-lg">
             {% block sidebar %}{% endblock %}
         </div>
 
@@ -64,17 +64,18 @@
             {% block content %}{% endblock %}
         </div>
     </div>
-</div>    
+</div>
 <!-- Footer -->
-<footer class="footer footer-center p-4 bg-base-300 text-base-content mt-12">
+<footer class="footer footer-center p-4 bg-gradient-to-r from-[#104458] to-[#00FFFF] text-base-content mt-12">
     <div>
         <p>© 2025 PWP CRM Pro. Все права защищены.</p>
     </div>
 </footer>
-    <!-- WebSocket connection for real-time updates -->
-    {% if user.is_authenticated %} <script src="{% static 'js/websocket.js' %}"></script> {% endif %}
-    <!-- Scripts of mani page -->
-    <script src="{% static 'js/base_js.js' %}"></script>
-    {% block extra_scripts %}{% endblock %}
+<!-- WebSocket connection for real-time updates -->
+{% if user.is_authenticated %}
+    <script src="{% static 'js/websocket.js' %}"></script> {% endif %}
+<!-- Scripts of mani page -->
+<script src="{% static 'js/base_js.js' %}"></script>
+{% block extra_scripts %}{% endblock %}
 </body>
 </html>

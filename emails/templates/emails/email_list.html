@@ -5,12 +5,13 @@
 {% block nav_menu %} {% include "partials/navmenu.html" %} {% endblock %}
 {% block mobile_menu %} {% include "partials/mobilemenu.html" %} {% endblock %}
 {% block breadcrumbs %}
-    {% comment %} <div class="breadcrumbs text-sm text-white"> {% endcomment %}
-        <ul>
-            <li><a href="{% url 'users:dashboard' %}">Главная</a></li>
-            <li><a href="{% url 'emails:email_list' %}">Email</a></li>
-        </ul>
-    {% comment %} </div>       {% endcomment %}
+    <ul>
+        <li>
+            <a class="fa-solid fa-folder hover:underline cursor-pointer gap-2 items-center"
+               href="{% url 'users:dashboard' %}">Главная</a>
+        </li>
+        <li><a href="{% url 'emails:email_list' %}">Email</a></li>
+    </ul>
 {% endblock %}
 {% block sidebar %}
     <div class="card bg-base-100 shadow-xl">
@@ -307,6 +308,22 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                     {{ page_obj.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}"
                                class="join-item btn">«</a>
                         {% endif %}
@@ -317,6 +334,22 @@
 
                         {% if page_obj.has_next %}
                             <a href="?page=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -4,12 +4,13 @@
 {% block nav_menu %} {% include "partials/navmenu.html" %} {% endblock %}
 {% block mobile_menu %} {% include "partials/mobilemenu.html" %} {% endblock %}
 {% block breadcrumbs %}
-    <nav class="text-sm breadcrumbs">
-        <ul>
-            <li><a href="{% url 'users:dashboard' %}">Главная</a></li>
-            <li>Компании</li>
-        </ul>
-    </nav>
+    {#    <nav class="text-sm breadcrumbs">#}
+    <ul>
+        <li><a class="fa-solid fa-folder hover:underline cursor-pointer gap-2 items-center"
+               href="{% url 'users:dashboard' %}">Главная</a></li>
+        <li>Компании</li>
+    </ul>
+    {#    </nav>#}
 {% endblock %}
 
 {% block content %}
@@ -248,6 +249,8 @@
                                     <a href="?page=
 
 
+
+
                                             {{ page_obj.previous_page_number }}{% for key,value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}"
                                        class="join-item btn">«</a>
                                 {% endif %}
@@ -258,6 +261,8 @@
 
                                 {% if page_obj.has_next %}
                                     <a href="?page=
+
+
 
 
                                             {{ page_obj.next_page_number }}{% for key,value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}"

@@ -4,14 +4,12 @@
 {% block nav_menu %} {% include "partials/navmenu.html" %} {% endblock %}
 {% block mobile_menu %} {% include "partials/mobilemenu.html" %} {% endblock %}
 {% block breadcrumbs %}
-    {% comment %} <nav class="text-sm breadcrumbs"> {% endcomment %}
-        <ul>
-            <li><a href="{% url 'users:dashboard' %}">Главная</a></li>
-            <li>Проекты</li>
-        </ul>
-    {% comment %} </nav> {% endcomment %}
+    <ul>
+        <li><a class="fa-solid fa-folder hover:underline cursor-pointer gap-2 items-center"
+               href="{% url 'users:dashboard' %}">Главная</a></li>
+        <li>Проекты</li>
+    </ul>
 {% endblock %}
-
 {% block content %}
     <div class="max-w-7xl mx-auto">
         <!-- Статистика -->
@@ -264,6 +262,9 @@
 
 
 
+
+
+
                                             {{ page_obj.previous_page_number }}{% for key,value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}"
                                        class="join-item btn">«</a>
                                 {% endif %}
@@ -274,6 +275,9 @@
 
                                 {% if page_obj.has_next %}
                                     <a href="?page=
+
+
+
 
 
 
