@@ -1,0 +1,94 @@
+<div id="navbar" class="navbar fixed flex w-full top-0 z-50 bg-base-100 shadow-lg">
+    <div class="navbar-start"> <!-- Главная страница -->
+        <div class="dropdown">
+            <label tabindex="0" class="btn btn-ghost lg:hidden">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                {% block mobile_menu %}{% include "partials/mobilemenu.html" %}{% endblock %}
+            </ul>
+        </div>
+        <a href="{% url 'users:dashboard' %}" class="btn btn-md normal-case text-xl hover:bg-gradient-to-r from-[#104458] to-[#00FFFF] shadow-lg">
+            <i class="fas fa-crown text-primary"></i>
+            TCB CRM Pro
+        </a>
+    </div>
+    <div class="navbar-center hidden lg:flex"> <!-- Средняя часть навигатора -->
+        <ul class="menu menu-horizontal px-1">
+            {% block nav_menu %} {% include "partials/navmenu.html" %} {% endblock %}
+        </ul>
+    </div>
+    <div class="navbar-end">  <!-- Theme Toggle -->
+        <button id="theme-toggle" class="btn btn-ghost btn-circle">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="dropdown dropdown-end"> <!-- Notifications -->
+            <label tabindex="0" class="btn btn-ghost btn-circle">
+                <div class="indicator">
+                    <i class="fas fa-bell"></i>
+                    <span id="notification-count" class="badge badge-xs badge-primary indicator-item hidden">0</span>
+                </div>
+            </label>
+            <!-- Оповещения -->
+            <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-80 bg-base-100 shadow">
+                <div class="card-body">
+                    <div id="notifications-list" class="max-h-64 overflow-y-auto">
+                        <!-- Notifications will be loaded here -->
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-primary btn-block">Показать все</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Menu -->
+        {% if user.is_authenticated %}
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                    {% if user.avatar %}
+                        <div class="w-8 rounded-full">
+                            <img src="{{ user.avatar.url }}" alt="Avatar"/>
+                        </div>
+                    {% else %}
+                        <div class="w-8 rounded-full bg-primary text-primary-content flex items-center justify-center">
+                            <span class="text-sm font-bold">{{ user.first_name|first|default:user.username|first|upper }}</span>
+                        </div>
+                    {% endif %}
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a href="{% url 'users:profile' %}"><i class="fas fa-user"></i> Профиль</a></li>
+                    <li><a href="{% url 'users:settings' %}"><i class="fas fa-cog"></i> Настройки</a></li>
+                    <li><a href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i> Выход</a></li>
+                </ul>
+            </div>
+        {% else %}
+            <a href="{% url 'account_login' %}" class="btn btn-primary">Войти</a>
+        {% endif %}
+    </div>
+</div>
+<script>
+        // Theme Toggle Script
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+        const icon = themeToggle.querySelector('i');
+        icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    }
+</script>

@@ -1,0 +1,36 @@
+<div class="container px-0 py-1 pt-16">
+    {% block breadcrumbs %}{% endblock %} <!-- Быстрые действия -->
+    <div id="messages" class="mb-4"> <!-- Messages -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags|default:'info' }} mb-2">
+                    <div>
+                        {% if message.tags == 'error' %}
+                            <i class="fas fa-exclamation-triangle"></i>
+                        {% elif message.tags == 'warning' %}
+                            <i class="fas fa-exclamation-circle"></i>
+                        {% elif message.tags == 'success' %}
+                            <i class="fas fa-check-circle"></i>
+                        {% else %}
+                            <i class="fas fa-info-circle"></i>
+                        {% endif %}
+                        {{ message }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <!-- Page Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <!-- Sidebar -->
+        <div class="lg:col-span-1">
+            {% block sidebar %}{% endblock %}
+        </div>
+
+        <!-- Main Content -->
+        <div class="lg:col-span-3">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>

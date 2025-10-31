@@ -1,0 +1,170 @@
+{% extends 'users/base.html' %} 
+
+{% block title %}Профиль пользователя
+{% endblock%} 
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Мой профиль</h3>
+      </div>
+      <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label
+                  for="{{ form.first_name.id_for_label }}"
+                  class="form-label"
+                  >Имя</label
+                >
+                {{ form.first_name }} {% if form.first_name.errors %}
+                <div class="text-danger">{{ form.first_name.errors }}</div>
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label
+                  for="{{ form.last_name.id_for_label }}"
+                  class="form-label"
+                  >Фамилия</label
+                >
+                {{ form.last_name }} {% if form.last_name.errors %}
+                <div class="text-danger">{{ form.last_name.errors }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="{{ form.email.id_for_label }}" class="form-label"
+              >Email</label
+            >{{ form.email }}
+            {% if form.email.errors %}
+                <div class="text-danger">{{ form.email.errors }}</div>
+            {% endif %}
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="{{ form.phone.id_for_label }}" class="form-label"
+                  >Телефон</label
+                >
+                {{ form.phone }} {% if form.phone.errors %}
+                <div class="text-danger">{{ form.phone.errors }}</div>
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label
+                  for="{{ form.birthdate.id_for_label }}"
+                  class="form-label"
+                  >Дата рождения</label
+                > {{ form.birthdate }}
+                  {% if form.birthdate.errors %}
+                    <div class="text-danger">{{ form.birthdate.errors }}</div>
+                  {% endif %}
+                  {% if user.birthdate %}
+                  <small class="form-text text-muted">Текущая дата: {{ user.birthdate|date:"d.m.Y" }}</small>
+                  {% endif %}
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="{{ form.photo.id_for_label }}" class="form-label"
+              >Фото</label
+            >
+            {{ form.photo }} {% if form.photo.errors %}
+            <div class="text-danger">{{ form.photo.errors }}</div>
+            {% endif %} {% if user.photo %}
+            <div class="mt-2">
+              <img
+                src="{{ user.photo.url }}"
+                alt="Текущее фото"
+                class="img-thumbnail"
+                style="max-width: 150px"
+              />
+            </div>
+            {% endif %}
+          </div>
+          <div class="mb-3">
+            <label for="{{ form.ip_address.id_for_label }}" class="form-label">IP-адрес: </label
+            >{{ form.ip_address }}
+            {% if form.ip_address.errors %}
+                <div class="text-danger">{{ form.ip_address.errors }}</div>
+            {% endif %}
+          </div>
+{#          {% if user.birthdate %}#}
+{#          <div class="mb-3">#}
+{#            <label class="form-label">Дата рождения: </label>#}
+{#            <span>{{ user.birthdate|date:"d.m.Y" }}</span>#}
+{#          </div>#}
+{#          {% endif %}#}
+          <button type="submit" class="btn btn-primary">
+            Сохранить изменения
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Информация об аккаунте</h5>
+      </div>
+      <div class="card-body">
+        <p>
+          <strong>id:</strong> {{ user.id }}
+        </p>
+        <p>
+          <strong>ID Роли:</strong> {{ user_role.role.id }}
+        </p>
+        <p>
+          <strong>Название роли:</strong> {{ user_role.role.name }}
+        </p>
+        <p>
+          <strong>Дата регистрации:</strong> {{ user.date_joined|date:"d.m.Y" }}
+        </p>
+        <p>
+          <strong>Последний вход:</strong> {{ user.last_login|date:"d.m.Y H:i" }}
+        </p>
+        {% if user.phone_verified %}
+        <p>
+          <strong>Телефон:</strong>
+          <span class="text-success">Верифицирован</span>
+        </p>
+        {% else %}
+        <p>
+          <strong>Телефон:</strong>
+          <span class="text-warning">Не верифицирован</span>
+        </p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="card mt-3">
+      <div class="card-header">
+        <h5 class="card-title">Опасная зона</h5>
+      </div>
+      <div class="card-body">
+        <p class="text-danger">
+          Удаление аккаунта необратимо. Ваши данные будут сохранены, но вы не
+          сможете войти в систему.
+        </p>
+        <form method="post" action="{% url 'users:delete_account' %}">
+          {% csrf_token %}
+          <button
+            type="submit"
+            class="btn btn-danger"
+            onclick="return confirm('Вы уверены, что хотите удалить аккаунт?')"
+          >
+            Удалить аккаунт
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

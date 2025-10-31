@@ -1,0 +1,88 @@
+{% extends 'users/base.html' %} 
+{% block title %}Регистрация{% endblock %} 
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Регистрация нового пользователя</h3>
+      </div>
+      <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="{{ form.first_name.id_for_label }}" class="form-label"
+              >Имя *</label
+            >
+            {{ form.first_name }} {% if form.first_name.errors %}
+            <div class="text-danger">{{ form.first_name.errors }}</div>
+            {% endif %}
+          </div>
+          <div class="mb-3">
+            <label for="{{ form.last_name.id_for_label }}" class="form-label"
+              >Фамилия *</label
+            >
+            {{ form.last_name }} {% if form.last_name.errors %}
+            <div class="text-danger">{{ form.last_name.errors }}</div>
+            {% endif %}
+          </div>
+          <div class="mb-3">
+            <label for="{{ form.email.id_for_label }}" class="form-label"
+              >Email *</label
+            >
+            {{ form.email }} {% if form.email.errors %}
+            <div class="text-danger">{{ form.email.errors }}</div>
+            {% endif %}
+          </div>
+          <div class="mb-3">
+            <label for="{{ form.phone.id_for_label }}" class="form-label"
+              >Телефон (+7XXXXXXXXXX)</label
+            >
+            {{ form.phone }} {% if form.phone.errors %}
+            <div class="text-danger">{{ form.phone.errors }}</div>
+            {% endif %}
+          </div>
+          <div class="mb-3">
+            <label for="{{ form.birthdate.id_for_label }}" class="form-label"
+              >Дата рождения</label
+            >
+            {{ form.birthdate }} {% if form.birthdate.errors %}
+            <div class="text-danger">{{ form.birthdate.errors }}</div>
+            {% endif %}
+          </div>
+          <div class="mb-3">
+            <label for="{{ form.photo.id_for_label }}" class="form-label"
+              >Фото</label
+            >
+            {{ form.photo }} {% if form.photo.errors %}
+            <div class="text-danger">{{ form.photo.errors }}</div>
+            {% endif %}
+          </div>
+          <div class="mb-3">
+            <label for="{{ form.password1.id_for_label }}" class="form-label"
+              >Пароль *</label
+            >
+            {{ form.password1 }} {% if form.password1.errors %}
+            <div class="text-danger">{{ form.password1.errors }}</div>
+            {% endif %}
+          </div>
+          <div class="mb-3">
+            <label for="{{ form.password2.id_for_label }}" class="form-label"
+              >Подтверждение пароля *</label
+            >
+            {{ form.password2 }} {% if form.password2.errors %}
+            <div class="text-danger">{{ form.password2.errors }}</div>
+            {% endif %}
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Зарегистрироваться
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="mt-3 text-center">
+      <a href="{% url 'users:login' %}">Уже есть аккаунт? Войти</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

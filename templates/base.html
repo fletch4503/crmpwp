@@ -13,137 +13,21 @@
     <!-- HTMX -->
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
     <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/ws.js"></script>
+    <meta name="htmx-config" content='{"includeIndicatorStyles": true}'>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Custom CSS -->
-    <style>
-        [data-theme="dark"] {
-            --bg-color: #1f2937;
-            --text-color: #f9fafb;
-        }
-
-        [data-theme="light"] {
-            --bg-color: #ffffff;
-            --text-color: #111827;
-        }
-
-        .htmx-indicator {
-            opacity: 0;
-            transition: opacity 0.3s ease-in;
-        }
-
-        .htmx-request .htmx-indicator {
-            opacity: 1;
-        }
-
-        .htmx-request.htmx-indicator {
-            opacity: 1;
-        }
-
-        .notification-enter {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-
-        .notification-enter-active {
-            transform: translateX(0);
-            opacity: 1;
-            transition: all 0.3s ease-out;
-        }
-
-        .notification-exit {
-            transform: translateX(0);
-            opacity: 1;
-        }
-
-        .notification-exit-active {
-            transform: translateX(100%);
-            opacity: 0;
-            transition: all 0.3s ease-in;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 
     {% block extra_head %}{% endblock %}
 </head>
 <body class="min-h-screen bg-base-200">
 <!-- Navigation -->
-<div id="navbar" class="navbar fixed flex w-full top-0 z-50 bg-base-100 shadow-lg">
-    <!-- navbar flex w-full top-0 z-50 border-b justify-between dark:bg-gray-900 dark:border-gray-600 shadow-md -->
-    {% comment %} <div id="navbar" class="navbar w-full top-0 z-50 bg-base-100 shadow-lg">  <!-- navbar flex w-full top-0 z-50 border-b justify-between dark:bg-gray-900 dark:border-gray-600 shadow-md --> {% endcomment %}
-    <div class="navbar-start"> <!-- Главная страница -->
-        <div class="dropdown">
-            <label tabindex="0" class="btn btn-ghost lg:hidden">
-                <i class="fas fa-bars"></i>
-            </label>
-            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                {% block mobile_menu %}{% include "partials/mobilemenu.html" %}{% endblock %}
-            </ul>
-        </div>
-        <a href="{% url 'users:dashboard' %}" class="btn btn-ghost normal-case text-xl">
-            <i class="fas fa-crown text-primary"></i>
-            CRM Pro
-        </a>
-    </div>
-    <div class="navbar-center hidden lg:flex"> <!-- Средняя часть навигатора -->
-        <ul class="menu menu-horizontal px-1">
-            {% block nav_menu %} {% include "partials/navmenu.html" %} {% endblock %}
-        </ul>
-    </div>
-    <div class="navbar-end">  <!-- Theme Toggle -->
-        <button id="theme-toggle" class="btn btn-ghost btn-circle">
-            <i class="fas fa-moon"></i>
-        </button>
-        <div class="dropdown dropdown-end"> <!-- Notifications -->
-            <label tabindex="0" class="btn btn-ghost btn-circle">
-                <div class="indicator">
-                    <i class="fas fa-bell"></i>
-                    <span id="notification-count" class="badge badge-xs badge-primary indicator-item hidden">0</span>
-                </div>
-            </label>
-            <!-- Оповещения -->
-            <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-80 bg-base-100 shadow">
-                <div class="card-body">
-                    <div id="notifications-list" class="max-h-64 overflow-y-auto">
-                        <!-- Notifications will be loaded here -->
-                    </div>
-                    <div class="card-actions">
-                        <button class="btn btn-primary btn-block">Показать все</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- User Menu -->
-        {% if user.is_authenticated %}
-            <div class="dropdown dropdown-end">
-                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                    {% if user.avatar %}
-                        <div class="w-8 rounded-full">
-                            <img src="{{ user.avatar.url }}" alt="Avatar"/>
-                        </div>
-                    {% else %}
-                        <div class="w-8 rounded-full bg-primary text-primary-content flex items-center justify-center">
-                            <span class="text-sm font-bold">{{ user.first_name|first|default:user.username|first|upper }}</span>
-                        </div>
-                    {% endif %}
-                </label>
-                <ul tabindex="0"
-                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a href="{% url 'users:profile' %}"><i class="fas fa-user"></i> Профиль</a></li>
-                    <li><a href="{% url 'users:settings' %}"><i class="fas fa-cog"></i> Настройки</a></li>
-                    <li><a href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i> Выход</a></li>
-                </ul>
-            </div>
-        {% else %}
-            <a href="{% url 'account_login' %}" class="btn btn-primary">Войти</a>
-        {% endif %}
-    </div>
-</div>
-
+{% include "partials/navpanel.html" %}
 <!-- Main Content -->
-{% comment %} <div class="container mx-auto px-0 py-1"> {% endcomment %}
+{% comment %} {% include "partials/maincontent.html" %} {% endcomment %}
 <div class="container px-0 py-1 pt-16">
     {% block breadcrumbs %}{% endblock %} <!-- Быстрые действия -->
     <div id="messages" class="mb-4"> <!-- Messages -->
@@ -166,7 +50,6 @@
             {% endfor %}
         {% endif %}
     </div>
-
     <!-- Page Content -->
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
         <!-- Sidebar -->
@@ -179,150 +62,17 @@
             {% block content %}{% endblock %}
         </div>
     </div>
-</div>
-
+</div>    
 <!-- Footer -->
 <footer class="footer footer-center p-4 bg-base-300 text-base-content mt-12">
     <div>
         <p>© 2025 PWP CRM Pro. Все права защищены.</p>
     </div>
 </footer>
-
-<!-- WebSocket connection for real-time updates -->
-{% if user.is_authenticated %}
-    <script>
-        // WebSocket connection for notifications
-        const notificationSocket = new WebSocket(
-            'ws://' + window.location.host + '/ws/notifications/'
-        );
-
-        notificationSocket.onmessage = function (e) {
-            const data = JSON.parse(e.data);
-            handleRealtimeMessage(data);
-        };
-
-        notificationSocket.onclose = function (e) {
-            console.log('Notification socket closed');
-            // Reconnect after 30 seconds
-            setTimeout(() => {
-                location.reload();
-            }, 120000);
-        };
-
-        function handleRealtimeMessage(data) {
-            if (data.type === 'connection_established') {
-                console.log('WebSocket connected:', data.message);
-            } else if (data.type === 'email_received') {
-                showNotification('Новый email', `От: ${data.sender}`, 'info');
-                updateNotificationCount();
-            } else if (data.type === 'project_created') {
-                showNotification('Проект создан', data.title, 'success');
-            } else if (data.type === 'contact_created') {
-                showNotification('Контакт создан', data.name, 'success');
-            } else if (data.type === 'system_notification') {
-                showNotification(data.title, data.message, data.level);
-            }
-        }
-
-        function showNotification(title, message, level = 'info') {
-            const notification = document.createElement('div');
-            notification.className = `alert alert-${level} mb-2 notification-enter`;
-            notification.innerHTML = `
-                <div>
-                    <h3 class="font-bold">${title}</h3>
-                    <div class="text-xs">${message}</div>
-                </div>
-                <div class="flex-none">
-                    <button class="btn btn-sm btn-circle btn-ghost" onclick="this.parentElement.parentElement.remove()">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            `;
-
-            const messagesDiv = document.getElementById('messages');
-            messagesDiv.appendChild(notification);
-
-            // Animate in
-            setTimeout(() => {
-                notification.classList.add('notification-enter-active');
-            }, 10);
-
-            // Auto remove after 5 seconds
-            setTimeout(() => {
-                notification.classList.remove('notification-enter-active');
-                notification.classList.add('notification-exit-active');
-                setTimeout(() => notification.remove(), 300);
-            }, 5000);
-        }
-
-        function updateNotificationCount() {
-            const countElement = document.getElementById('notification-count');
-            const currentCount = parseInt(countElement.textContent || '0');
-            countElement.textContent = currentCount + 1;
-            countElement.classList.remove('hidden');
-        }
-    </script>
-{% endif %}
-
-<!-- Theme Toggle Script -->
-<script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
-
-    function updateThemeIcon(theme) {
-        const icon = themeToggle.querySelector('i');
-        icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
-    }
-</script>
-
-<!-- HTMX Configuration -->
-<script>
-    // Configure HTMX
-    htmx.config.globalViewTransitions = true;
-    htmx.config.useTemplateFragments = true;
-
-    // Add loading indicators
-    document.body.addEventListener('htmx:beforeRequest', function (evt) {
-        const btn = evt.target.closest('button, [role="button"]');
-        if (btn) {
-            btn.disabled = true;
-            const originalText = btn.innerHTML;
-            btn.setAttribute('data-original-text', originalText);
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Загрузка...';
-        }
-    });
-
-    document.body.addEventListener('htmx:afterRequest', function (evt) {
-        const btn = evt.target.closest('button, [role="button"]');
-        if (btn) {
-            btn.disabled = false;
-            const originalText = btn.getAttribute('data-original-text');
-            if (originalText) {
-                btn.innerHTML = originalText;
-            }
-        }
-    });
-
-    // Handle HTMX errors
-    document.body.addEventListener('htmx:responseError', function (evt) {
-        showNotification('Ошибка', 'Произошла ошибка при загрузке данных', 'error');
-    });
-</script>
-
-{% block extra_scripts %}{% endblock %}
+    <!-- WebSocket connection for real-time updates -->
+    {% if user.is_authenticated %} <script src="{% static 'js/websocket.js' %}"></script> {% endif %}
+    <!-- Scripts of mani page -->
+    <script src="{% static 'js/base_js.js' %}"></script>
+    {% block extra_scripts %}{% endblock %}
 </body>
 </html>

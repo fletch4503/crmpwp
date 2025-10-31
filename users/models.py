@@ -8,7 +8,7 @@ from .managers import UserManager
 
 class User(AbstractUser):
     """
-    Кастомная модель пользователя с расширенными полями.
+    Кастомная модель пользователя с расширенными полями на базе AllAuth.
     """
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
