@@ -46,6 +46,11 @@ class ProjectListView(LoginRequiredMixin, ListView):
         queryset = (
             Project.objects.filter(user=self.request.user, is_active=True)
             .select_related("company", "contact")
+            .prefetch_related(
+                Prefetch(
+                    "emails", queryset=ProjectEmail.objects.order_by("-received_at")
+                )
+            )
         )
         logger.info(f"projects: {queryset}")
 
