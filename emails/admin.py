@@ -51,7 +51,7 @@ class EmailCredentialsAdmin(admin.ModelAdmin):
         (
             _("Статистика"),
             {
-                "fields": ("messages_count", "last_sync"),
+                "fields": ("total_emails_processed", "last_sync"),
                 "classes": ("collapse",),
             },
         ),
@@ -283,14 +283,13 @@ class EmailSyncLogAdmin(admin.ModelAdmin):
         failed = EmailSyncLog.objects.filter(status="failed").count()
 
         total_messages = (
-            EmailSyncLog.objects.aggregate(total=Sum("messages_processed"))["total"]
-            or 0
+            EmailSyncLog.objects.aggregate(total=Sum("emails_processed"))["total"] or 0
         )
 
         avg_duration = (
             EmailSyncLog.objects.filter(status="success")
-            .exclude(duration__isnull=True)
-            .aggregate(avg=Avg("duration"))["avg"]
+            .exclude(duration_seconds__isnull=True)
+            .aggregate(avg=Avg("duration_seconds"))["avg"]
         )
 
         return {

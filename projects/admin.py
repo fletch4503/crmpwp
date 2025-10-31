@@ -38,7 +38,7 @@ class ProjectAdmin(admin.ModelAdmin):
         (
             _("Статистика"),
             {
-                "fields": ("emails_count",),
+                "fields": ("deadline",),
                 "classes": ("collapse",),
             },
         ),

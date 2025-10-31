@@ -15,7 +15,7 @@ class OrderInline(admin.TabularInline):
     model = Order
     extra = 0
     readonly_fields = ("created_at",)
-    fields = ("number", "amount", "created_at")
+    fields = ("order_number", "amount", "created_at")
     ordering = ("-created_at",)
 
 
@@ -54,16 +54,38 @@ class CompanyAdmin(admin.ModelAdmin):
     inlines = [OrderInline, PaymentInline]
 
     fieldsets = (
-        (None, {"fields": ("name", "inn", "address")}),
+        (None, {"fields": ("name", "inn", "legal_address", "actual_address")}),
+        (
+            _("Контактная информация"),
+            {
+                "fields": (
+                    "phone",
+                    "email",
+                    "website",
+                    "contact_person",
+                    "contact_position",
+                ),
+                "classes": ("collapse",),
+            },
+        ),
         (
             _("Финансовая информация"),
             {
-                "fields": (
-                    "orders_count",
-                    "total_orders_amount",
-                    "payments_count",
-                    "total_payments_amount",
-                ),
+                "fields": ("credit_limit", "current_debt"),
+                "classes": ("collapse",),
+            },
+        ),
+        (
+            _("Статус и тип"),
+            {
+                "fields": ("company_type", "status", "is_active"),
+                "classes": ("collapse",),
+            },
+        ),
+        (
+            _("Дополнительная информация"),
+            {
+                "fields": ("notes", "tags"),
                 "classes": ("collapse",),
             },
         ),
@@ -91,8 +113,8 @@ class CompanyAdmin(admin.ModelAdmin):
             .annotate(
                 orders_count=Count("orders"),
                 payments_count=Count("payments"),
-                total_orders_amount=Sum("orders__amount"),
-                total_payments_amount=Sum("payments__amount"),
+                total_orders_amount_annotated=Sum("orders__amount"),
+                total_payments_amount_annotated=Sum("payments__amount"),
             )
         )
 
@@ -105,10 +127,10 @@ class CompanyAdmin(admin.ModelAdmin):
 
     def total_orders_amount(self, obj):
         """Общая сумма заказов."""
-        return f"{obj.total_orders_amount or 0:,.0f} ₽"
+        return f"{obj.total_orders_amount_annotated or 0:,.0f} ₽"
 
     total_orders_amount.short_description = _("Сумма заказов")
-    total_orders_amount.admin_order_field = "total_orders_amount"
+    total_orders_amount.admin_order_field = "total_orders_amount_annotated"
 
     def payments_count(self, obj):
         """Количество оплат."""
@@ -119,16 +141,16 @@ class CompanyAdmin(admin.ModelAdmin):
 
     def total_payments_amount(self, obj):
         """Общая сумма оплат."""
-        return f"{obj.total_payments_amount or 0:,.0f} ₽"
+        return f"{obj.total_payments_amount_annotated or 0:,.0f} ₽"
 
     total_payments_amount.short_description = _("Сумма оплат")
-    total_payments_amount.admin_order_field = "total_payments_amount"
+    total_payments_amount.admin_order_field = "total_payments_amount_annotated"
 
     def changelist_view(self, request, extra_context=None):
         """Добавить статистику на страницу списка."""
         response = super().changelist_view(request, extra_context)
 
-        if hasattr(response, "context_data"):
+        if hasattr(response, "context_data") and response.context_data.get("cl"):
             stats = self.get_company_stats()
             response.context_data["company_stats"] = stats
 
@@ -172,11 +194,28 @@ class OrderAdmin(admin.ModelAdmin):
     ordering = ("-created_at",)
 
     fieldsets = (
-        (None, {"fields": ("company", "number", "amount")}),
+        (
+            None,
+            {"fields": ("company", "order_number", "title", "description", "amount")},
+        ),
+        (
+            _("Статус и приоритет"),
+            {
+                "fields": ("status", "priority"),
+                "classes": ("collapse",),
+            },
+        ),
         (
             _("Даты"),
             {
-                "fields": ("created_at",),
+                "fields": ("due_date", "completion_date", "created_at"),
+                "classes": ("collapse",),
+            },
+        ),
+        (
+            _("Дополнительная информация"),
+            {
+                "fields": ("notes",),
                 "classes": ("collapse",),
             },
         ),

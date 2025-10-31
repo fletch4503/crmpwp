@@ -60,7 +60,7 @@ class ContactAdmin(admin.ModelAdmin):
 
     def get_full_name(self, obj):
         """Получить полное имя контакта."""
-        return obj.get_full_name()
+        return obj.full_name
 
     get_full_name.short_description = _("Полное имя")
     get_full_name.admin_order_field = "last_name"
