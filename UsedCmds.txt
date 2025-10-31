@@ -14,4 +14,5 @@ docker-compose exec web python manage.py makemigrations
 
 docker-compose exec web python manage.py migrate
 
-
+cd /d D:\PythonProject\DJANGO\crmpwp && uv run python manage.py check
+                                    - проверка приложения

@@ -20,6 +20,12 @@
         </ul>
     </div>
     <div class="navbar-end">
+        {% if user.is_authenticated and user.is_admin %}
+            <!-- User List for Admins -->
+            <a href="{% url 'users:users_list' %}" class="btn btn-ghost btn-circle" title="Список пользователей">
+                <i class="fas fa-users"></i>
+            </a>
+        {% endif %}
         <!-- Theme Toggle -->
         <button id="theme-toggle" class="btn btn-ghost btn-circle">
             <i class="fas fa-moon"></i>
@@ -62,11 +68,11 @@
                     class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                     <li><a href="{% url 'users:profile' %}"><i class="fas fa-user"></i> Профиль</a></li>
                     <li><a href="{% url 'users:settings' %}"><i class="fas fa-cog"></i> Настройки</a></li>
-                    <li><a href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i> Выход</a></li>
+                    <li><a href="{% url 'users:logout' %}"><i class="fas fa-sign-out-alt"></i> Выход</a></li>
                 </ul>
             </div>
         {% else %}
-            <a href="{% url 'account_login' %}" class="btn btn-primary">Войти</a>
+            <a href="{% url 'users:login' %}" class="btn btn-primary">Войти</a>
         {% endif %}
     </div>
 </div>

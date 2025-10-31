@@ -38,21 +38,21 @@
                                             {% endif %}
                                         </td>
                                         <td>
-                                            {% if user.auth_token %}
-                                                {% if user.auth_token.is_active %}
-                                                    {% if user.auth_token.is_expired %}
-                                                        <span class="badge bg-danger">Истек</span>
-                                                    {% elif user.auth_token.is_soft_expired %}
-                                                        <span class="badge bg-warning">Истекает скоро</span>
+                                            {% with latest_token=user.access_tokens.first %}
+                                                {% if latest_token %}
+                                                    {% if latest_token.is_active %}
+                                                        {% if latest_token.is_expired %}
+                                                            <span class="badge bg-danger">Истек {{ latest_token.expires_at|date:"d.m.Y H:i" }}</span>
+                                                        {% else %}
+                                                            <span class="badge bg-success">Активен до {{ latest_token.expires_at|date:"d.m.Y H:i" }}</span>
+                                                        {% endif %}
                                                     {% else %}
-                                                        <span class="badge bg-success">Активен</span>
+                                                        <span class="badge bg-secondary">Неактивен</span>
                                                     {% endif %}
                                                 {% else %}
-                                                    <span class="badge bg-secondary">Неактивен</span>
+                                                    <span class="text-muted">Нет токена</span>
                                                 {% endif %}
-                                            {% else %}
-                                                <span class="text-muted">Нет токена</span>
-                                            {% endif %}
+                                            {% endwith %}
                                         </td>
                                         <td>
                                             <a href="{% url 'users:user_detail' user.id %}"

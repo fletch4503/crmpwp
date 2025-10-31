@@ -2,12 +2,72 @@
 
 {% block title %}Профиль пользователя
 {% endblock %}
+{% block breadcrumbs %}
+    <ul>
+        <li>
+            <a class="fa-solid fa-folder hover:underline cursor-pointer gap-2 items-center"
+               href="{% url 'users:dashboard' %}">Главная</a>
+        </li>
+        <li><a> Профиль пользователя</a></li>
+    </ul>
+{% endblock %}
+{% block sidebar %}
+    <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+            <h1 class="card-title text-xl">
+                <i class="fas fa-info-circle"></i>Информация об аккаунте</h1>
+            <div class="space-y-2 text-md">
+                <p>
+                    <strong>id:</strong> <a class="text-xs">{{ user.id }}</a>
+                </p>
+                <p>
+                    <strong>ID Роли:</strong> <a class="text-xs">{{ user_role.role.id }}</a>
+                </p>
+                <p>
+                    <strong>Название роли:</strong> {{ user_role.role.name }}
+                </p>
+                <p>
+                    <strong>IP:</strong> {{ user.ip_address }}
+                </p>
+                <p>
+                    <strong>Дата регистрации:</strong> {{ user.date_joined|date:"d.m.Y" }}
+                </p>
+                <p>
+                    <strong>Последний вход:</strong> {{ user.last_login|date:"d.m.Y H:i" }}
+                </p>
+                {% if user.phone_verified %}
+                    <p>
+                        <strong>Телефон:</strong>
+                        <span class="text-success">Верифицирован</span>
+                    </p>
+                {% else %}
+                    <p>
+                        <strong>Телефон:</strong>
+                        <span class="text-warning">Не верифицирован</span>
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+        {#        <div class="card mt-3">#}
+        {#            <div class="card-header">#}
+        {#                <h5 class="card-title">Опасная зона</h5>#}
+        {#            </div>#}
+        {#            <div class="card-body">#}
+        {#                <p class="text-danger">#}
+        {#                    Удаление аккаунта необратимо. Ваши данные будут сохранены, но вы не#}
+        {#                    сможете войти в систему.#}
+        {#                </p>#}
+        {#                <p class="text-muted">Функция удаления аккаунта временно недоступна.</p>#}
+        {#            </div>#}
+        {#        </div>#}
+    </div>
+{% endblock sidebar %}
 {% block content %}
-    <div class="row">
+    <div class="card bg-base-100">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Мой профиль</h3>
+                    <h2 class="card-title mx-2 p-2">Мой профиль</h2>
                 </div>
                 <div class="card-body">
                     <form method="post" enctype="multipart/form-data">
@@ -15,9 +75,9 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label
-                                            for="{{ form.first_name.id_for_label }}"
-                                            class="form-label"
+                                    <label class="form-label"
+                                           for="{{ form.first_name.id_for_label }}"
+                                           for="{{ form.last_name.id_for_label }}"
                                     >Имя</label
                                     >
                                     {{ form.first_name }} {% if form.first_name.errors %}
@@ -28,7 +88,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label
-                                            for="{{ form.last_name.id_for_label }}"
+
                                             class="form-label"
                                     >Фамилия</label
                                     >
@@ -91,71 +151,15 @@
                             </div>
                         {% endif %}
                         </div>
-                        <div class="mb-3">
-                            <label for="{{ form.ip_address.id_for_label }}" class="form-label">IP-адрес: </label
-                            >{{ form.ip_address }}
-                            {% if form.ip_address.errors %}
-                                <div class="text-danger">{{ form.ip_address.errors }}</div>
-                            {% endif %}
-                        </div>
+                        {#                        <div class="mb-3">#}
+                        {#                            <label for="{{ form.ip_address.id_for_label }}" class="form-label">IP-адрес: </label#}
+                        {#                            >{{ form.ip_address }}#}
+                        {#                            {% if form.ip_address.errors %}#}
+                        {#                                <div class="text-danger">{{ form.ip_address.errors }}</div>#}
+                        {#                            {% endif %}#}
+                        {#                        </div>#}
                         <button type="submit" class="btn btn-primary">
                             Сохранить изменения
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">Информация об аккаунте</h5>
-                </div>
-                <div class="card-body">
-                    <p>
-                        <strong>id:</strong> {{ user.id }}
-                    </p>
-                    <p>
-                        <strong>ID Роли:</strong> {{ user_role.role.id }}
-                    </p>
-                    <p>
-                        <strong>Название роли:</strong> {{ user_role.role.name }}
-                    </p>
-                    <p>
-                        <strong>Дата регистрации:</strong> {{ user.date_joined|date:"d.m.Y" }}
-                    </p>
-                    <p>
-                        <strong>Последний вход:</strong> {{ user.last_login|date:"d.m.Y H:i" }}
-                    </p>
-                    {% if user.phone_verified %}
-                        <p>
-                            <strong>Телефон:</strong>
-                            <span class="text-success">Верифицирован</span>
-                        </p>
-                    {% else %}
-                        <p>
-                            <strong>Телефон:</strong>
-                            <span class="text-warning">Не верифицирован</span>
-                        </p>
-                    {% endif %}
-                </div>
-            </div>
-            <div class="card mt-3">
-                <div class="card-header">
-                    <h5 class="card-title">Опасная зона</h5>
-                </div>
-                <div class="card-body">
-                    <p class="text-danger">
-                        Удаление аккаунта необратимо. Ваши данные будут сохранены, но вы не
-                        сможете войти в систему.
-                    </p>
-                    <form method="post" action="{% url 'users:delete_account' %}">
-                        {% csrf_token %}
-                        <button
-                                type="submit"
-                                class="btn btn-danger"
-                                onclick="return confirm('Вы уверены, что хотите удалить аккаунт?')"
-                        >
-                            Удалить аккаунт
                         </button>
                     </form>
                 </div>

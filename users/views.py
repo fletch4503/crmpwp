@@ -1,6 +1,7 @@
 from datetime import timedelta
 from django.contrib import messages
-from django.contrib.auth import login, logout
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.views import LogoutView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
@@ -30,9 +31,8 @@ from .forms import (
     CustomUserChangeForm,
     ProfileUpdateForm,
     TokenGenerationForm,
-    # CustomSignupForm,
-    # CustomLoginForm,
 )
+from .allauth_forms import CustomSignupForm, CustomLoginForm
 from .models import User, Role, Permission, UserRole, RolePermission, AccessToken
 from .permissions import IsAdmin, RBACPermission
 
@@ -108,11 +108,23 @@ class ProfileView(LoginRequiredMixin, UpdateView):
 
     model = User
     form_class = ProfileUpdateForm
-    template_name = "users/profile.html"
+    template_name = "users/partials/profile.html"
     success_url = reverse_lazy("users:profile")
 
-    def get_object(self):
+    def get_object(self, **kwargs):
         return self.request.user
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Получаем роль пользователя для отображения в профиле
+        try:
+            user_role = UserRole.objects.select_related("role").get(
+                user=self.request.user
+            )
+            context["user_role"] = user_role
+        except UserRole.DoesNotExist:
+            context["user_role"] = None
+        return context
 
     def form_valid(self, form):
         messages.success(self.request, _("Профиль успешно обновлен."))
@@ -130,12 +142,16 @@ class UserListView(AdminRequiredMixin, ListView):
     """Представление списка пользователей для администраторов"""
 
     model = User
-    template_name = "users/user_list.html"
+    template_name = "users/partials/user_list.html"
     context_object_name = "users"
     paginate_by = 20
 
     def get_queryset(self):
-        return User.objects.select_related().prefetch_related("user_roles__role").all()
+        return (
+            User.objects.select_related()
+            .prefetch_related("user_roles__role", "access_tokens")
+            .all()
+        )
 
 
 class TokenListView(LoginRequiredMixin, ListView):
@@ -396,3 +412,76 @@ class SettingsView(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         context["user"] = self.request.user
         return context
+
+
+class CustomLoginView(FormView):
+    """
+    Кастомная страница входа с использованием подготовленного шаблона.
+    """
+
+    template_name = "users/partials/login.html"
+    form_class = CustomLoginForm
+    success_url = reverse_lazy("users:dashboard")
+
+    def form_valid(self, form):
+        email = form.cleaned_data.get("login")
+        password = form.cleaned_data.get("password")
+        user = authenticate(self.request, username=email, password=password)
+
+        if user is not None:
+            login(self.request, user)
+
+            # Создаем токен доступа с временем действия 1 час
+            expires_at = timezone.now() + timedelta(hours=1)
+            AccessToken.objects.create(
+                user=user,
+                expires_at=expires_at,
+            )
+
+            # Добавляем сообщение для отображения через toast
+            messages.success(self.request, _("Вход выполнен успешно!"))
+            return super().form_valid(form)
+        else:
+            messages.error(self.request, _("Неверный email или пароль."))
+            return self.form_invalid(form)
+
+    def form_invalid(self, form):
+        messages.error(self.request, _("Ошибка входа. Проверьте введенные данные."))
+        return super().form_invalid(form)
+
+
+class CustomRegisterView(FormView):
+    """
+    Кастомная страница регистрации с использованием подготовленного шаблона.
+    """
+
+    template_name = "users/partials/register.html"
+    form_class = CustomSignupForm
+    success_url = reverse_lazy("users:dashboard")
+
+    def form_valid(self, form):
+        user = form.save(self.request)
+        if user:
+            # Автоматический вход после регистрации
+            login(self.request, user)
+            messages.success(
+                self.request, _("Регистрация прошла успешно! Добро пожаловать!")
+            )
+            return super().form_valid(form)
+        else:
+            messages.error(self.request, _("Ошибка при регистрации."))
+            return self.form_invalid(form)
+
+    def form_invalid(self, form):
+        messages.error(
+            self.request, _("Ошибка регистрации. Проверьте введенные данные.")
+        )
+        return super().form_invalid(form)
+
+
+class CustomLogoutView(LogoutView):
+    """
+    Кастомная страница выхода с редиректом на страницу входа.
+    """
+
+    next_page = reverse_lazy("users:login")

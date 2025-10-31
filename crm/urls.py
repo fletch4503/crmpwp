@@ -43,8 +43,8 @@ urlpatterns = [
     path("companies/", include("companies.urls")),
     path("projects/", include("projects.urls")),
     path("emails/", include("emails.urls")),
-    # Third party
-    path("accounts/", include("allauth.urls")),
+    # Third party - commented out to use custom auth views
+    # path("accounts/", include("allauth.urls")),
 ]
 
 # Serve media files in development

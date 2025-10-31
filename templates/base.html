@@ -54,13 +54,14 @@
     </div>
     <!-- Page Content -->
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        {#    <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">#}
         <!-- Sidebar -->
         <div class="lg:col-span-1 shadow-lg">
             {% block sidebar %}{% endblock %}
         </div>
 
         <!-- Main Content -->
-        <div class="lg:col-span-3">
+        <div class="lg:col-span-3 shadow-lg">
             {% block content %}{% endblock %}
         </div>
     </div>

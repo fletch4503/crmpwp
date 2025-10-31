@@ -101,10 +101,18 @@ class ProfileUpdateForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ("first_name", "last_name", "phone", "date_of_birth", "avatar")
+        fields = (
+            "first_name",
+            "last_name",
+            "email",
+            "phone",
+            "date_of_birth",
+            "avatar",
+        )
         widgets = {
             "first_name": forms.TextInput(attrs={"class": "input input-bordered"}),
             "last_name": forms.TextInput(attrs={"class": "input input-bordered"}),
+            "email": forms.TextInput(attrs={"class": "input input-bordered"}),
             "phone": forms.TextInput(attrs={"class": "input input-bordered"}),
             "date_of_birth": forms.DateInput(
                 attrs={"class": "input input-bordered", "type": "date"}
