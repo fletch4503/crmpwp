@@ -8,6 +8,10 @@
   --text-color: #111827;
 }
 
+.breadcrumbs {
+  height: 20px;
+  background-color: linear-gradient(to right top, #104458, #00ffff);
+}
 nav {
   color: white;
   height: 50px;

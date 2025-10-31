@@ -4,12 +4,12 @@
 {% block nav_menu %} {% include "partials/navmenu.html" %} {% endblock %}
 {% block mobile_menu %} {% include "partials/mobilemenu.html" %} {% endblock %}
 {% block breadcrumbs %}
-    <nav class="text-sm breadcrumbs">
+    {% comment %} <nav class="text-sm breadcrumbs"> {% endcomment %}
         <ul>
             <li><a href="{% url 'users:dashboard' %}">Главная</a></li>
             <li>Проекты</li>
         </ul>
-    </nav>
+    {% comment %} </nav> {% endcomment %}
 {% endblock %}
 
 {% block content %}

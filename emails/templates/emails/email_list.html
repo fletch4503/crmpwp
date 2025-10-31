@@ -5,12 +5,12 @@
 {% block nav_menu %} {% include "partials/navmenu.html" %} {% endblock %}
 {% block mobile_menu %} {% include "partials/mobilemenu.html" %} {% endblock %}
 {% block breadcrumbs %}
-    <nav class="text-sm breadcrumbs">
+    {% comment %} <div class="breadcrumbs text-sm text-white"> {% endcomment %}
         <ul>
             <li><a href="{% url 'users:dashboard' %}">Главная</a></li>
             <li><a href="{% url 'emails:email_list' %}">Email</a></li>
         </ul>
-    </nav>
+    {% comment %} </div>       {% endcomment %}
 {% endblock %}
 {% block sidebar %}
     <div class="card bg-base-100 shadow-xl">

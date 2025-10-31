@@ -29,7 +29,9 @@
 <!-- Main Content -->
 {% comment %} {% include "partials/maincontent.html" %} {% endcomment %}
 <div class="container px-0 py-1 pt-16">
-    {% block breadcrumbs %}{% endblock %} <!-- Быстрые действия -->
+    <div class="breadcrumbs bg-gradient-to-r from-[#104458] to-[#00FFFF] h-8 text-sm text-white">
+        {% block breadcrumbs %}{% endblock breadcrumbs %} <!-- Индикатор приложения -->
+    </div>    
     <div id="messages" class="mb-4"> <!-- Messages -->
         {% if messages %}
             {% for message in messages %}

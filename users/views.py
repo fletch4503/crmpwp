@@ -30,8 +30,8 @@ from .forms import (
     CustomUserChangeForm,
     ProfileUpdateForm,
     TokenGenerationForm,
-    CustomSignupForm,
-    CustomLoginForm,
+    # CustomSignupForm,
+    # CustomLoginForm,
 )
 from .models import User, Role, Permission, UserRole, RolePermission, AccessToken
 from .permissions import IsAdmin, RBACPermission
