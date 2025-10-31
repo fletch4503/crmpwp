@@ -1,7 +1,7 @@
 token_list.html
 accesstoken_list.html
 profile.html
-Изменить функцию showNotification JavaScript в шаблоне settings.html на Toasts из DaisyUI
+Изменить функцию showNotification JavaScript в шаблоне settings.html на toasts из DaisyUI
 
 данные страницы и опция видны только администратору
 

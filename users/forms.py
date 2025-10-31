@@ -84,10 +84,14 @@ class CustomUserChangeForm(UserChangeForm):
             "phone",
             "date_of_birth",
             "avatar",
-            "is_active",
-            "is_staff",
+            # "ip_address",
+            # "is_email_verified",
+            # "is_phone_verified",
+            # "is_email_verified",
+            # "is_email_verified",
+            # "is_active",
+            # "is_staff",
         )
-
 
 
 class ProfileUpdateForm(forms.ModelForm):
