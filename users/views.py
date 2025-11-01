@@ -7,6 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
+from django.template.loader import render_to_string
 from django.urls import reverse_lazy
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
@@ -26,7 +27,6 @@ from rest_framework.decorators import api_view
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
 from .forms import (
     CustomUserCreationForm,
     CustomUserChangeForm,
@@ -133,14 +133,15 @@ class ProfileView(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         messages.success(self.request, _("Профиль успешно обновлен."))
         # Если запрос через HTMX, возвращаем только сообщения
-        if self.request.headers.get('HX-Request'):
-            from django.template.loader import render_to_string
+        if self.request.headers.get("HX-Request"):
             # Получаем сообщения из хранилища
             storage = messages.get_messages(self.request)
             message_list = list(storage)
-            messages_html = render_to_string('partials/messages.html', {'messages': message_list}, self.request)
+            messages_html = render_to_string(
+                "partials/messages.html", {"messages": message_list}, self.request
+            )
             response = HttpResponse(messages_html)
-            response['HX-Trigger'] = 'profileUpdated'
+            response["HX-Trigger"] = "profileUpdated"
             return response
         return super().form_valid(form)
 
@@ -237,7 +238,8 @@ class DashboardStatsAPIView(APIView):
 
     permission_classes = [IsAuthenticated]
 
-    def get(self, request):
+    @staticmethod
+    def get(request):
         from emails.models import EmailMessage
         from projects.models import Project
         from companies.models import Company
@@ -274,7 +276,8 @@ class RecentActivityAPIView(APIView):
 
     permission_classes = [IsAuthenticated]
 
-    def get(self, request):
+    @staticmethod
+    def get(request):
         activities = []
 
         # Недавние email
@@ -326,7 +329,8 @@ class SystemHealthAPIView(APIView):
 
     permission_classes = [IsAuthenticated]
 
-    def get(self, request):
+    @staticmethod
+    def get(request):
         # Проверка базы данных
         try:
             User.objects.count()
@@ -420,7 +424,7 @@ def clear_messages_ajax(request):
     """
     AJAX view для очистки сообщений.
     """
-    from django.template.loader import render_to_string
+
     return HttpResponse('<div id="messages" class="mb-2 shadow-lg"></div>')
 
 

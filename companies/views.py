@@ -42,7 +42,10 @@ from .forms import (
     OrderSearchForm,
 )
 from .models import Company, Order, Payment, CompanyNote
-from logly import logger
+from crm.utils import logger, configure_logging
+
+
+configure_logging()
 
 
 class CompanyListView(LoginRequiredMixin, ListView):

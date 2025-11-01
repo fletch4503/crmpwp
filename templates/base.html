@@ -23,7 +23,7 @@
 
     {% block extra_head %}{% endblock %}
 </head>
-<body class="min-h-screen bg-base-200">
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' class="min-h-screen bg-base-200">
 <!-- Navigation -->
 {% include "partials/navpanel.html" %}
 <!-- Main Content -->
@@ -55,9 +55,10 @@
 </footer>
 <!-- WebSocket connection for real-time updates -->
 {% if user.is_authenticated %}
-    <script src="{% static 'js/websocket.js' %}"></script> {% endif %}
-<!-- Scripts of mani page -->
-<script src="{% static 'js/base_js.js' %}"></script>
+    {#    <script src="{% static 'js/websocket.js' %}"></script>#}
+{% endif %}
+<!-- Scripts of main page -->
+{#<script src="{% static 'js/base_js.js' %}"></script>#}
 {% block extra_scripts %}{% endblock %}
 </body>
 </html>

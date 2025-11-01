@@ -1,0 +1,46 @@
+<!-- Sync Status -->
+<div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+        <h2 class="card-title">
+            <i class="fas fa-sync"></i>
+            Статус синхронизации
+        </h2>
+
+        <div class="space-y-3">
+            <div class="flex justify-between items-center">
+                <span class="text-sm">Последняя синхронизация</span>
+                <span class="text-sm font-mono">
+                {% if credentials.last_sync %}
+                    {{ credentials.last_sync|date:"d.m.Y H:i" }}
+                {% else %}
+                    Никогда
+                {% endif %}
+            </span>
+            </div>
+
+            <div class="flex justify-between items-center">
+                <span class="text-sm">Статус</span>
+                <span class="badge {% if credentials.sync_status == 'success' %}badge-success{% elif credentials.sync_status == 'error' %}badge-error{% else %}badge-warning{% endif %}">
+                {{ credentials.get_sync_status_display }}
+            </span>
+            </div>
+
+            <div class="flex justify-between items-center">
+                <span class="text-sm">Всего сообщений</span>
+                <span class="text-sm font-mono">{{ credentials.total_messages|default:0 }}</span>
+            </div>
+
+            <div class="flex justify-between items-center">
+                <span class="text-sm">Обработано</span>
+                <span class="text-sm font-mono">{{ credentials.processed_messages|default:0 }}</span>
+            </div>
+        </div>
+
+        <div class="form-control mt-4">
+            <button onclick="syncNow()" class="btn btn-primary btn-sm">
+                <i class="fas fa-sync"></i>
+                Синхронизировать сейчас
+            </button>
+        </div>
+    </div>
+</div>

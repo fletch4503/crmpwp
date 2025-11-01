@@ -1,0 +1,28 @@
+<!-- Recent Sync Logs -->
+<div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+        <h2 class="card-title">
+            <i class="fas fa-history"></i>
+            Последние синхронизации
+        </h2>
+
+        <div class="space-y-2 max-h-64 overflow-y-auto">
+            {% for log in sync_logs %}
+                <div class="flex items-center space-x-2 text-sm">
+                    <div class="w-2 h-2 rounded-full {% if log.status == 'success' %}bg-success{% elif log.status == 'error' %}bg-error{% else %}bg-warning{% endif %}"></div>
+                    <div class="flex-1">
+                        <div class="font-medium">{{ log.get_status_display }}</div>
+                        <div class="text-xs text-base-content/70">
+                            {{ log.started_at|date:"d.m.Y H:i" }}
+                            {% if log.duration %}
+                                ({{ log.duration }} сек)
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="text-center text-base-content/50 py-4 text-sm">Нет логов синхронизации</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<!-- Processing Rules -->
+<div class="card bg-base-100 shadow-xl mt-6">
+    <div class="card-body">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="card-title">
+                <i class="fas fa-filter"></i>
+                Правила обработки
+            </h2>
+            <a href="{% url 'emails:rule_create' %}" class="btn btn-primary btn-sm">
+                <i class="fas fa-plus"></i>
+                Добавить правило
+            </a>
+        </div>
+
+        <div class="space-y-2">
+            {% for rule in credentials.processing_rules.all %}
+                <div class="flex items-center justify-between p-3 bg-base-200 rounded-lg">
+                    <div>
+                        <h4 class="font-semibold">{{ rule.name }}</h4>
+                        <p class="text-sm text-base-content/70">{{ rule.description }}</p>
+                        <div class="flex space-x-2 mt-1">
+                            <span class="badge badge-outline badge-sm">{{ rule.get_condition_display }}</span>
+                            <span class="badge badge-outline badge-sm">{{ rule.get_action_display }}</span>
+                            {% if rule.is_active %}
+                                <span class="badge badge-success badge-sm">Активно</span>
+                            {% else %}
+                                <span class="badge badge-neutral badge-sm">Неактивно</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="flex space-x-1">
+                        <a href="{% url 'emails:rule_update' rule.id %}" class="btn btn-ghost btn-xs">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <button onclick="deleteRule({{ rule.id }})" class="btn btn-ghost btn-xs text-error">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="text-center text-base-content/50 py-4">Нет правил обработки</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>

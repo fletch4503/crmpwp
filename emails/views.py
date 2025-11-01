@@ -32,12 +32,15 @@ from .forms import (
 )
 from .models import EmailCredentials, EmailMessage, EmailProcessingRule, EmailSyncLog
 from .tasks import sync_user_emails, process_email_message
-from .utils import EmailProcessor
+from .utils import EmailProcessor, configure_logging, log
+
+
+configure_logging()
 
 
 class EmailCredentialsView(LoginRequiredMixin, TemplateView):
     """
-    Управление учетными данными Exchange.
+    Управление учетными данными Exchange. Запрашиваем настройки для входа.
     """
 
     template_name = "emails/credentials.html"
@@ -49,7 +52,7 @@ class EmailCredentialsView(LoginRequiredMixin, TemplateView):
         credentials, created = EmailCredentials.objects.get_or_create(
             user=self.request.user, defaults={"email": self.request.user.email}
         )
-
+        log.info(f"get_context_data -> credentials: {credentials}, created: {created}")
         context["credentials"] = credentials
         context["credentials_form"] = EmailCredentialsForm(
             instance=credentials, user=self.request.user
@@ -65,20 +68,24 @@ class EmailCredentialsView(LoginRequiredMixin, TemplateView):
         return context
 
     def post(self, request, *args, **kwargs):
-        credentials, created = EmailCredentials.objects.get_or_create(
+        formcredentials, created = EmailCredentials.objects.get_or_create(
             user=request.user, defaults={"email": request.user.email}
         )
 
         if "save_credentials" in request.POST:
+            log.info(
+                f"save_credentials -> formcredentials: {formcredentials}, created: {created}"
+            )
             form = EmailCredentialsForm(
-                request.POST, instance=credentials, user=request.user
+                request.POST, instance=formcredentials, user=request.user
             )
             if form.is_valid():
                 form.save()
                 messages.success(request, _("Email credentials saved successfully."))
+                log.info("Сохранили данные (save_credentials)!")
 
                 # Запускаем тестовую синхронизацию
-                sync_user_emails.delay(request.user.id, credentials.id)
+                sync_user_emails.delay(request.user.id, formcredentials.id)
                 messages.info(request, _("Email synchronization started."))
 
                 return redirect("emails:credentials")
@@ -86,6 +93,7 @@ class EmailCredentialsView(LoginRequiredMixin, TemplateView):
         elif "test_connection" in request.POST:
             form = EmailTestConnectionForm(request.POST)
             if form.is_valid():
+                log.info("test_connection -> Сохраняем данные:")
                 # Тестируем подключение
                 try:
                     from exchangelib import (
@@ -95,6 +103,13 @@ class EmailCredentialsView(LoginRequiredMixin, TemplateView):
                         DELEGATE,
                     )
 
+                    log.info(f"test_connection -> Email: {form.cleaned_data['email']}")
+                    log.info(
+                        f"test_connection -> Password: {form.cleaned_data['password']}"
+                    )
+                    log.info(
+                        f"test_connection -> Server: {form.cleaned_data['server']}"
+                    )
                     creds = Credentials(
                         username=form.cleaned_data["email"],
                         password=form.cleaned_data["password"],
@@ -523,7 +538,8 @@ class EmailAPIView(APIView):
     permission_classes = [IsAuthenticated, RBACPermission]
     required_permissions = ["view_project"]  # Используем project permissions для email
 
-    def get(self, request):
+    @staticmethod
+    def get(request):
         """Получить список email сообщений пользователя."""
         emails = EmailMessage.objects.filter(user=request.user).select_related(
             "related_company", "related_project"
@@ -574,7 +590,8 @@ class EmailSyncAPIView(APIView):
     permission_classes = [IsAuthenticated, RBACPermission]
     required_permissions = ["view_project"]
 
-    def post(self, request):
+    @staticmethod
+    def post(request):
         """Запустить синхронизацию email."""
         try:
             credentials = EmailCredentials.objects.get(

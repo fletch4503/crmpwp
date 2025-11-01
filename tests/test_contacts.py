@@ -231,7 +231,7 @@ class TestContactValidation:
             data = {
                 "first_name": "Test",
                 "last_name": "User",
-                "email": f'test{phone.replace(" ", "")}@example.com',
+                "email": f"test{phone.replace(' ', '')}@example.com",
                 "phone": phone,
             }
             response = authenticated_client.post("/api/contacts/", data)

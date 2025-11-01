@@ -1,0 +1,39 @@
+<!-- Тест Подключения -->
+<div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+        <h2 class="card-title">
+            <i class="fas fa-plug"></i>
+            Тест подключения
+        </h2>
+        <form method="post" class="space-y-4">
+            {% csrf_token %}
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Email</span>
+                </label>
+                <input type="email" name="test_email" class="input input-bordered input-sm"
+                       placeholder="user@company.com" required>
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Пароль</span>
+                </label>
+                <input type="password" name="test_password" class="input input-bordered input-sm"
+                       placeholder="Пароль" required>
+            </div>
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Сервер</span>
+                </label>
+                <input type="text" name="test_server" class="input input-bordered input-sm"
+                       placeholder="mail.company.com" required>
+            </div>
+            <div class="form-control">
+                <button type="submit" name="test_connection" class="btn btn-secondary btn-sm">
+                    <i class="fas fa-plug"></i>
+                    Протестировать
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

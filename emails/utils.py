@@ -2,7 +2,16 @@ import re
 import logging
 from typing import List, Dict, Optional, Any
 
-logger = logging.getLogger(__name__)
+log = logging.getLogger(__name__)
+
+
+def configure_logging():
+    logging.basicConfig(
+        level=logging.INFO,
+        datefmt="%Y-%m-%d %H:%M:%S",
+        format="[%(asctime)s.%(msecs)03d] - %(funcName)15s - %(module)s:%(lineno)d - %(levelname)-8s - %(message)s",
+        # handlers=[PrettyXmlHandler],
+    )
 
 
 class EmailParser:
@@ -52,20 +61,6 @@ class EmailParser:
                     return inn
 
         return None
-        """
-        Извлекает ИНН из текста.
-        """
-        if not text:
-            return None
-
-        for pattern in self.INN_PATTERNS:
-            matches = re.findall(pattern, text, re.IGNORECASE)
-            for match in matches:
-                inn = match if isinstance(match, str) else match
-                if self._validate_inn(inn):
-                    return inn
-
-        return None
 
     def extract_project_number(self, subject: str, body: str) -> Optional[str]:
         """
@@ -81,7 +76,8 @@ class EmailParser:
 
         return None
 
-    def extract_contacts(self, text: str) -> List[Dict[str, str]]:
+    @staticmethod
+    def extract_contacts(text: str) -> List[Dict[str, str]]:
         """
         Извлекает контактную информацию из текста.
         """
@@ -122,7 +118,7 @@ class EmailParser:
 
         # Добавляем контакты без email, но с телефонами
         for phone in phones:
-            phone_clean = re.sub(r"[^\+\d]", "", phone)
+            phone_clean = re.sub(r"[^+\d]", "", phone)
             if len(phone_clean) >= 7:
                 # Проверяем, не добавлен ли уже этот контакт
                 existing = next(
@@ -149,7 +145,8 @@ class EmailParser:
 
         return contacts
 
-    def _validate_inn(self, inn: str) -> bool:
+    @staticmethod
+    def _validate_inn(inn: str) -> bool:
         """
         Проверяет корректность ИНН.
         """
@@ -188,6 +185,42 @@ class EmailParser:
             return False
 
         return True
+
+
+def create_contacts_from_email(email_message: Any, user: Any) -> List[Any]:
+    """
+    Создает контакты на основе email сообщения.
+    """
+    created_contacts = []
+
+    try:
+        from contacts.models import Contact
+
+        for contact_data in email_message.parsed_contacts:
+            # Проверяем, существует ли контакт
+            existing = Contact.objects.filter(
+                user=user, email=contact_data.get("email", "")
+            ).first()
+
+            if existing:
+                continue
+
+            # Создаем контакт
+            contact = Contact.objects.create(
+                user=user,
+                first_name=contact_data.get("first_name", ""),
+                last_name=contact_data.get("last_name", ""),
+                email=contact_data.get("email", ""),
+                phone=contact_data.get("phone", ""),
+                tags=["email_auto"],
+            )
+
+            created_contacts.append(contact)
+
+    except Exception as e:
+        log.error(f"Error creating contacts from email: {e}")
+
+    return created_contacts
 
 
 class EmailProcessor:
@@ -246,7 +279,7 @@ class EmailProcessor:
                     results["suggested_project"] = project
 
         except Exception as e:
-            logger.error(
+            log.error(
                 f"Error processing email {getattr(email_message, 'id', 'unknown')}: {e}"
             )
             processing_errors = results["processing_errors"]
@@ -255,7 +288,8 @@ class EmailProcessor:
 
         return results
 
-    def create_project_from_email(self, email_message: Any, user: Any) -> Optional[Any]:
+    @staticmethod
+    def create_project_from_email(email_message: Any, user: Any) -> Optional[Any]:
         """
         Создает проект на основе email сообщения.
         """
@@ -284,103 +318,5 @@ class EmailProcessor:
             return project
 
         except Exception as e:
-            logger.error(f"Error creating project from email: {e}")
+            log.error(f"Error creating project from email: {e}")
             return None
-        """
-        Создает проект на основе email сообщения.
-        """
-        try:
-            from projects.models import Project
-
-            # Проверяем, не существует ли уже проект
-            existing = Project.objects.filter(
-                user=user, source_email_id=email_message.message_id
-            ).first()
-
-            if existing:
-                return existing
-
-            # Создаем проект
-            project = Project.objects.create(
-                user=user,
-                title=email_message.subject,
-                description=f"Проект создан из email от {email_message.sender}",
-                inn=email_message.parsed_inn,
-                project_number=email_message.parsed_project_number,
-                source_email_id=email_message.message_id,
-                tags=["email_auto"],
-            )
-
-            return project
-
-        except Exception as e:
-            logger.error(f"Error creating project from email: {e}")
-            return None
-
-    def create_contacts_from_email(self, email_message: Any, user: Any) -> List[Any]:
-        """
-        Создает контакты на основе email сообщения.
-        """
-        created_contacts = []
-
-        try:
-            from contacts.models import Contact
-
-            for contact_data in email_message.parsed_contacts:
-                # Проверяем, существует ли контакт
-                existing = Contact.objects.filter(
-                    user=user, email=contact_data.get("email", "")
-                ).first()
-
-                if existing:
-                    continue
-
-                # Создаем контакт
-                contact = Contact.objects.create(
-                    user=user,
-                    first_name=contact_data.get("first_name", ""),
-                    last_name=contact_data.get("last_name", ""),
-                    email=contact_data.get("email", ""),
-                    phone=contact_data.get("phone", ""),
-                    tags=["email_auto"],
-                )
-
-                created_contacts.append(contact)
-
-        except Exception as e:
-            logger.error(f"Error creating contacts from email: {e}")
-
-        return created_contacts
-        """
-        Создает контакты на основе email сообщения.
-        """
-        created_contacts = []
-
-        try:
-            from contacts.models import Contact
-
-            for contact_data in email_message.parsed_contacts:
-                # Проверяем, существует ли контакт
-                existing = Contact.objects.filter(
-                    user=user, email=contact_data.get("email", "")
-                ).first()
-
-                if existing:
-                    continue
-
-                # Создаем контакт
-                contact = Contact.objects.create(
-                    user=user,
-                    first_name=contact_data.get("first_name", ""),
-                    last_name=contact_data.get("last_name", ""),
-                    email=contact_data.get("email", ""),
-                    phone=contact_data.get("phone", ""),
-                    tags=["email_auto"],
-                )
-
-                created_contacts.append(contact)
-
-        except Exception as e:
-            logger.error(f"Error creating contacts from email: {e}")
-
-        return created_contacts

@@ -1,0 +1,66 @@
+<div class="card bg-base-100 shadow-xl">
+    <div class="card-body">
+        <h2 class="card-title">
+            <i class="fas fa-cog"></i>
+            Настройки подключения к Exchange
+        </h2>
+
+        <form method="post" class="space-y-4">
+            {% csrf_token %}
+
+            <!-- Email Credentials -->
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Email адрес</span>
+                </label>
+                <input type="email" name="email" value="{{ credentials.email }}"
+                       class="input input-bordered" placeholder="user@company.com" required>
+            </div>
+
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Сервер Exchange</span>
+                </label>
+                <input type="text" name="server" value="{{ credentials.server }}"
+                       class="input input-bordered" placeholder="mail.company.com" required>
+                <label class="label">
+                    <span class="label-text-alt">Адрес сервера Exchange (без https://)</span>
+                </label>
+            </div>
+
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Пароль</span>
+                </label>
+                <input type="password" name="password" class="input input-bordered"
+                       placeholder="Пароль от email" required>
+                <label class="label">
+                    <span class="label-text-alt">Пароль будет сохранен в зашифрованном виде</span>
+                </label>
+            </div>
+
+            <div class="form-control">
+                <label class="label cursor-pointer">
+                    <span class="label-text">Использовать SSL/TLS</span>
+                    <input type="checkbox" name="use_ssl" {% if credentials.use_ssl %}checked{% endif %}
+                           class="checkbox checkbox-primary">
+                </label>
+            </div>
+
+            <div class="form-control">
+                <label class="label cursor-pointer">
+                    <span class="label-text">Активно</span>
+                    <input type="checkbox" name="is_active" {% if credentials.is_active %}checked{% endif %}
+                           class="checkbox checkbox-primary">
+                </label>
+            </div>
+
+            <div class="form-control">
+                <button type="submit" name="save_credentials" class="btn btn-primary">
+                    <i class="fas fa-save"></i>
+                    Сохранить настройки
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

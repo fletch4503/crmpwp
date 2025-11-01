@@ -10,10 +10,10 @@ notificationSocket.onmessage = function (e) {
 
 notificationSocket.onclose = function (e) {
     console.log('Notification socket closed');
-    // Reconnect after 120 seconds
+    // Reconnect after 10 minutes
     setTimeout(() => {
         location.reload();
-    }, 120000);
+    }, 600000);
 };
 
 function handleRealtimeMessage(data) {
@@ -54,12 +54,12 @@ function showNotification(title, message, level = 'info') {
         notification.classList.add('notification-enter-active');
     }, 10);
 
-    // Auto remove after 2 seconds
+    // Auto remove after 10 seconds
     setTimeout(() => {
         notification.classList.remove('notification-enter-active');
         notification.classList.add('notification-exit-active');
         setTimeout(() => notification.remove(), 300);
-    }, 2000);
+    }, 10000);
 }
 
 function updateNotificationCount() {
