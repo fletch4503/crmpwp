@@ -54,12 +54,12 @@ function showNotification(title, message, level = 'info') {
         notification.classList.add('notification-enter-active');
     }, 10);
 
-    // Auto remove after 5 seconds
+    // Auto remove after 2 seconds
     setTimeout(() => {
         notification.classList.remove('notification-enter-active');
         notification.classList.add('notification-exit-active');
         setTimeout(() => notification.remove(), 300);
-    }, 5000);
+    }, 2000);
 }
 
 function updateNotificationCount() {

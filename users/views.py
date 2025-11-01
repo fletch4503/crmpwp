@@ -135,7 +135,10 @@ class ProfileView(LoginRequiredMixin, UpdateView):
         # Если запрос через HTMX, возвращаем только сообщения
         if self.request.headers.get('HX-Request'):
             from django.template.loader import render_to_string
-            messages_html = render_to_string('partials/messages.html', {'messages': messages.get_messages(self.request)}, self.request)
+            # Получаем сообщения из хранилища
+            storage = messages.get_messages(self.request)
+            message_list = list(storage)
+            messages_html = render_to_string('partials/messages.html', {'messages': message_list}, self.request)
             response = HttpResponse(messages_html)
             response['HX-Trigger'] = 'profileUpdated'
             return response

@@ -17,34 +17,16 @@
             <h1 class="card-title text-xl">
                 <i class="fas fa-info-circle"></i>Информация об аккаунте</h1>
             <div class="space-y-2 text-md">
-                <p>
-                    <strong>id:</strong> <a class="text-xs">{{ user.id }}</a>
-                </p>
-                <p>
-                    <strong>ID Роли:</strong> <a class="text-xs">{{ user_role.role.id }}</a>
-                </p>
-                <p>
-                    <strong>Название роли:</strong> {{ user_role.role.name }}
-                </p>
-                <p>
-                    <strong>IP:</strong> {{ user.ip_address }}
-                </p>
-                <p>
-                    <strong>Дата регистрации:</strong> {{ user.date_joined|date:"d.m.Y" }}
-                </p>
-                <p>
-                    <strong>Последний вход:</strong> {{ user.last_login|date:"d.m.Y H:i" }}
-                </p>
+                <p><strong>id:</strong> <a class="text-xs">{{ user.id }}</a></p>
+                <p><strong>ID Роли:</strong> <a class="text-xs">{{ user_role.role.id }}</a></p>
+                <p><strong>Название роли:</strong> <a class="text-xs">{{ user_role.role.name }}</a></p>
+                <p><strong>IP:</strong> <a class="text-xs">{{ user.ip_address }}</a></p>
+                <p><strong>Дата регистрации:</strong> <a class="text-xs">{{ user.date_joined|date:"d.m.Y" }}</a></p>
+                <p><strong>Последний вход:</strong> <a class="text-xs">{{ user.last_login|date:"d.m.Y H:i" }}</a></p>
                 {% if user.phone_verified %}
-                    <p>
-                        <strong>Телефон:</strong>
-                        <span class="text-success">Верифицирован</span>
-                    </p>
+                    <p><strong>Телефон:</strong><span class="text-success">Верифицирован</span></p>
                 {% else %}
-                    <p>
-                        <strong>Телефон:</strong>
-                        <span class="text-warning">Не верифицирован</span>
-                    </p>
+                    <p><strong>Телефон:</strong><span class="text-warning">Не верифицирован</span></p>
                 {% endif %}
             </div>
         </div>
@@ -70,7 +52,8 @@
                     <h2 class="card-title mx-2 p-2">Мой профиль</h2>
                 </div>
                 <div class="card-body">
-                    <form method="post" enctype="multipart/form-data" hx-post="{% url 'users:profile' %}" hx-target="#messages" hx-swap="innerHTML">
+                    <form method="post" enctype="multipart/form-data" hx-post="{% url 'users:profile' %}"
+                          hx-target="#messages" hx-swap="innerHTML">
                         {% csrf_token %}
                         <div class="row">
                             <div class="col-md-6">

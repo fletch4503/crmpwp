@@ -1,7 +1,7 @@
-<div id="messages" class="mb-2 shadow-lg text-sm">
+<div id="messages" class="mb-1 shadow-lg">
     {% if messages %}
         {% for message in messages %}
-            <div class="alert alert-{{ message.tags|default:'info' }} mb-2" hx-trigger="load delay:3s"
+            <div class="alert alert-{{ message.tags|default:'info' }} m-1 text-white" hx-trigger="load delay:3s"
                  hx-swap="outerHTML" hx-get="{% url 'users:clear_messages' %}">
                 <div>
                     {% if message.tags == 'error' %}
