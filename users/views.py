@@ -20,6 +20,7 @@ from django.views.generic import (
     DeleteView,
     FormView,
 )
+from django.core.cache import cache
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.permissions import IsAuthenticated
@@ -498,3 +499,15 @@ class CustomLogoutView(LogoutView):
     """
 
     next_page = reverse_lazy("users:login")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        cache.clear()
+        context.update(
+            {
+                "title": _("Logged out"),
+                "subtitle": None,
+                **(self.extra_context or {}),
+            }
+        )
+        return context

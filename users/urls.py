@@ -8,12 +8,12 @@ app_name = "users"
 
 urlpatterns = [
     # Dashboard
-    path("", views.DashboardView.as_view(), name="dashboard"),
+    path("", login_required(views.DashboardView.as_view()), name="dashboard"),
     # path("dashboard/", views.DashboardView.as_view(), name="dashboard"),
     # Authentication
     path("login/", views.CustomLoginView.as_view(), name="login"),
-    path("register/", views.CustomRegisterView.as_view(), name="register"),
     path("logout/", views.CustomLogoutView.as_view(), name="logout"),
+    path("register/", views.CustomRegisterView.as_view(), name="register"),
     # Profile
     path("profile/", views.ProfileView.as_view(), name="profile"),
     path("userslist/", login_required(views.UserListView.as_view()), name="users_list"),

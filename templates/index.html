@@ -103,7 +103,7 @@
                         </h2>
                         <p class="text-blue-100">{{ stats.emails_total|default:0 }} сообщений</p>
                         <p class="text-sm text-blue-200">
-                            {{ stats.emails_unread|default:0 }} непрочитанных
+                            {{ stats.unread_emails|default:0 }} непрочитанных
                         </p>
                     </div>
                     <div class="text-4xl opacity-75">
@@ -182,73 +182,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Recent Items Grid -->
-    {% comment %} <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-        <!-- Последние Email -->
-        <div class="card bg-base-100 shadow-xl">
-            <div class="card-body">
-                <h2 class="card-title">
-                    <i class="fas fa-envelope"></i>
-                    Последние Email
-                </h2>
-                <div id="recent-emails" class="space-y-2">
-                    {% for email in recent_emails %}
-                        <div class="flex items-center space-x-3 p-3 bg-base-200 rounded-lg">
-                            <div class="avatar placeholder">
-                                <div class="bg-neutral-focus text-neutral-content rounded-full w-8">
-                                    <span class="text-xs">{{ email.sender|first|upper }}</span>
-                                </div>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="text-sm font-medium truncate">{{ email.subject }}</p>
-                                <p class="text-xs text-base-content/70">{{ email.sender }}</p>
-                            </div>
-                            <div class="text-xs text-base-content/50">
-                                {{ email.received_at|date:"d.m H:i" }}
-                            </div>
-                        </div>
-                    {% empty %}
-                        <p class="text-center text-base-content/50 py-4">Нет новых сообщений</p>
-                    {% endfor %}
-                </div>
-                <div class="card-actions justify-end">
-                    <a href="{% url 'emails:email_list' %}" class="btn btn-primary btn-sm">Показать все</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Recent Projects -->
-        <div class="card bg-base-100 shadow-xl">
-            <div class="card-body">
-                <h2 class="card-title">
-                    <i class="fas fa-project-diagram"></i>
-                    Активные проекты
-                </h2>
-                <div id="recent-projects" class="space-y-2">
-                    {% for project in recent_projects %}
-                        <div class="flex items-center space-x-3 p-3 bg-base-200 rounded-lg">
-                            <div class="avatar placeholder">
-                                <div class="bg-primary text-primary-content rounded-full w-8">
-                                    <span class="text-xs">{{ project.title|first|upper }}</span>
-                                </div>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <p class="text-sm font-medium truncate">{{ project.title }}</p>
-                                <p class="text-xs text-base-content/70">{{ project.status }}</p>
-                            </div>
-                            <div class="badge badge-outline">{{ project.get_status_display }}</div>
-                        </div>
-                    {% empty %}
-                        <p class="text-center text-base-content/50 py-4">Нет активных проектов</p>
-                    {% endfor %}
-                </div>
-                <div class="card-actions justify-end">
-                    <a href="{% url 'projects:project_list' %}" class="btn btn-primary btn-sm">Показать все</a>
-                </div>
-            </div>
-        </div>
-    </div> {% endcomment %}
 
     <!-- System Status -->
     <div hx-get="/api/dashboard/stats/" hx-trigger="load, every 30s" hx-target="#stats-container">

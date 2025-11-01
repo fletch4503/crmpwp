@@ -19,12 +19,9 @@ class NotificationConsumer(AsyncWebsocketConsumer):
 
         # Создаем группу для пользователя
         self.group_name = f"user_{self.user.id}"
-
         # Присоединяемся к группе
         await self.channel_layer.group_add(self.group_name, self.channel_name)
-
         await self.accept()
-
         # Отправляем приветственное сообщение
         await self.send(
             text_data=json.dumps(

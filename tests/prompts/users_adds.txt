@@ -42,7 +42,11 @@ users/templates/users/partials/profile.html и проверить - все ли 
 1. ✅ Замена showNotification на DaisyUI toasts в settings.html
 Функция showNotification теперь использует механизм DaisyUI toast вместо обычных alert'ов
 Toast отображается в верхнем правом углу экрана
-Автоматическое скрытие через 5 секунд
+Как скрывать через 5 секунд сообщение, переданное из метода form_valid класса ProfileView приложения users после
+успешного обновления профиля пользователя через механизмы HTMX без использования JavaScript?
+ProfileView -> form_valid - > messages.success(self.request, _("Профиль успешно обновлен."))
+После этого через htmx передавать в форму сигнал на обновление страницы через 5 секунд
+
 2. ✅ Кастомная страница входа с использованием login.html
 Создан CustomLoginView с использованием подготовленного шаблона users/partials/login.html
 При успешном входе генерируется токен доступа с временем действия 1 час
