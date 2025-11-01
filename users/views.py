@@ -5,7 +5,7 @@ from django.contrib.auth.views import LogoutView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils import timezone
@@ -132,6 +132,13 @@ class ProfileView(LoginRequiredMixin, UpdateView):
 
     def form_valid(self, form):
         messages.success(self.request, _("Профиль успешно обновлен."))
+        # Если запрос через HTMX, возвращаем только сообщения
+        if self.request.headers.get('HX-Request'):
+            from django.template.loader import render_to_string
+            messages_html = render_to_string('partials/messages.html', {'messages': messages.get_messages(self.request)}, self.request)
+            response = HttpResponse(messages_html)
+            response['HX-Trigger'] = 'profileUpdated'
+            return response
         return super().form_valid(form)
 
 
@@ -403,6 +410,15 @@ def update_user_settings_ajax(request):
     # Обновляем настройки (здесь можно добавить поля в модель User)
     # Пока просто возвращаем успех
     return JsonResponse({"success": True})
+
+
+@login_required
+def clear_messages_ajax(request):
+    """
+    AJAX view для очистки сообщений.
+    """
+    from django.template.loader import render_to_string
+    return HttpResponse('<div id="messages" class="mb-2 shadow-lg"></div>')
 
 
 class SettingsView(LoginRequiredMixin, TemplateView):

@@ -53,4 +53,6 @@ urlpatterns = [
         views.update_user_settings_ajax,
         name="ajax_update_settings",
     ),
+    # Скрываем появляющиеся сообщения
+    path("ajax/clear-messages/", views.clear_messages_ajax, name="clear_messages"),
 ]

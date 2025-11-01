@@ -1,0 +1,21 @@
+<div id="messages" class="mb-2 shadow-lg text-sm">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags|default:'info' }} mb-2" hx-trigger="load delay:3s"
+                 hx-swap="outerHTML" hx-get="{% url 'users:clear_messages' %}">
+                <div>
+                    {% if message.tags == 'error' %}
+                        <i class="fas fa-exclamation-triangle"></i>
+                    {% elif message.tags == 'warning' %}
+                        <i class="fas fa-exclamation-circle"></i>
+                    {% elif message.tags == 'success' %}
+                        <i class="fas fa-check-circle"></i>
+                    {% else %}
+                        <i class="fas fa-info-circle"></i>
+                    {% endif %}
+                    {{ message }}
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>

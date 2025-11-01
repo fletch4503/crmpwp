@@ -32,26 +32,7 @@
     <div class="breadcrumbs bg-gradient-to-r from-[#104458] to-[#00FFFF] full-w-xs h-7 text-sm text-white shadow-lg">
         {% block breadcrumbs %}{% endblock breadcrumbs %} <!-- Индикатор приложения -->
     </div>
-    <div id="messages" class="mb-2 shadow-lg"> <!-- Messages -->
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags|default:'info' }} mb-2">
-                    <div>
-                        {% if message.tags == 'error' %}
-                            <i class="fas fa-exclamation-triangle"></i>
-                        {% elif message.tags == 'warning' %}
-                            <i class="fas fa-exclamation-circle"></i>
-                        {% elif message.tags == 'success' %}
-                            <i class="fas fa-check-circle"></i>
-                        {% else %}
-                            <i class="fas fa-info-circle"></i>
-                        {% endif %}
-                        {{ message }}
-                    </div>
-                </div>
-            {% endfor %}
-        {% endif %}
-    </div>
+    {% include "partials/messages.html" %}
     <!-- Page Content -->
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {#    <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">#}
