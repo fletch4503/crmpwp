@@ -46,7 +46,7 @@ class DashboardView(LoginRequiredMixin, TemplateView):
     Главная страница дашборда.
     """
 
-    template_name = "dashboard.html"
+    template_name = "crm/dashboard.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -138,7 +138,7 @@ class ProfileView(LoginRequiredMixin, UpdateView):
             storage = messages.get_messages(self.request)
             message_list = list(storage)
             messages_html = render_to_string(
-                "partials/messages.html", {"messages": message_list}, self.request
+                "crm/partials/messages.html", {"messages": message_list}, self.request
             )
             response = HttpResponse(messages_html)
             response["HX-Trigger"] = "profileUpdated"

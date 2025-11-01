@@ -25,14 +25,14 @@
 </head>
 <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' class="min-h-screen bg-base-200">
 <!-- Navigation -->
-{% include "partials/navpanel.html" %}
+{% include "crm/partials/navpanel.html" %}
 <!-- Main Content -->
 {% comment %} {% include "partials/maincontent.html" %} {% endcomment %}
 <div class="container px-0 py-1 pt-14">
     <div class="breadcrumbs bg-gradient-to-r from-[#104458] to-[#00FFFF] full-w-xs h-7 text-sm text-white shadow-lg">
         {% block breadcrumbs %}{% endblock breadcrumbs %} <!-- Индикатор приложения -->
     </div>
-    {% include "partials/messages.html" %}
+    {% include "crm/partials/messages.html" %}
     <!-- Page Content -->
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {#    <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">#}
@@ -55,7 +55,7 @@
 </footer>
 <!-- WebSocket connection for real-time updates -->
 {% if user.is_authenticated %}
-    {#    <script src="{% static 'js/websocket.js' %}"></script>#}
+    <script src="{% static 'js/websocket.js' %}"></script>
 {% endif %}
 <!-- Scripts of main page -->
 {#<script src="{% static 'js/base_js.js' %}"></script>#}

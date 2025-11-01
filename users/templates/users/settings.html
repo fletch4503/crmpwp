@@ -1,9 +1,9 @@
-{% extends "base.html" %}
+{% extends "crm/base.html" %}
 {% load static %}
 
 {% block title %}Настройки - CRM Система{% endblock %}
-{% block nav_menu %} {% include "partials/navmenu.html" %} {% endblock %}
-{% block mobile_menu %} {% include "partials/mobilemenu.html" %} {% endblock %}{% block breadcrumbs %}
+{% block nav_menu %} {% include "crm/partials/navmenu.html" %} {% endblock %}
+{% block mobile_menu %} {% include "crm/partials/mobilemenu.html" %} {% endblock %}{% block breadcrumbs %}
     <ul>
         <li><a class="fa-solid fa-folder hover:underline cursor-pointer gap-2 items-center"
                href="{% url 'users:dashboard' %}">Главная</a></li>

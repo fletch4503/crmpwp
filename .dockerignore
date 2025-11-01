@@ -68,7 +68,7 @@ yarn-error.log*
 .env.production.local
 
 # Static and media
-/staticfiles/
+/crm/staticfiles/
 /media/
 
 # Tests

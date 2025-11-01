@@ -1,8 +1,8 @@
-{% extends "base.html" %}
+{% extends "crm/base.html" %}
 
 {% block title %}Контакты - CRM Система{% endblock %}
-{% block nav_menu %} {% include "partials/navmenu.html" %} {% endblock %}
-{% block mobile_menu %} {% include "partials/mobilemenu.html" %} {% endblock %}
+{% block nav_menu %} {% include "crm/partials/navmenu.html" %} {% endblock %}
+{% block mobile_menu %} {% include "crm/partials/mobilemenu.html" %} {% endblock %}
 {% block breadcrumbs %}
     <ul>
         <li><a class="fa-solid fa-folder hover:underline cursor-pointer gap-2 items-center"
@@ -229,6 +229,7 @@
 
 
 
+
                                             {{ page_obj.previous_page_number }}{% for key,value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}"
                                        class="join-item btn">«</a>
                                 {% endif %}
@@ -239,6 +240,7 @@
 
                                 {% if page_obj.has_next %}
                                     <a href="?page=
+
 
 
 

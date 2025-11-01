@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     "django_celery_beat",
     "django_celery_results",
     # Local apps
+    "crm",
     "users",
     "contacts",
     "companies",
@@ -158,7 +159,9 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_DIRS = [
+    BASE_DIR / "crm" / "static_src",
+]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
@@ -174,8 +177,8 @@ AUTH_USER_MODEL = "users.User"
 # Authentication backends
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
-    "guardian.backends.ObjectPermissionBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
+    "guardian.backends.ObjectPermissionBackend",
 ]
 
 # Django REST Framework

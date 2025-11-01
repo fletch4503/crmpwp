@@ -5,7 +5,7 @@
                 <i class="fas fa-bars"></i>
             </label>
             <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                {% block mobile_menu %}{% include "partials/mobilemenu.html" %}{% endblock %}
+                {% block mobile_menu %}{% include "crm/partials/mobilemenu.html" %}{% endblock %}
             </ul>
         </div>
         <a href="{% url 'users:dashboard' %}"
@@ -16,7 +16,7 @@
     </div>
     <div class="navbar-center hidden lg:flex"> <!-- Средняя часть навигатора -->
         <ul class="menu menu-horizontal px-1">
-            {% block nav_menu %} {% include "partials/navmenu.html" %} {% endblock %}
+            {% block nav_menu %} {% include "crm/partials/navmenu.html" %} {% endblock %}
         </ul>
     </div>
     <div class="navbar-end">
